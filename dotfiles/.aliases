@@ -1,0 +1,83 @@
+alias hs='history | grep'
+alias sf="screenfetch"
+alias ncdu='ncdu --color=dark'
+alias togif='foo(){ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1".gif}; foo'
+# shell
+alias change="code $HOME/.zshrc"
+alias update="source $HOME/.zshrc"
+alias reload="exec ${SHELL} -l"
+alias path='echo -e ${PATH//:/\\n}'
+# network
+alias myip="curl http://ipecho.net/plain; echo"
+alias myrouter="netstat -nr | grep default"
+alias localip="ipconfig getifaddr en0"
+alias st="speedtest-cli --no-upload --bytes"
+# directories
+alias mvcd='foo(){mv "$1" "$2" && cd "$2";}; foo'
+# updates
+alias brewup="brew update; brew upgrade; brew cask upgrade; brew cask doctor; brew cleanup; brew doctor"
+alias sysup="sudo softwareupdate -i -a"
+alias npmup="npm install npm -g; npm update -g"
+alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
+alias allup="brewup; sysup; gemup; npmup"
+# ls
+alias ls="colorls --group-directories-first --almost-all --git-status -1"
+alias cls="clear && colorls --group-directories-first --almost-all --git-status -1"
+alias lst="colorls --group-directories-first --tree=10"
+alias lsl="exa --long --all --git --header --group-directories-first"
+# git
+alias gcd='gclonecd(){git clone "$1" && cd "$1";}; gclonecd'
+alias gaa='git add .'
+alias gac="git add -v . && git commit -v"
+alias glog='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all'
+alias gpbd='git push origin --delete'
+alias lg='lazygit'
+# npm
+alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nig='npm install --global'
+alias nt='npm test'
+alias nit='npm install && npm test'
+alias nk='npm link'
+alias nr='npm run'
+alias ns='npm start'
+alias nf='npm cache clean && rm -rf node_modules && npm install'
+alias nlg='npm list --global --depth=0'
+# prompt if deleting more than 3 files at a time #
+alias rm='rm -iv'
+# confirmation #
+alias mv='mv -iv'
+alias cp='cp -iv'
+alias ln='ln -iv'
+# Brew
+alias brewsl='brew services list'
+alias brewlistcask="brew cask list -1"
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+# PostgreSQL
+alias pgrun='brew services run postgresql'
+alias pgstatus='brew services list | grep -i postgresql'
+alias pgstop='brew services stop postgresql'
+alias pgrestart='brew services restart postgresql'
+# mongoDB
+alias mdrun='brew services run mongodb-community'
+alias mdstatus='brew services list | grep -i mongodb-community'
+alias mdstop='brew services stop mongodb-community'
+alias mdrestart='brew services restart mongodb-community'
+# Directory shortcuts
+alias moodle="cd $HOME/resilio-sync/jenkins/moodle-scraper/courses/"
+alias conu="cd $HOME/Google\ Drive/University/Concordia\ University/"
+alias ws="cd $HOME/workspace/src/github.com/gpnn"
+alias sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
+alias dl="cd $HOME/Downloads"
+# Gatekeeper (for installing 3rd party apps)
+alias gatekeeperOff="sudo spctl --master-disable"
+alias gatekeeperOn="sudo spctl --master-enable"
+# sort LaunchPad
+alias sortlaunchpad="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+# Get week number
+alias week='date +%V'

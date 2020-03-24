@@ -1,0 +1,25 @@
+[user]
+	name = Gordon Pham-Nguyen
+	email = gordon.pn6@gmail.com
+[color]
+	ui = auto
+[core]
+	excludesFile = $HOME/.gitignore
+	editor = nano -w
+	autocrlf = input
+	pager = cat
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait $MERGED"
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff $LOCAL $REMOTE"
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,0 +1,48 @@
+export EDITOR="code"
+
+# export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+export LC_ALL='en_US.UTF-8';
+
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+export PATH="$HOME/workspace/bin:$PATH"
+
+export PATH="/usr/local/share/python:$PATH"
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+export PATH="/Library/TeX/texbin/:$PATH"
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+export PATH="~/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="/usr/local/opt/libarchive/bin:$PATH"
+export PATH="/usr/local/opt/krb5/bin:$PATH"
+export PATH="/usr/local/opt/krb5/sbin:$PATH"
+# export PATH="/usr/local/opt/libpq/bin:$PATH"
+export FZF_BASE="/usr/local/bin/fzf"
+
+export LESS="--no-init --raw-control-chars --QUIT-AT-EOF --quit-at-eof +G $LESS"
+
+export LDFLAGS="-L/usr/local/opt/libarchive/lib:$LDFLAGS"
+export LDFLAGS="-L/usr/local/opt/sqlite/lib:$LDFLAGS"
+export LDFLAGS="-L/usr/local/opt/readline/lib:$LDFLAGS"
+export LDFLAGS="-L/usr/local/opt/krb5/lib:$LDFLAGS"
+export LDFLAGS="-L/usr/local/opt/libpq/lib:$LDFLAGS"
+
+export PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/krb5/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/libpq/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+export CPPFLAGS="-I/usr/local/opt/sqlite/include:$CPPFLAGS"
+export CPPFLAGS="-I/usr/local/opt/libarchive/include:$CPPFLAGS"
+export CPPFLAGS="-I/usr/local/opt/readline/include:$CPPFLAGS"
+export CPPFLAGS="-I/usr/local/opt/krb5/include:$CPPFLAGS"
+export CPPFLAGS="-I/usr/local/opt/libpq/include:$CPPFLAGS"
