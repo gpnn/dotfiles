@@ -19,9 +19,8 @@ echo "Installing Homebrew..."
 read -n 1 -s -r -p "Press any key to continue"
 echo
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 open -a "App Store"
-echo "Please mak sure you are logged into the App Store then continue"
+echo "Please make sure you are logged into the App Store then continue"
 read -n 1 -s -r -p "Press any key to continue"
 echo
 gem install colorize

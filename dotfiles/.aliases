@@ -1,4 +1,5 @@
 alias readme="mdstart README.md"
+alias op="open"
 alias hs='history | grep'
 alias sf="screenfetch"
 alias ncdu='ncdu --color=dark'
@@ -22,10 +23,11 @@ alias npmup="npm install npm -g; npm update -g"
 alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
 alias allup="brewup; sysup; gemup; npmup"
 # ls
-alias ls="colorls --group-directories-first --almost-all --git-status -1"
-alias cls="clear && colorls --group-directories-first --almost-all --git-status -1"
-alias lst="colorls --group-directories-first --tree=10"
-alias lsl="exa --long --all --git --header --group-directories-first"
+alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
+alias cls="clear && ls"
+alias lsd="ls --only-dirs"
+alias lst="exa --tree --level=5"
+alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
 # git
 alias gcd='gclonecd(){git clone "$1" && cd "$1";}; gclonecd'
 alias gaa='git add .'

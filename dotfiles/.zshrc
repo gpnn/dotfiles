@@ -14,6 +14,7 @@ plugins=(
     copydir
     copyfile
     cp
+    fzf-tab
     git
     gitignore
     last-working-dir
@@ -25,6 +26,7 @@ plugins=(
     z
     zsh-better-npm-completion
     zsh-interactive-cd
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh

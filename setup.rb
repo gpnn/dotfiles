@@ -94,6 +94,17 @@ def set_mac_os_settings
   system('./.macos')
 end
 
+def install_zsh_plugins
+  puts 'Installing zsh plugins'.colorize(:blue)
+  system('git clone https://github.com/Aloxaf/fzf-tab ~ZSH_CUSTOM/plugins/fzf-tab')
+  system('git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion')
+end
+
+def install_nano_syntax
+  puts 'Installing nano syntax highlighting'.colorize(:blue)
+  system('curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh')
+end
+
 def main
   install_brew_taps
   install_brews
@@ -108,6 +119,8 @@ def main
   continue = STDIN.gets.strip.chomp.downcase == 'y'
   create_ssh_key if continue
   set_mac_os_settings
+  install_zsh_plugins
+  install_nano_syntax
 end
 
 main
