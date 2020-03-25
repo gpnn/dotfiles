@@ -2,7 +2,7 @@ export EDITOR="code"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
-export LC_ALL='en_US.UTF-8';
+export LC_ALL=en_US.UTF-8
 
 export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH

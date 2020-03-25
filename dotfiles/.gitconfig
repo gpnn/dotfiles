@@ -4,7 +4,7 @@
 [color]
 	ui = auto
 [core]
-	excludesFile = $HOME/.gitignore
+	excludesFile = ~/.gitignore
 	editor = nano -w
 	autocrlf = input
 	pager = cat

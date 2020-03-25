@@ -53,7 +53,7 @@ def symlink_dotfiles
 
     original_dotfile = "#{Dir.home}/#{filename}"
     File.delete(original_dotfile) if File.exist?(original_dotfile)
-    puts "Symlinking #{filename}".colorize(:blue)
+    puts "Creating symlink #{filename}".colorize(:blue)
     system("ln -s ./dotfiles/#{filename} #{original_dotfile}")
   end
 end
@@ -81,6 +81,19 @@ def create_ssh_key
   system('open -a Brave\ Browser https://github.com/settings/keys')
 end
 
+def symlink_iterm
+  filename = 'com.googlecode.iterm2.plist'
+  original_file = "#{Dir.home}/Library/Preferences/#{filename}"
+  File.delete(original_file) if File.exist?(original_file)
+  puts "Creating symlink #{filename}".colorize(:blue)
+  system("ln -s ./iterm2/#{filename} #{original_file}")
+end
+
+def set_mac_os_settings
+  puts 'Setting macOS preferences'.colorize(:blue)
+  system('./.macos')
+end
+
 def main
   install_brew_taps
   install_brews
@@ -90,9 +103,11 @@ def main
   make_zsh_default
   symlink_dotfiles
   install_npm_global
+  symlink_iterm
   puts 'Would you like to create an SSH key for GitHub?'.colorize(:yellow)
   continue = STDIN.gets.strip.chomp.downcase == 'y'
   create_ssh_key if continue
+  set_mac_os_settings
 end
 
 main

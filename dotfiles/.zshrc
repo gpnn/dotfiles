@@ -21,6 +21,7 @@ plugins=(
     npm
     osx
     pip
+    vscode
     z
     zsh-better-npm-completion
     zsh-interactive-cd

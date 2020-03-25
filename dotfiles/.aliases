@@ -3,7 +3,7 @@ alias sf="screenfetch"
 alias ncdu='ncdu --color=dark'
 alias togif='foo(){ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1".gif}; foo'
 # shell
-alias change="code $HOME/.zshrc"
+alias change="code $DOTFILES_ROOT"
 alias update="source $HOME/.zshrc"
 alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
