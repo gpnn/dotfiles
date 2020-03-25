@@ -1,4 +1,5 @@
 set nowrap
+include "~/.nano/nanorc/*.nanorc"
 syntax "gitcommit" "COMMIT_EDITMSG$"
 color white "#.*"
 color green "#.(modified|deleted).*"
@@ -13,3 +14,17 @@ color brightmagenta "@@.*@@"
 color white "# (Change[ds]|Untracked) .*"
 color white "#.*\(use .*"
 color white "^#"
+    
+# comment
+color blue "^#.*$"
+    
+# special comment lines
+color green "^# Changes to be committed:"
+color red "^# Changes not staged for commit:"
+color brightblue "^# Untracked files:"
+color brightblue "^# On branch .+$"
+color brightblue "^# Your branch is ahead of .+$"
+    
+# diff files
+# meh - cannot match against \t ... should be: ^#\t.*$
+color cyan "^#[^ a-zA-Z0-9][^ ].*$"
