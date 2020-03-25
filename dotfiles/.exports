@@ -1,4 +1,5 @@
 export EDITOR="code"
+export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes, No, Abort, Edit] "
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8

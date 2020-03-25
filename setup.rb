@@ -66,7 +66,7 @@ end
 
 def make_zsh_default
   puts 'Making zsh the default shell'.colorize(:blue)
-  system('chsh -s $(which zsh)')
+  system('chsh -s /usr/local/bin/zsh')
 end
 
 def create_ssh_key

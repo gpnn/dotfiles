@@ -1,3 +1,4 @@
+alias readme="mdstart README.md"
 alias hs='history | grep'
 alias sf="screenfetch"
 alias ncdu='ncdu --color=dark'

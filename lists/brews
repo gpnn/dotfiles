@@ -5,6 +5,7 @@ automake
 berkeley-db
 cairo
 coreutils
+direnv
 docker
 exa
 ffmpeg
@@ -113,6 +114,8 @@ x264
 x265
 xvid
 xz
+zsh
+zsh-autosuggestions
 zsh-completions
 zsh-syntax-highlighting
 zstd

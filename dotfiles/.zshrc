@@ -1,12 +1,10 @@
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-
-DISABLE_UPDATE_PROMPT="true"
-
 export UPDATE_ZSH_DAYS=7
 
+ZSH_THEME="robbyrussell"
+DISABLE_UPDATE_PROMPT="true"
 COMPLETION_WAITING_DOTS="true"
+ENABLE_CORRECTION="true"
 
 plugins=(
     brew
@@ -15,17 +13,18 @@ plugins=(
     command-not-found
     copydir
     copyfile
+    cp
     git
     gitignore
     last-working-dir
     npm
     osx
     pip
+    safe-paste
     vscode
     z
     zsh-better-npm-completion
     zsh-interactive-cd
-    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -33,11 +32,12 @@ source $ZSH/oh-my-zsh.sh
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
-source /usr/local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-SPACESHIP_CHAR_SYMBOL="➜➜ "
+SPACESHIP_CHAR_SYMBOL="❯❯ "
 SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
-SPACESHIP_USER_SHOW="true"
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_HOST_SHOW="always"
+SPACESHIP_DIR_TRUNC="0"
+SPACESHIP_BATTERY_SHOW="false"
 
 # Allow the use of the z plugin to easily navigate directories
 . /usr/local/etc/profile.d/z.sh
@@ -56,11 +56,17 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
+setopt correct
+
+source /usr/local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export DOTFILES_ROOT="$HOME/workspace/src/github.com/gpnn/dotfiles/dotfiles"
 source "$DOTFILES_ROOT/.aliases"
 source "$DOTFILES_ROOT/.exports"
-FILE=.aliases-home
+FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
-    source "$HOME/$FILE"
+    source "$FILE"
 fi
+
+eval "$(direnv hook zsh)"
