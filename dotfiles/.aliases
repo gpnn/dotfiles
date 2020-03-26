@@ -1,5 +1,6 @@
 alias readme="mdstart README.md"
 alias op="open"
+alias htop="htop --sort-key=PERCENT_CPU"
 alias al="alias | ag"
 alias hs='history | grep'
 alias ncdu='ncdu --color=dark'
@@ -47,7 +48,7 @@ alias ns='npm start'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias nlg='npm list --global --depth=0'
 # prompt if deleting more than 3 files at a time #
-alias rm='rm -iv'
+alias rm='rm -Iv'
 # confirmation #
 alias mv='mv -iv'
 alias cp='cp -iv'

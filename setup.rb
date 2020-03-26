@@ -95,7 +95,8 @@ def set_mac_os_settings
 end
 
 def install_zsh_plugins
-  puts 'Installing zsh plugins'.colorize(:blue)
+  puts 'Installing oh-my-zsh and zsh plugins'.colorize(:blue)
+  system('sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
   system('git clone https://github.com/Aloxaf/fzf-tab ~ZSH_CUSTOM/plugins/fzf-tab')
   system('git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion')
 end
