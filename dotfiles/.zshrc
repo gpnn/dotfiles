@@ -24,6 +24,7 @@ plugins=(
     safe-paste
     vscode
     z
+    zsh-autosuggestions
     zsh-better-npm-completion
     zsh-interactive-cd
     zsh-syntax-highlighting
@@ -43,7 +44,6 @@ SPACESHIP_BATTERY_SHOW="false"
 
 # Allow the use of the z plugin to easily navigate directories
 . /usr/local/etc/profile.d/z.sh
-# source $(dirname $(gem which colorls))/tab_complete.sh
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
@@ -60,17 +60,15 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 setopt correct
 
-source /usr/local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles/dotfiles"
-source "$DOTFILES_ROOT/.aliases"
-source "$DOTFILES_ROOT/.exports"
+export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles"
+source "$DOTFILES_ROOT/dotfiles/.aliases"
+source "$DOTFILES_ROOT/dotfiles/.exports"
 FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
     source "$FILE"
 fi
 
 eval "$(direnv hook zsh)"
+
 # following is for vim
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
