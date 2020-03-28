@@ -29,16 +29,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-plugins=(
-	colored-man-pages
-	copydir
-	fzf-tab
-	git
-	zsh-interactive-cd
-	zsh-syntax-highlighting
-    fzf
-)
-
 #        _ _                     
 #   __ _| (_) __ _ ___  ___  ___ 
 #  / _` | | |/ _` / __|/ _ \/ __|
@@ -79,6 +69,16 @@ alias localip="ipconfig getifaddr en0"
 alias checkmail="sudo less /var/mail/$(whoami)"
 alias deletemail="sudo rm /var/mail/$(whoami)"
 
+plugins=(
+	colored-man-pages
+	copydir
+	fzf-tab
+	git
+	zsh-interactive-cd
+	zsh-syntax-highlighting
+    fzf
+)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZSH/oh-my-zsh.sh
 neofetch
@@ -92,11 +92,11 @@ export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
 
 # Allow the use of the z plugin to easily navigate directories
-. /usr/local/etc/profile.d/z.sh
-source $(dirname $(gem which colorls))/tab_complete.sh
+. $HOME/z.sh
+# source $(dirname $(gem which colorls))/tab_complete.sh
 #export PATH="/usr/local/share/python:$PATH"
 
-source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
