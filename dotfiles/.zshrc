@@ -63,7 +63,7 @@ setopt correct
 source /usr/local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export DOTFILES_ROOT="$HOME/workspace/src/github.com/gpnn/dotfiles/dotfiles"
+export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles/dotfiles"
 source "$DOTFILES_ROOT/.aliases"
 source "$DOTFILES_ROOT/.exports"
 FILE="$HOME/.aliases-home"

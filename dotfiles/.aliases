@@ -5,6 +5,7 @@ alias al="alias | ag"
 alias hs='history | grep'
 alias ncdu='ncdu --color=dark'
 alias togif='foo(){ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1".gif}; foo'
+# alias lps="foo(){lpass show -c --password $(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')}; foo"
 # shell
 alias change="code $DOTFILES_ROOT"
 alias update="source $HOME/.zshrc"
@@ -73,7 +74,7 @@ alias mdrestart='brew services restart mongodb-community'
 # Directory shortcuts
 alias moodle="cd $HOME/resilio-sync/jenkins/moodle-scraper/courses/"
 alias conu="cd $HOME/Google\ Drive/University/Concordia\ University/"
-alias ws="cd $HOME/workspace/src/github.com/gpnn"
+alias ws="cd $HOME/workspace/src/github.com/gordonpn"
 alias sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
 alias dl="cd $HOME/Downloads"
 # Gatekeeper (for installing 3rd party apps)
@@ -85,3 +86,19 @@ alias sortlaunchpad="defaults write com.apple.dock ResetLaunchPad -bool true; ki
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 # Get week number
 alias week='date +%V'
+# jumping
+alias j=z
+alias jj=zz
+unalias z
+z() {
+  if [[ -z "$*" ]]; then
+    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
+  else
+    _last_z_args="$@"
+    _z "$@"
+  fi
+}
+
+zz() {
+  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
+}
