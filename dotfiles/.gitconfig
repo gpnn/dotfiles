@@ -4,9 +4,12 @@
 [color]
 	ui = auto
 [core]
-	excludesFile = ~/.gitignore
-	editor = nano -w
+	attributesfile = ~/.gitattributes
 	autocrlf = input
+	editor = nano -w
+	eol = lf
+	excludesFile = ~/.gitignore
+	hooksPath = ~/.githooks
 	pager = cat
 [merge]
 	tool = vscode
@@ -23,3 +26,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	template = ~/.gitmessage

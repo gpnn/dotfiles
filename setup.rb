@@ -54,7 +54,11 @@ def symlink_dotfiles
     original_dotfile = "#{Dir.home}/#{filename}"
     File.delete(original_dotfile) if File.exist?(original_dotfile)
     puts "Creating symlink #{filename}".colorize(:blue)
-    system("ln -s ./dotfiles/#{filename} #{original_dotfile}")
+    if File.directory?(filename)
+      system("ln -s ./dotfiles/#{filename} #{Dir.home}")
+    else
+      system("ln -s ./dotfiles/#{filename} #{original_dotfile}")
+    end  
   end
 end
 
