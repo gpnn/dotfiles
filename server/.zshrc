@@ -29,6 +29,45 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+plugins=(
+	colored-man-pages
+	copydir
+	fzf-tab
+	git
+	zsh-interactive-cd
+	zsh-syntax-highlighting
+    fzf
+)
+
+source $ZSH/oh-my-zsh.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+neofetch
+fpath=($fpath "$HOME/.zfunctions")
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+
+# Allow the use of the z plugin to easily navigate directories
+. $HOME/z.sh
+# source $(dirname $(gem which colorls))/tab_complete.sh
+#export PATH="/usr/local/share/python:$PATH"
+
+# source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+SPACESHIP_CHAR_SYMBOL="❯❯ "
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_HOST_SHOW="always"
+SPACESHIP_DIR_TRUNC="0"
+SPACESHIP_BATTERY_SHOW="false"
+
 #        _ _                     
 #   __ _| (_) __ _ ___  ___  ___ 
 #  / _` | | |/ _` / __|/ _ \/ __|
@@ -68,42 +107,3 @@ alias localip="ipconfig getifaddr en0"
 # mail
 alias checkmail="sudo less /var/mail/$(whoami)"
 alias deletemail="sudo rm /var/mail/$(whoami)"
-
-plugins=(
-	colored-man-pages
-	copydir
-	fzf-tab
-	git
-	zsh-interactive-cd
-	zsh-syntax-highlighting
-    fzf
-)
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $ZSH/oh-my-zsh.sh
-neofetch
-fpath=($fpath "$HOME/.zfunctions")
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# Install Ruby Gems to ~/gems
-export GEM_HOME=$HOME/gems
-export PATH=$HOME/gems/bin:$PATH
-
-# Allow the use of the z plugin to easily navigate directories
-. $HOME/z.sh
-# source $(dirname $(gem which colorls))/tab_complete.sh
-#export PATH="/usr/local/share/python:$PATH"
-
-# source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-SPACESHIP_CHAR_SYMBOL="❯❯ "
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
-SPACESHIP_USER_SHOW="always"
-SPACESHIP_HOST_SHOW="always"
-SPACESHIP_DIR_TRUNC="0"
-SPACESHIP_BATTERY_SHOW="false"
