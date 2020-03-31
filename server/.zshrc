@@ -1,9 +1,9 @@
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin:/usr/sbin:/sbin:$PATH
-export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
 export FZF_BASE="/usr/bin/fzf"
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
@@ -32,11 +32,11 @@ HISTFILE=~/.zsh_history
 plugins=(
 	colored-man-pages
 	copydir
+	fzf
 	fzf-tab
 	git
 	zsh-interactive-cd
 	zsh-syntax-highlighting
-    fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -48,8 +48,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Install Ruby Gems to ~/gems
-export GEM_HOME=$HOME/gems
-export PATH=$HOME/gems/bin:$PATH
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
 
 # Allow the use of the z plugin to easily navigate directories
 . $HOME/z.sh
