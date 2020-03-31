@@ -14,6 +14,8 @@ plugins=(
     copydir
     copyfile
     cp
+    docker
+    docker-compose
     fzf-tab
     git
     gitignore
