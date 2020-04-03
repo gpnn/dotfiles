@@ -10,7 +10,8 @@
 	eol = lf
 	excludesFile = ~/.gitignore
 	hooksPath = ~/.githooks
-	pager = cat
+	pager = delta --dark --paging never --tabs 2
+	# pager = cat
 [merge]
 	tool = vscode
 [mergetool "vscode"]
@@ -26,5 +27,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[commit]
-	template = ~/.gitmessage
+#[commit]
+#	template = ~/.gitmessage

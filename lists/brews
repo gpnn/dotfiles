@@ -6,11 +6,13 @@ awk
 berkeley-db
 cairo
 coreutils
+curl
 diffutils
 direnv
 docker
 exa
 ffmpeg
+figlet
 findutils
 flac
 fontconfig
@@ -26,6 +28,7 @@ ghostscript
 giflib
 gifsicle
 git
+git-delta
 glib
 gmp
 gnu-sed
@@ -33,6 +36,7 @@ gnu-tar
 gnutls
 graphite2
 grep
+grip
 harfbuzz
 htop
 icu4c
@@ -43,11 +47,14 @@ jpeg
 kotlin
 krb5
 lame
+lastpass-cli
+lazydocker
 lazygit
 leptonica
 less
 libarchive
 libass
+libassuan
 libb2
 libbluray
 libde265
@@ -101,6 +108,7 @@ pcre
 pcre2
 perl
 pgcli
+pinentry
 pipenv
 pixman
 pkg-config

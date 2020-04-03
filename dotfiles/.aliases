@@ -23,7 +23,8 @@ alias brewup="brew update; brew upgrade; brew cask upgrade; brew cask doctor; br
 alias sysup="$DOTFILES_ROOT/update-plugins.sh; sudo softwareupdate -i -a"
 alias npmup="npm install npm -g; npm update -g"
 alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
-alias allup="brewup; sysup; gemup; npmup"
+alias pyup="pip3 list -o --format columns|  cut -d' ' -f1|xargs -n1 pip3 install -U"
+alias allup="brewup; sysup; gemup; npmup; pyup"
 # ls
 alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
 alias cls="clear && ls"
@@ -31,7 +32,7 @@ alias lsd="ls --only-dirs"
 alias lst="exa --tree --level=5"
 alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
 # git
-alias gcd='gclonecd(){git clone "$1" && cd "$1";}; gclonecd'
+# alias gcd='gclonecd(){git clone "$1" && cd "$1";}; gclonecd'
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"
 alias glog='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all --decorate -20'
@@ -46,6 +47,17 @@ alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
 alias gdw='git diff --word-diff -w'
 alias gsh="git show -w"
+function gcd {
+  REPO=$1
+  CLONEPATH=$2
+
+  if [ -z $CLONEPATH ]; then
+      CLONEPATH=${$(basename $1)/.git/}
+  fi
+
+  git clone $REPO $CLONEPATH
+  cd $CLONEPATH
+}
 # npm
 alias ni='npm install'
 alias nid='npm install --save-dev'
@@ -96,9 +108,9 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 # Get week number
 alias week='date +%V'
 # jumping
+unalias z
 alias j=z
 alias jj=zz
-unalias z
 z() {
   if [[ -z "$*" ]]; then
     cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"

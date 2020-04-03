@@ -8,7 +8,7 @@ ENABLE_CORRECTION="true"
 
 plugins=(
     brew
-    colored-man-pages 
+    colored-man-pages
     colorize
     command-not-found
     copydir
@@ -16,14 +16,18 @@ plugins=(
     cp
     docker
     docker-compose
+    encode64
+    extract
     fzf-tab
     git
+    git-auto-fetch
     gitignore
     last-working-dir
     npm
     osx
     pip
     safe-paste
+    urltools
     vscode
     z
     zsh-autosuggestions
