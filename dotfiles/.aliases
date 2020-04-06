@@ -42,7 +42,7 @@ alias glogs='git log --reverse --all --decorate --stat --date=iso'
 alias gpbd='git push origin --delete'
 alias lg='lazygit'
 alias gb="git branch --sort=-committerdate --verbose"
-alias gst="git status --short --branch"
+alias gst="git status --short"
 alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
 alias gdw='git diff --word-diff -w'
@@ -69,6 +69,7 @@ alias nr='npm run'
 alias ns='npm start'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias nlg='npm list --global --depth=0'
+alias npkill='npx npkill'
 # prompt if deleting more than 3 files at a time #
 alias rm='rm -Iv'
 # confirmation #
