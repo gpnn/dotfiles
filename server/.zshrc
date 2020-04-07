@@ -2,7 +2,7 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
-export FZF_BASE="/usr/bin/fzf"
+# export FZF_BASE="/usr/bin/fzf"
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -32,6 +32,8 @@ HISTFILE=~/.zsh_history
 plugins=(
 	colored-man-pages
 	copydir
+	docker
+	docker-compose
 	fzf
 	fzf-tab
 	git
@@ -104,6 +106,9 @@ alias st="speedtest-cli --no-upload --bytes"
 alias myip="curl http://ipecho.net/plain; echo"
 alias myrouter="netstat -nr | grep default"
 alias localip="ipconfig getifaddr en0"
+alias dockerping='foo(){docker exec -ti "$1" ping "$2"}; foo'
 # mail
 alias checkmail="sudo less /var/mail/$(whoami)"
 alias deletemail="sudo rm /var/mail/$(whoami)"
+
+enable-fzf-tab
