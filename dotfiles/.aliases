@@ -35,9 +35,10 @@ alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --c
 # alias gcd='gclonecd(){git clone "$1" && cd "$1";}; gclonecd'
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"
-alias glog='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all --decorate -20'
-alias glogg='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all --decorate'
-alias glogr='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --reverse --all --decorate'
+alias glog='git log --oneline --decorate --graph --all -20'
+alias gloga='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all --decorate'
+alias glogg='git log --oneline --decorate --graph --all'
+alias glogr='git log --oneline --decorate --reverse --all'
 alias glogs='git log --reverse --all --decorate --stat --date=iso'
 alias gpbd='git push origin --delete'
 alias lg='lazygit'
