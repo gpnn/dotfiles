@@ -20,7 +20,7 @@ alias st="speedtest-cli --no-upload --bytes"
 alias mvcd='foo(){mv "$1" "$2" && cd "$2";}; foo'
 # updates
 alias brewup="brew update; brew upgrade; brew cask upgrade; brew cask doctor; brew cleanup; brew doctor"
-alias sysup="$DOTFILES_ROOT/update-plugins.sh; sudo softwareupdate -i -a"
+alias sysup="$DOTFILES_ROOT/update-plugins.sh"
 alias npmup="npm install npm -g; npm update -g"
 alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
 alias pyup="pip3 list -o --format columns|  cut -d' ' -f1|xargs -n1 pip3 install -U"

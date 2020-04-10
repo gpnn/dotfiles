@@ -10,7 +10,7 @@
 	eol = lf
 	excludesFile = ~/.gitignore
 	hooksPath = ~/.githooks
-	pager = delta --dark --paging never --tabs 2
+	pager = delta --dark --paging never --tabs 2 --theme ansi-dark --file-style box
 	# pager = cat
 [merge]
 	tool = vscode
