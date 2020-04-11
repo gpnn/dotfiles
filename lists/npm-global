@@ -1,6 +1,10 @@
 ├── @bchatard/alfred-jetbrains@1.2.2
 ├── alfred-npms@2.1.0
+├── eslint@6.8.0
+├── jshint@2.11.0
 ├── md-fileserver@1.6.1
+├── node-gyp@6.1.0
+├── npm@6.14.4
 ├── npm-check-updates@4.0.5
 ├── spaceship-prompt@3.11.2
 ├── tldr@3.3.2

@@ -3,12 +3,12 @@ amethyst
 appcleaner
 authy
 brave-browser
-caprine
-captin
 coconutbattery
 discord
+docker
 drawio
 firefox-developer-edition
+font-cascadia
 font-droidsansmono-nerd-font
 font-fira-code
 font-firacode-nerd-font
@@ -32,6 +32,7 @@ itsycal
 java
 jetbrains-toolbox
 karabiner-elements
+kitematic
 mactex-no-gui
 microsoft-office
 notion
@@ -39,6 +40,7 @@ raindropio
 resilio-sync
 slack
 spotify
+
 stremio
 transmission
 visual-studio-code

@@ -1,5 +1,6 @@
 alias readme="mdstart README.md"
 alias op="open"
+alias cat="bat"
 alias htop="htop --sort-key=PERCENT_CPU"
 alias al="alias | ag"
 alias hs='history | grep'

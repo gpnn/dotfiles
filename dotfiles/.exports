@@ -2,6 +2,8 @@
 # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 # export PATH="/usr/local/opt/libpq/bin:$PATH"
+export BAT_THEME="ansi-dark"
+export BAT_PAGER=""
 export EDITOR="code"
 export FZF_BASE="/usr/local/bin/fzf"
 export FZF_DEFAULT_COMMAND="ag -l -f --depth=1"
