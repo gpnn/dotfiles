@@ -12,6 +12,9 @@ alias change="code $DOTFILES_ROOT"
 alias update="source $HOME/.zshrc"
 alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
+# python
+alias python="python3"
+alias pip="pip3"
 # network
 alias myip="curl http://ipecho.net/plain; echo"
 alias myrouter="netstat -nr | grep default"
@@ -30,7 +33,7 @@ alias allup="brewup; sysup; gemup; npmup; pyup"
 alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
 alias cls="clear && ls"
 alias lsd="ls --only-dirs"
-alias lst="exa --tree --level=5"
+alias lst="exa --git-ignore --tree --level=5"
 alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
 # git
 # alias gcd='gclonecd(){git clone "$1" && cd "$1";}; gclonecd'
@@ -49,6 +52,7 @@ alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
 alias gdw='git diff --word-diff -w'
 alias gsh="git show -w"
+alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
 function gcd {
   REPO=$1
   CLONEPATH=$2

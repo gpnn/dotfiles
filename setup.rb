@@ -58,7 +58,7 @@ def symlink_dotfiles
       system("ln -s ./dotfiles/#{filename} #{Dir.home}")
     else
       system("ln -s ./dotfiles/#{filename} #{original_dotfile}")
-    end  
+    end
   end
 end
 
@@ -105,6 +105,7 @@ def install_zsh_plugins
   system('git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion')
   system('git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~ZSH_CUSTOM/plugins/zsh-syntax-highlighting')
   system('git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions')
+  system('git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~ZSH_CUSTOM/themes/powerlevel10k')
 end
 
 def install_nano_syntax
