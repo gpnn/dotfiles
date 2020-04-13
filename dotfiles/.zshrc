@@ -36,6 +36,7 @@ plugins=(
     pip
     safe-paste
     urltools
+    virtualenvwrapper
     vscode
     z
     zsh-autosuggestions
