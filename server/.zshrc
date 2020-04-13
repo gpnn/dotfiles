@@ -4,6 +4,8 @@ export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
 # export FZF_BASE="/usr/bin/fzf"
 export ZSH="$HOME/.oh-my-zsh"
+export TZ=America/Montreal
+export DOMAIN="gordon-pn.com"
 
 ZSH_THEME="robbyrussell"
 
