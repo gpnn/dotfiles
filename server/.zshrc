@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
@@ -7,7 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export TZ=America/Montreal
 export DOMAIN="gordon-pn.com"
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 DISABLE_AUTO_UPDATE="true"
 export UPDATE_ZSH_DAYS=7
@@ -114,3 +121,7 @@ alias checkmail="sudo less /var/mail/$(whoami)"
 alias deletemail="sudo rm /var/mail/$(whoami)"
 
 enable-fzf-tab
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+(( ! ${+functions[p10k]} )) || p10k finalize
