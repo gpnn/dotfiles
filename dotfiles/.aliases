@@ -12,6 +12,8 @@ alias change="code $DOTFILES_ROOT"
 alias update="source $HOME/.zshrc"
 alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
+# spotify control
+alias spn="spotify next"
 # python
 alias python="python3"
 alias pip="pip3"
