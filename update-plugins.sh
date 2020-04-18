@@ -17,6 +17,6 @@ for directory in "${GIT_REPOS[@]}"; do
     echo -e "$RED"
     echo -e "Updating $directory"
     echo -e "$NC"
-    cd "$directory" || return
+    cd "$directory" || continue
     git pull origin master
 done

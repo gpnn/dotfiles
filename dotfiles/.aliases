@@ -14,6 +14,8 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 # spotify control
 alias spn="spotify next"
+alias sps="spotify stop"
+alias spp="spotify play"
 # python
 alias python="python3"
 alias pip="pip3"
@@ -49,7 +51,7 @@ alias glogs='git log --reverse --all --decorate --stat --date=iso'
 alias gpbd='git push origin --delete'
 alias lg='lazygit'
 alias gb="git branch --sort=-committerdate --verbose"
-alias gst="git status --short"
+alias gst="git status --show-stash --verbose --column"
 alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
 alias gdw='git diff --word-diff -w'
@@ -92,18 +94,8 @@ alias brewlistcask="brew cask list -1"
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
-# PostgreSQL
-alias pgrun='brew services run postgresql'
-alias pgstatus='brew services list | grep -i postgresql'
-alias pgstop='brew services stop postgresql'
-alias pgrestart='brew services restart postgresql'
-# mongoDB
-alias mdrun='brew services run mongodb-community'
-alias mdstatus='brew services list | grep -i mongodb-community'
-alias mdstop='brew services stop mongodb-community'
-alias mdrestart='brew services restart mongodb-community'
 # Directory shortcuts
-alias moodle="cd $HOME/resilio-sync/jenkins/moodle-scraper/courses/"
+alias moodle="cd $HOME/resilio-sync/macbook-desktop/moodle"
 alias conu="cd $HOME/Google\ Drive/University/Concordia\ University/"
 alias ws="cd $HOME/workspace/src/github.com/gordonpn"
 alias sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
