@@ -1,0 +1,51 @@
+function mv() {
+  if [ "$#" -ne 1 ] || [ ! -e "$1" ]; then
+    command mv "$@"
+    return
+  fi
+
+  read -eir "$1" newfilename
+  command mv -v -- "$1" "$newfilename"
+}
+
+function togif() {
+  ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1".gif
+}
+
+function cpcd() {
+  if [ -d "$2" ];then
+    cp "$1" "$2" && (cd "$2" || exit)
+  else
+    cp "$1" "$2"
+  fi
+}
+
+function mvcd() {
+  if [ -d "$2" ];then
+    mv "$1" "$2" && (cd "$2" || exit)
+  else
+    mv "$1" "$2"
+  fi
+}
+
+function gccd() {
+  REPO=$1
+  CLONEPATH=$2
+
+  if [ -z "$CLONEPATH" ]; then
+      CLONEPATH=${$(basename "$1")/.git/}
+  fi
+
+  git clone "$REPO" $CLONEPATH
+  cd $CLONEPATH || exit
+}
+
+function transfer() {
+  wget -t 1 -qO - --method=PUT --body-file="$1" --header="Content-Type: $(file -b --mime-type "$1")" https://transfer.sh/"$(basename "$1")";
+  echo
+}
+
+function z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')" || exit
+}

@@ -7,6 +7,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
+export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT="true"
@@ -47,16 +48,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-SPACESHIP_CHAR_SYMBOL="❯❯ "
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
-SPACESHIP_USER_SHOW="always"
-SPACESHIP_HOST_SHOW="always"
-SPACESHIP_DIR_TRUNC="0"
-SPACESHIP_BATTERY_SHOW="false"
-
 # Allow the use of the z plugin to easily navigate directories
 . /usr/local/etc/profile.d/z.sh
 
@@ -75,9 +66,9 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 setopt correct
 
-export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles"
-source "$DOTFILES_ROOT/dotfiles/.aliases"
-source "$DOTFILES_ROOT/dotfiles/.exports"
+source "$HOME/.aliases"
+source "$HOME/.exports"
+source "$HOME/.functions"
 FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
     source "$FILE"

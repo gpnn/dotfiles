@@ -5,7 +5,6 @@ alias htop="htop --sort-key=PERCENT_CPU"
 alias al="alias | ag"
 alias hs='history | grep'
 alias ncdu='ncdu --color=dark'
-alias togif='foo(){ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1".gif}; foo'
 # alias lps="foo(){lpass show -c --password $(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')}; foo"
 # shell
 alias change="code $DOTFILES_ROOT"
@@ -24,8 +23,6 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias myrouter="netstat -nr | grep default"
 alias localip="ipconfig getifaddr en0"
 alias st="speedtest-cli --no-upload --bytes"
-# directories
-alias mvcd='foo(){mv "$1" "$2" && cd "$2";}; foo'
 # updates
 alias brewup="brew update; brew upgrade; brew cask upgrade; brew cask doctor; brew cleanup; brew doctor"
 alias sysup="$DOTFILES_ROOT/update-plugins.sh"
@@ -40,7 +37,6 @@ alias lsd="ls --only-dirs"
 alias lst="exa --git-ignore --tree --level=5"
 alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
 # git
-# alias gcd='gclonecd(){git clone "$1" && cd "$1";}; gclonecd'
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"
 alias glog='git log --oneline --decorate --graph --all -20'
@@ -58,17 +54,6 @@ alias gdw='git diff --word-diff -w'
 alias gsh="git show -w"
 alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
 alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
-function gcd {
-  REPO=$1
-  CLONEPATH=$2
-
-  if [ -z $CLONEPATH ]; then
-      CLONEPATH=${$(basename $1)/.git/}
-  fi
-
-  git clone $REPO $CLONEPATH
-  cd $CLONEPATH
-}
 # npm
 alias ni='npm install'
 alias nid='npm install --save-dev'
@@ -110,26 +95,4 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 # Get week number
 alias week='date +%V'
 # jumping
-unalias z
-alias j=z
-alias jj=zz
-z() {
-  if [[ -z "$*" ]]; then
-    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
-  else
-    _last_z_args="$@"
-    _z "$@"
-  fi
-}
-
-zz() {
-  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
-}
-
-transfer() {
-  tmpfile=$( mktemp -t transferXXX )
-  curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
-  cat $tmpfile;
-  echo $'\n'
-  rm -f $tmpfile;
-}
+unalias z 2> /dev/null
