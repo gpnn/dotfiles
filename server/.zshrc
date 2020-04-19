@@ -80,6 +80,7 @@ alias ls="ls -A -1 --group-directories-first --color=always"
 alias mkdir='mkdir -pv'
 alias sysup='sudo apt-get update; sudo apt-get upgrade'
 alias npmup='npm install npm -g; npm update -g'
+alias listd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 # do not delete / or prompt if deleting more than 3 files at a time
 alias rm='rm -Iv'
 # confirmation #
