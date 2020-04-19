@@ -53,7 +53,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 neofetch
-fpath=($fpath "$HOME/.zfunctions")
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -62,25 +61,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
-# Allow the use of the z plugin to easily navigate directories
-. $HOME/z.sh
 # source $(dirname $(gem which colorls))/tab_complete.sh
 #export PATH="/usr/local/share/python:$PATH"
 
-# source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-SPACESHIP_CHAR_SYMBOL="❯❯ "
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
-SPACESHIP_USER_SHOW="always"
-SPACESHIP_HOST_SHOW="always"
-SPACESHIP_DIR_TRUNC="0"
-SPACESHIP_BATTERY_SHOW="false"
-
-#        _ _                     
-#   __ _| (_) __ _ ___  ___  ___ 
+#        _ _
+#   __ _| (_) __ _ ___  ___  ___
 #  / _` | | |/ _` / __|/ _ \/ __|
 # | (_| | | | (_| \__ \  __/\__ \
 #  \__,_|_|_|\__,_|___/\___||___/
@@ -107,7 +92,6 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 # network
-alias whatsonport='foo(){sudo netstat -tulpn | grep --color :"$1"}; foo'
 alias ufwnum="sudo ufw status numbered"
 alias pingdns="ping -c3 8.8.8.8"
 alias pingtest="ping -c3 google.com"
@@ -115,10 +99,79 @@ alias st="speedtest-cli --no-upload --bytes"
 alias myip="curl http://ipecho.net/plain; echo"
 alias myrouter="netstat -nr | grep default"
 alias localip="ipconfig getifaddr en0"
-alias dockerping='foo(){docker exec -ti "$1" ping "$2"}; foo'
 # mail
 alias checkmail="sudo less /var/mail/$(whoami)"
 alias deletemail="sudo rm /var/mail/$(whoami)"
+# zombie processes
+alias zombie="ps axo stat,ppid,pid,comm | grep -w defunct"
+
+#   __                  _   _
+#  / _|                | | (_)
+# | |_ _   _ _ __   ___| |_ _  ___  _ __  ___
+# |  _| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# | | | |_| | | | | (__| |_| | (_) | | | \__ \
+# |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+
+function port() {
+  sudo netstat -tulpn | grep --color :"$1"
+}
+
+function dockerping() {
+  docker exec -ti "$1" ping "$2"
+}
+
+# select docker contaner to remove
+function drm() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker rm "$cid"
+}
+
+# select docker container to stop
+function ds() {
+  local cid
+  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker stop "$cid"
+}
+
+fkill() {
+    local pid
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi
+
+    if [ "x$pid" != "x" ]
+    then
+        echo "$pid" | xargs kill -${1:-9}
+    fi
+}
+
+# cd to selected parent directory
+fdr() {
+  local declare dirs=()
+  get_parent_dirs() {
+    if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
+    if [[ "${1}" == '/' ]]; then
+      for _dir in "${dirs[@]}"; do echo $_dir; done
+    else
+      get_parent_dirs $(dirname "$1")
+    fi
+  }
+  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac)
+  cd "$DIR" || exit
+}
+
+# cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir" || exit
+}
 
 enable-fzf-tab
 

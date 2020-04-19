@@ -39,7 +39,6 @@ plugins=(
     urltools
     virtualenvwrapper
     vscode
-    z
     zsh-autosuggestions
     zsh-better-npm-completion
     zsh-interactive-cd
@@ -47,9 +46,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# Allow the use of the z plugin to easily navigate directories
-. /usr/local/etc/profile.d/z.sh
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
@@ -73,6 +69,8 @@ FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
     source "$FILE"
 fi
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 eval "$(direnv hook zsh)"
 

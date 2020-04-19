@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 XCODE="$(xcode-select --print-path)"
 
 printf "\nWill try resetting xcode first\n\n"
@@ -9,7 +11,7 @@ read -n 1 -s -r -p "Press any key to continue if it did not solve the problem"
 
 if [ -d "$XCODE" ]; then
     printf "\n\n\n"
-    printf "xcode exists at path $XCODE \n\n"
+    printf "xcode exists at path %s \n\n" "$XCODE"
     printf "Will delete\n"
     read -n 1 -s -r -p "Press any key to continue"
     printf "\n\n\n"

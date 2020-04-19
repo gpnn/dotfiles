@@ -5,6 +5,7 @@ alias htop="htop --sort-key=PERCENT_CPU"
 alias al="alias | ag"
 alias hs='history | grep'
 alias ncdu='ncdu --color=dark'
+alias cpd='copydir'
 # alias lps="foo(){lpass show -c --password $(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')}; foo"
 # shell
 alias change="code $DOTFILES_ROOT"
@@ -47,7 +48,7 @@ alias glogs='git log --reverse --all --decorate --stat --date=iso'
 alias gpbd='git push origin --delete'
 alias lg='lazygit'
 alias gb="git branch --sort=-committerdate --verbose"
-alias gst="git status --show-stash --verbose --column"
+alias gst="git status --show-stash --column --untracked-files=all"
 alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
 alias gdw='git diff --word-diff -w'
@@ -94,5 +95,3 @@ alias sortlaunchpad="defaults write com.apple.dock ResetLaunchPad -bool true; ki
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 # Get week number
 alias week='date +%V'
-# jumping
-unalias z 2> /dev/null
