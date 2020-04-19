@@ -48,7 +48,7 @@ alias glogs='git log --reverse --all --decorate --stat --date=iso'
 alias gpbd='git push origin --delete'
 alias lg='lazygit'
 alias gb="git branch --sort=-committerdate --verbose"
-alias gst="git status --show-stash --column --untracked-files=all"
+alias gst="git status --show-stash --untracked-files=all"
 alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
 alias gdw='git diff --word-diff -w'
