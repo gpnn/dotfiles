@@ -13,15 +13,10 @@ font-droidsansmono-nerd-font
 font-fira-code
 font-firacode-nerd-font
 font-ibm-plex
+font-ibmplexmono-nerd-font
 font-input
-font-menlo-for-powerline
-font-meslo-nerd-font
-font-monoid
-font-monoid-nerd-font
+font-jetbrainsmono-nerd-font
 font-roboto-mono
-font-source-code-pro
-font-sourcecodepro-nerd-font
-font-ubuntumono-nerd-font
 font-victor-mono
 google-backup-and-sync
 grammarly
@@ -40,7 +35,6 @@ raindropio
 resilio-sync
 slack
 spotify
-
 stremio
 transmission
 visual-studio-code

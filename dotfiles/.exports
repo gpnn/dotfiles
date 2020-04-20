@@ -1,4 +1,4 @@
-# export MANPATH="/usr/local/man:$MANPATH"
+# export LESS="--no-init --raw-control-chars --QUIT-AT-EOF --quit-at-eof +G $LESS"
 # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 # export PATH="/usr/local/opt/libpq/bin:$PATH"
@@ -10,7 +10,7 @@ export FZF_DEFAULT_COMMAND="ag -l -f --depth=1"
 export GEM_HOME="$HOME/gems"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export LESS="--no-init --raw-control-chars --QUIT-AT-EOF --quit-at-eof +G $LESS"
+export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/Library/TeX/texbin/:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
