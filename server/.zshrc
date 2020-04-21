@@ -13,7 +13,9 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export TZ=America/Montreal
 export DOMAIN="gordon-pn.com"
-
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export GIT_EDITOR=vim
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 DISABLE_AUTO_UPDATE="true"

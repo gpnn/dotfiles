@@ -9,6 +9,7 @@ export EDITOR="code"
 export FZF_BASE="/usr/local/bin/fzf"
 export FZF_DEFAULT_COMMAND="ag -l -f --depth=1"
 export GEM_HOME="$HOME/gems"
+export GIT_EDITOR=vim
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export MANPATH="/usr/local/man:$MANPATH"
