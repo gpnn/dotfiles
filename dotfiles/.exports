@@ -4,6 +4,7 @@
 # export PATH="/usr/local/opt/libpq/bin:$PATH"
 export BAT_PAGER=""
 export BAT_THEME="ansi-dark"
+export EDITOR="$VISUAL"
 export EDITOR="code"
 export FZF_BASE="/usr/local/bin/fzf"
 export FZF_DEFAULT_COMMAND="ag -l -f --depth=1"
@@ -35,3 +36,4 @@ export PATH="$HOME/gems/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="$HOME/workspace/bin:$PATH"
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes, No, Abort, Edit] "
+export VISUAL=vim

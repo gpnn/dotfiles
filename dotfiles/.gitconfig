@@ -6,7 +6,7 @@
 [core]
 	attributesfile = ~/.gitattributes
 	autocrlf = input
-	editor = nano -w
+	editor = vim
 	eol = lf
 	excludesFile = ~/.gitignore
 	hooksPath = ~/.githooks
@@ -15,11 +15,11 @@
 [merge]
 	tool = vscode
 [mergetool "vscode"]
-	cmd = "code --wait $MERGED"
+	cmd = code --wait $MERGED
 [diff]
 	tool = vscode
 [difftool "vscode"]
-	cmd = "code --wait --diff $LOCAL $REMOTE"
+	cmd = code --wait --diff $LOCAL $REMOTE
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
