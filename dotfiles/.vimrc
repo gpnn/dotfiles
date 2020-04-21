@@ -1,4 +1,21 @@
+" My person settings
 set number
+
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'itchyny/lightline.vim'
+call plug#end()
+
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
+set laststatus=2
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
 " The default vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
