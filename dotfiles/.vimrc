@@ -1,10 +1,12 @@
-" My person settings
+" My personal settings
 set number
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'yggdroot/indentline'
+
 call plug#end()
 
 set termguicolors
@@ -15,6 +17,15 @@ set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+
+set ignorecase
+set smartcase
+
+set conceallevel=1
+let g:indentLine_conceallevel=1
+set list lcs=tab:\|\
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 
 " The default vimrc file.
 "
