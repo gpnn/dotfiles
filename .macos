@@ -14,6 +14,11 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+defaults write com.jetbrains.WebStorm ApplePressAndHoldEnabled -bool false
+defaults write com.jetbrains.pycharm ApplePressAndHoldEnabled -bool false
+defaults write com.jetbrains.RubyMine ApplePressAndHoldEnabled -bool false
+defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
