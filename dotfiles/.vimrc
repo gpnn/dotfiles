@@ -6,8 +6,14 @@ Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'yggdroot/indentline'
-
+Plug 'editorconfig/editorconfig-vim'
+Plug 'frazrepo/vim-rainbow'
+Plug 'preservim/nerdcommenter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 call plug#end()
+
+let g:rainbow_active = 1
 
 set termguicolors
 let ayucolor="dark"
