@@ -7,7 +7,7 @@ export BAT_THEME="ansi-dark"
 export EDITOR="$VISUAL"
 export EDITOR="code"
 export FZF_BASE="/usr/local/bin/fzf"
-export FZF_DEFAULT_COMMAND="ag -l -f --depth=1"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g "" --depth=-1'
 export GEM_HOME="$HOME/gems"
 export GIT_EDITOR=vim
 export LANG=en_US.UTF-8
