@@ -74,6 +74,7 @@ export PATH="$HOME/gems/bin:$PATH"
 # shell
 alias reload="exec ${SHELL} -l"
 alias change="nano $HOME/.zshrc"
+alias al="alias | ag"
 # utilities
 alias htop="htop --sort-key=PERCENT_CPU"
 alias ncdu="ncdu --color=dark"
