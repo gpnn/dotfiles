@@ -107,6 +107,8 @@ alias checkmail="sudo less /var/mail/$(whoami)"
 alias deletemail="sudo rm /var/mail/$(whoami)"
 # zombie processes
 alias zombie="ps axo stat,ppid,pid,comm | grep -w defunct"
+# docker
+alias dcls='docker container ls --format "table {{.Image}}\t{{.Names}}\t{{.Status}}"'
 
 #   __                  _   _
 #  / _|                | | (_)
