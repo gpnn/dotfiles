@@ -33,6 +33,7 @@ alias pyup="pip3 list -o --format columns|  cut -d' ' -f1|xargs -n1 pip3 install
 alias allup="brewup; sysup; gemup; npmup; pyup"
 # ls
 alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
+alias lss="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
 alias cls="clear && ls"
 alias lsd="ls --only-dirs"
 alias lst="exa --git-ignore --tree --level=5"

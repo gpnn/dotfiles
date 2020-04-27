@@ -13,7 +13,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
-ZSH_AUTOSUGGEST_STRATEGY=(completion history match_prev_cmd)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
 ZSH_AUTOSUGGEST_USE_ASYNC=""
 
 plugins=(
