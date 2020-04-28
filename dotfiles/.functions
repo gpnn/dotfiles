@@ -9,6 +9,15 @@ function mv() {
   command mv -v -- "$1" "$newfilename"
 }
 
+# find pip dependencies
+pip-dependencies() {
+  PACKAGE=$1
+  pip download $PACKAGE -d /tmp --no-binary :all: \
+    | grep Collecting \
+    | cut -d' ' -f2 \
+    | grep -Ev "$PACKAGE(~|=|\!|>|<|$)"
+}
+
 # make gif
 togif() {
   ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1".gif

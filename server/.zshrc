@@ -94,6 +94,9 @@ alias ln='ln -iv'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+# python
+alias python='python3'
+alias pip='pip3'
 # network
 alias ufwnum="sudo ufw status numbered"
 alias pingdns="ping -c3 8.8.8.8"
@@ -176,6 +179,14 @@ fd() {
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir" || exit
+}
+
+pip-dependencies() {
+PACKAGE=$1
+pip download $PACKAGE -d /tmp --no-binary :all: \
+| grep Collecting \
+| cut -d' ' -f2 \
+| grep -Ev "$PACKAGE(~|=|\!|>|<|$)"
 }
 
 enable-fzf-tab
