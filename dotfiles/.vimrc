@@ -2,7 +2,6 @@
 set number
 
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'yggdroot/indentline'
