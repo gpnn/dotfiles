@@ -2,7 +2,6 @@
 set number
 
 call plug#begin('~/.vim/plugged')
-Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'yggdroot/indentline'
 Plug 'editorconfig/editorconfig-vim'
@@ -10,13 +9,14 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sensible'
 call plug#end()
 
 let g:rainbow_active = 1
 
+set undolevels=1000
+
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu
 set laststatus=2
 set noshowmode
 let g:lightline = {
@@ -31,6 +31,16 @@ let g:indentLine_conceallevel=1
 set list lcs=tab:\|\
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
+set ttyfast
+"set showmode
+set showcmd
+set title
+set number
+set hidden
+
+set wildignore+=*.pyc,*.pyo,*/__pycache__/*
+set wildignore+=*.swp,~*
+set wildignore+=*.zip,*.tar
 
 " The default vimrc file.
 "
