@@ -10,13 +10,8 @@ Installing everything manually would've probably taken a good amount of time.
 
 ---
 
-![GitHub](https://img.shields.io/github/license/gpnn/dotfiles?style=flat-square)
-
-![GitHub top language](https://img.shields.io/github/languages/top/gpnn/dotfiles?style=flat-square)
-![GitHub language count](https://img.shields.io/github/languages/count/gpnn/dotfiles?style=flat-square)
-
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/gpnn/dotfiles?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/gpnn/dotfiles?style=flat-square)
+![Last commit on develop](https://badgen.net/github/last-commit/gordonpn/dotfiles)
+![License](https://badgen.net/github/license/gordonpn/dotfiles)
 
 ## Features
 
