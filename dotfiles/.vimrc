@@ -10,13 +10,18 @@ Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-let g:rainbow_active = 1
+let g:rainbow_active=1
+
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 set undolevels=1000
 
-set termguicolors
+"set termguicolors
 set laststatus=2
 set noshowmode
 let g:lightline = {
