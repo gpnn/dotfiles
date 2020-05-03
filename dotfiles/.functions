@@ -60,20 +60,20 @@ transfer() {
   echo
 }
 
-# browse brave browser history
-bhis() {
-  local cols sep brave_history open
+# browse google chrome history
+chis() {
+  local cols sep chrome_history open
   cols=$(( COLUMNS / 3 ))
   sep='{::}'
 
   if [ "$(uname)" = "Darwin" ]; then
-    brave_history="$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default/History"
+    chrome_history="$HOME/Library/Application Support/Google/Chrome/Profile 1/History"
     open=open
   else
-    brave_history="$HOME/.config/brave-browser/Default/History"
+    chrome_history="$HOME/.config/google-chrome/Default/History"
     open=xdg-open
   fi
-  yes | cp -rf "$brave_history" /tmp/h
+  yes | cp -rf "$chrome_history" /tmp/h
   sqlite3 -separator $sep /tmp/h \
     "select substr(title, 1, $cols), url
      from urls order by last_visit_time desc" |

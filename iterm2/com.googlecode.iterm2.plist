@@ -5954,7 +5954,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -5976,7 +5976,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>-1120 1138 799 448 -1440 -428 1440 2537 </string>
+	<string>1520 1266 799 448 0 0 3840 2137 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>530 957 735 382 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
@@ -5986,9 +5986,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 2137 0 0 3840 2137 </string>
+	<string>-1440 424 1440 622 -1440 -223 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 2560 1417 0 0 2560 1417 </string>
+	<string>0 0 3840 2137 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>-1440 -418 1440 1258 -1440 -428 1440 2537 </string>
 	<key>NeverWarnAboutOverrides</key>
@@ -6013,7 +6013,7 @@
 			<key>AWDS Window Directory</key>
 			<string></string>
 			<key>AWDS Window Option</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -6249,7 +6249,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Advanced</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -6605,7 +6605,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>JetBrainsMonoNerdFontComplete-Regular 18</string>
+			<string>JetBrainsMonoNerdFontComplete-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -6713,16 +6713,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {3840, 2160}}</string>
+		<string>{{-1440, -223}, {1440, 2560}}</string>
 		<key>topLeft</key>
-		<string>{545, 1324}</string>
+		<string>{-1305, 1330}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>008AF6C1-D3BD-4E0B-BF04-299CAC8C5CAB</string>
 	<key>NoSyncLastTipTime</key>
 	<real>596085933.02166498</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>426</integer>
+	<integer>467</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -7538,7 +7538,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-29T15:28:55Z</date>
+	<date>2020-05-02T16:20:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
