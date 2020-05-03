@@ -20,7 +20,7 @@ pip-dependencies() {
 
 # make gif
 togif() {
-  ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1".gif
+  ffmpeg -i "$1" -s 1280x720 -f gif - | gifsicle --delay=2 > "$1".gif
 }
 
 # copy directory and cd to it

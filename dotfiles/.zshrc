@@ -17,6 +17,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
 ZSH_AUTOSUGGEST_USE_ASYNC=""
 
 plugins=(
+    autojump
     brew
     colored-man-pages
     colorize
@@ -32,8 +33,11 @@ plugins=(
     git
     git-auto-fetch
     gitignore
+    golang
+    gradle
     httpie
     last-working-dir
+    mvn
     npm
     osx
     pip
