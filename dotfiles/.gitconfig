@@ -10,8 +10,7 @@
 	eol = lf
 	excludesFile = ~/.gitignore
 	hooksPath = ~/.githooks
-  # pager = delta --dark --paging never --tabs 2 --theme='Monokai Extended Bright' --file-style underline
-	pager = cat
+	pager = diff-so-fancy | cat
 [merge]
 	tool = vscode
 [mergetool "vscode"]
