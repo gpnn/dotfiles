@@ -10,6 +10,7 @@ cairo
 cheat
 coreutils
 curl
+diff-so-fancy
 diffutils
 direnv
 dive
@@ -33,13 +34,13 @@ ghostscript
 giflib
 gifsicle
 git
-git-delta
 git-extras
 glib
 gmp
 gnu-sed
 gnu-tar
 gnutls
+go
 graphite2
 grep
 grip
@@ -141,6 +142,7 @@ smartmontools
 snappy
 speex
 sqlite
+srt
 swi-prolog
 tesseract
 the_silver_searcher
