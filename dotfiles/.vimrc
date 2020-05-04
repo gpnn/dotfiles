@@ -36,6 +36,8 @@ let g:indentLine_conceallevel=1
 set list lcs=tab:\|\
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
+let g:vim_json_conceal = 0
+
 set ttyfast
 "set showmode
 set showcmd

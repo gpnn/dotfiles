@@ -1,0 +1,68 @@
+{
+  "title": "Media control",
+  "rules": [
+    {
+      "description": "Control + Volume Decrement to Play/Pause",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "volume_decrement",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "consumer_key_code": "play_or_pause"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Control + Mute to Previous Track",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "mute",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "consumer_key_code": "scan_previous_track"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Control + Volume Increment to Next Track",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "volume_increment",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "consumer_key_code": "scan_next_track"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -51,7 +51,7 @@ plugins=(
     zsh-interactive-cd
     zsh-syntax-highlighting
 )
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 # added by travis gem
