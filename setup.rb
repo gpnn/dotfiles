@@ -106,6 +106,7 @@ def install_zsh_plugins
   system('git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~ZSH_CUSTOM/plugins/zsh-syntax-highlighting')
   system('git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions')
   system('git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~ZSH_CUSTOM/themes/powerlevel10k')
+  system('git clone https://github.com/zsh-users/zsh-history-substring-search ~ZSH_CUSTOM/plugins/zsh-history-substring-search')
 end
 
 def install_nano_syntax

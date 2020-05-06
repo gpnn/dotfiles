@@ -35,6 +35,7 @@ plugins=(
     gitignore
     golang
     gradle
+    history-substring-search
     httpie
     last-working-dir
     mvn
@@ -86,3 +87,7 @@ eval "$(direnv hook zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
