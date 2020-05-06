@@ -10,6 +10,8 @@ export FZF_BASE="/usr/local/bin/fzf"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g "" --depth=-1'
 export GEM_HOME="$HOME/gems"
 export GIT_EDITOR=vim
+export GOPATH="$HOME/go"
+export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export MANPATH="/usr/local/man:$MANPATH"
