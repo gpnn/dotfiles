@@ -2,15 +2,16 @@
 set number
 
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim'
-Plug 'yggdroot/indentline'
+Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'frazrepo/vim-rainbow'
-Plug 'preservim/nerdcommenter'
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sensible'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'yggdroot/indentline'
 call plug#end()
 
 let g:rainbow_active=1
@@ -30,6 +31,9 @@ let g:lightline = {
 
 set ignorecase
 set smartcase
+
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
 
 set conceallevel=1
 let g:indentLine_conceallevel=1
