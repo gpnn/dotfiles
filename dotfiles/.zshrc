@@ -78,6 +78,9 @@ setopt AUTO_MENU
 setopt COMPLETE_IN_WORD
 setopt MENU_COMPLETE
 setopt PROMPT_SUBST
+setopt NO_LIST_AMBIGUOUS
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 source "$HOME/.aliases"
 source "$HOME/.exports"
