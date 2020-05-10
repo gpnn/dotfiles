@@ -53,6 +53,9 @@ set wildignore+=*.pyc,*.pyo,*/__pycache__/*
 set wildignore+=*.swp,~*
 set wildignore+=*.zip,*.tar
 
+" Default to not read-only in vimdiff
+set noro
+
 " The default vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>

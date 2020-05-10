@@ -2,7 +2,7 @@
 	name = Gordon Pham-Nguyen
 	email = gordon.pn6@gmail.com
 [color]
-	ui = auto
+	ui = true
 [core]
 	attributesfile = ~/.gitattributes
 	autocrlf = input
@@ -12,11 +12,11 @@
 	hooksPath = ~/.githooks
 	pager = diff-so-fancy | cat
 [merge]
-	tool = vscode
+	tool = vimdiff
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [diff]
-	tool = vscode
+	tool = vimdiff
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
 [credential]
@@ -38,3 +38,8 @@
 	insteadOf = git@github.com:
 [url "https://"]
 	insteadOf = git://
+[difftool]
+	prompt = false
+[diff-so-fancy]
+	stripLeadingSymbols = true
+	markEmptyLines = false

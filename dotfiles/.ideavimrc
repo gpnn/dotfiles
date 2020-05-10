@@ -2,4 +2,7 @@ source ~/.vimrc
 set easymotion
 set surround
 set commentary
+set showmode
+set ignorecase
+set smartcase
 

@@ -3,7 +3,8 @@
 # export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 # export PATH="/usr/local/opt/libpq/bin:$PATH"
 export BAT_PAGER=""
-export BAT_THEME="ansi-dark"
+export BAT_THEME="Monokai Extended Bright"
+export BAT_STYLE="header,grid"
 export EDITOR="$VISUAL"
 export EDITOR="code"
 export FZF_BASE="/usr/local/bin/fzf"
@@ -13,6 +14,7 @@ export GIT_EDITOR=vim
 export GOPATH="$HOME/go"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export LANG=en_US.UTF-8
+export LESSCHARSET=utf-8
 export LC_ALL=en_US.UTF-8
 export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/Library/TeX/texbin/:$PATH"
