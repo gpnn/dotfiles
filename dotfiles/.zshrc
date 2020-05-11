@@ -93,6 +93,7 @@ fi
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+# source $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 eval "$(direnv hook zsh)"
 

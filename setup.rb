@@ -75,14 +75,14 @@ end
 
 def create_ssh_key
   puts 'Log into GitHub then hit any key to continue'.colorize(:yellow)
-  system('open -a Brave\ Browser https://github.com/login')
+  system('open -a Google\ Chrome https://github.com/login')
   STDIN.gets.strip.chomp
   puts 'What is the email used for GitHub?'.colorize(:yellow)
   email = STDIN.gets.strip.chomp
   system("ssh-keygen -t rsa -b 4096 -C \"#{email}\"")
   system('pbcopy < ~/.ssh/id_rsa.pub')
   puts 'Your SSH key has been copied to your clipboard'.colorize(:yellow)
-  system('open -a Brave\ Browser https://github.com/settings/keys')
+  system('open -a Google\ Chrome https://github.com/settings/keys')
 end
 
 def symlink_iterm
@@ -107,6 +107,7 @@ def install_zsh_plugins
   system('git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions')
   system('git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~ZSH_CUSTOM/themes/powerlevel10k')
   system('git clone https://github.com/zsh-users/zsh-history-substring-search ~ZSH_CUSTOM/plugins/zsh-history-substring-search')
+  system('git clone https://github.com/marlonrichert/zsh-autocomplete ~ZSH_CUSTOM/plugins/zsh-autocomplete')
 end
 
 def install_nano_syntax

@@ -25,22 +25,21 @@ set undolevels=1000
 "set termguicolors
 set laststatus=2
 set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+let g:lightline={'colorscheme': 'wombat'}
 
 set ignorecase
 set smartcase
 
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_use_smartsign_us = 1
+let g:EasyMotion_smartcase=1
+let g:EasyMotion_use_smartsign_us=1
 
 set conceallevel=1
 let g:indentLine_conceallevel=1
-set list lcs=tab:\|\
+" set list lcs=tab:\|\
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_enabled=1
 
-let g:vim_json_conceal = 0
+let g:vim_json_conceal=0
 
 set ttyfast
 "set showmode
@@ -53,8 +52,8 @@ set wildignore+=*.pyc,*.pyo,*/__pycache__/*
 set wildignore+=*.swp,~*
 set wildignore+=*.zip,*.tar
 
-" Default to not read-only in vimdiff
 set noro
+set tabstop=2 shiftwidth=2 expandtab
 
 " The default vimrc file.
 "
