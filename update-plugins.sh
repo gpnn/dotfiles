@@ -6,13 +6,18 @@ NC='\033[0m'
 GIT_REPOS=(
 	"$HOME/.nano/nanorc"
 	"$HOME/.oh-my-zsh"
+	"$HOME/.oh-my-zsh/custom/plugins/autoswitch_virtualenv"
+	"$HOME/.oh-my-zsh/custom/plugins/fast-syntax-highlighting"
 	"$HOME/.oh-my-zsh/custom/plugins/fzf-tab"
+	"$HOME/.oh-my-zsh/custom/plugins/git-extra-commands/"
+	"$HOME/.oh-my-zsh/custom/plugins/you-should-use"
+	"$HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-better-npm-completion"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-	"$HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete"
 	"$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
+	"$HOME/.zsh-autopair"
 )
 
 for directory in "${GIT_REPOS[@]}"; do

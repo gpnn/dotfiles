@@ -11,10 +11,11 @@ DISABLE_UPDATE_PROMPT="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
-ZSH_AUTOSUGGEST_USE_ASYNC=""
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 plugins=(
     autojump
+    autoswitch_virtualenv
     brew
     colored-man-pages
     colorize
@@ -26,9 +27,11 @@ plugins=(
     docker-compose
     encode64
     extract
+    fast-syntax-highlighting
     fzf-tab
     git
     git-auto-fetch
+    git-extra-commands
     gitignore
     golang
     gradle
@@ -43,11 +46,11 @@ plugins=(
     urltools
     virtualenvwrapper
     vscode
+    you-should-use
     zsh-autosuggestions
     zsh-better-npm-completion
     zsh-completions
     zsh-interactive-cd
-    zsh-syntax-highlighting
 )
 autoload -Uz compinit && compinit
 source $ZSH/oh-my-zsh.sh
@@ -92,10 +95,11 @@ fi
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+# source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 # source $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/.zsh-autopair/autopair.zsh
 
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize

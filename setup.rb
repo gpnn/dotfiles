@@ -101,13 +101,18 @@ end
 def install_zsh_plugins
   puts 'Installing oh-my-zsh and zsh plugins'.colorize(:blue)
   system('sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
-  system('git clone https://github.com/Aloxaf/fzf-tab ~ZSH_CUSTOM/plugins/fzf-tab')
-  system('git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion')
-  system('git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~ZSH_CUSTOM/plugins/zsh-syntax-highlighting')
-  system('git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions')
   system('git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~ZSH_CUSTOM/themes/powerlevel10k')
-  system('git clone https://github.com/zsh-users/zsh-history-substring-search ~ZSH_CUSTOM/plugins/zsh-history-substring-search')
+  system('git clone https://github.com/Aloxaf/fzf-tab ~ZSH_CUSTOM/plugins/fzf-tab')
+  system('git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair')
+  system('git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion')
   system('git clone https://github.com/marlonrichert/zsh-autocomplete ~ZSH_CUSTOM/plugins/zsh-autocomplete')
+  system('git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git ~ZSH_CUSTOM/plugins/autoswitch_virtualenv')
+  system('git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ~ZSH_CUSTOM/plugins/you-should-use')
+  system('git clone https://github.com/unixorn/git-extra-commands.git ~ZSH_CUSTOM/plugins/git-extra-commands')
+  system('git clone https://github.com/zdharma/fast-syntax-highlighting.git ~ZSH_CUSTOM/plugins/fast-syntax-highlighting')
+  system('git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions')
+  system('git clone https://github.com/zsh-users/zsh-history-substring-search ~ZSH_CUSTOM/plugins/zsh-history-substring-search')
+  system('git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~ZSH_CUSTOM/plugins/zsh-syntax-highlighting')
 end
 
 def install_nano_syntax
