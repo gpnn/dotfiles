@@ -38,6 +38,7 @@ alias cls="clear && ls"
 alias lsd="ls --only-dirs"
 alias lst="exa --git-ignore --tree --level=5"
 alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
+alias tree="tree -I 'node_modules'"
 # git
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"

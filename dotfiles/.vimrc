@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'yggdroot/indentline'
+Plug 'zxqfl/tabnine-vim'
 call plug#end()
 
 let g:rainbow_active=1
@@ -35,7 +36,6 @@ let g:EasyMotion_use_smartsign_us=1
 
 set conceallevel=1
 let g:indentLine_conceallevel=1
-" set list lcs=tab:\|\
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_enabled=1
 
@@ -53,6 +53,7 @@ set wildignore+=*.swp,~*
 set wildignore+=*.zip,*.tar
 
 set noro
+
 set tabstop=2 shiftwidth=2 expandtab
 
 " The default vimrc file.

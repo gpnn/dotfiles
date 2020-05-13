@@ -15,7 +15,6 @@ ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 plugins=(
     autojump
-    autoswitch_virtualenv
     brew
     colored-man-pages
     colorize
