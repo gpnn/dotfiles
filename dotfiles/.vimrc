@@ -2,12 +2,17 @@
 set number
 
 call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'davidosomething/vim-colors-meh'
+Plug 'dense-analysis/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'morhetz/gruvbox'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'rafalbromirski/vim-aurora'
+Plug 'sainnhe/gruvbox-material'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -17,19 +22,17 @@ call plug#end()
 
 let g:rainbow_active=1
 
+if has('termguicolors')
+  set termguicolors
+endif
+
 set background=dark
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+let g:gruvbox_material_background='hard'
+let g:gruvbox_material_disable_italic_comment=1
+let g:vim_monokai_tasty_italic=0
+colorscheme gruvbox-material
 
-set undolevels=1000
-
-"set termguicolors
-set laststatus=2
-set noshowmode
-let g:lightline={'colorscheme': 'wombat'}
-
-set ignorecase
-set smartcase
+let g:lightline={'colorscheme': 'gruvbox_material'}
 
 let g:EasyMotion_smartcase=1
 let g:EasyMotion_use_smartsign_us=1
@@ -41,31 +44,38 @@ let g:indentLine_enabled=1
 
 let g:vim_json_conceal=0
 
-set ttyfast
-"set showmode
-set showcmd
-set title
-set number
+set autoindent
+set backspace=indent,eol,start
+set display=truncate
 set hidden
+set history=200
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set nocompatible
+set noro
+set noshowmode
+set nrformats-=octal
+set number
+set ruler
+set scrolloff=15
+set showcmd
+set smartcase
+set tabstop=2 shiftwidth=2 expandtab
+set title
+set ttimeout
+set ttimeoutlen=100
+set ttyfast
+set undolevels=1000
+set wildmenu
 
 set wildignore+=*.pyc,*.pyo,*/__pycache__/*
 set wildignore+=*.swp,~*
 set wildignore+=*.zip,*.tar
 
-set noro
-
-set tabstop=2 shiftwidth=2 expandtab
-
 " The default vimrc file.
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2019 Oct 27
-"
-" This is loaded if no vimrc file was found.
-" Except when Vim is run with "-u NONE" or "-C".
-" Individual settings can be reverted with ":set option&".
-" Other commands can be reverted as mentioned below.
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -75,51 +85,6 @@ endif
 " want Vim to use these default values.
 if exists('skip_defaults_vim')
   finish
-endif
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-" Avoid side effects when it was already reset.
-if &compatible
-  set nocompatible
-endif
-
-" When the +eval feature is missing, the set command above will be skipped.
-" Use a trick to reset compatible only when the +eval feature is missing.
-silent! while 0
-  set nocompatible
-silent! endwhile
-
-" Allow backspacing over everything in insert mode.
-set backspace=indent,eol,start
-
-set history=200		" keep 200 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set wildmenu		" display completion matches in a status line
-
-set ttimeout		" time out for key codes
-set ttimeoutlen=100	" wait up to 100ms after Esc for special key
-
-" Show @@@ in the last line if it is truncated.
-set display=truncate
-
-" Show a few lines of context around the cursor.  Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
-
-" Do incremental searching when it's possible to timeout.
-if has('reltime')
-  set incsearch
-endif
-
-" Do not recognize octal numbers for Ctrl-A and Ctrl-X, most users find it
-" confusing.
-set nrformats-=octal
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries.
-if has('win32')
-  set guioptions-=t
 endif
 
 " Don't use Ex mode, use Q for formatting.
