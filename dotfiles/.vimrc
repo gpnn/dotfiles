@@ -1,5 +1,4 @@
 " My personal settings
-set number
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
@@ -57,7 +56,8 @@ set nocompatible
 set noro
 set noshowmode
 set nrformats-=octal
-set number
+set nu rnu
+set number relativenumber
 set ruler
 set scrolloff=15
 set showcmd
