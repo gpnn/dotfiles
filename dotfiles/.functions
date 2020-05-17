@@ -18,6 +18,11 @@ pip-dependencies() {
     | grep -Ev "$PACKAGE(~|=|\!|>|<|$)"
 }
 
+# open quicklook
+ql() {
+  qlmanage -p "$1"
+}
+
 # make gif
 togif() {
   ffmpeg -i "$1" -s 1280x720 -f gif - | gifsicle --delay=2 > "$1".gif

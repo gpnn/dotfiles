@@ -6,6 +6,7 @@ alias al="alias | ag"
 alias hs='history | grep'
 alias ncdu='ncdu --color=dark'
 alias cpd='copydir'
+alias cpf='copyfile'
 # alias lps="foo(){lpass show -c --password $(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')}; foo"
 # shell
 alias change="code $DOTFILES_ROOT"
@@ -52,8 +53,9 @@ alias lg='lazygit'
 alias gb="git branch --sort=-committerdate --verbose"
 alias gst="git status --show-stash --untracked-files=all"
 alias gcount="git shortlog -sn --all --no-merges"
-alias gd="git diff -w"
-alias gdw='git diff --word-diff -w'
+alias gd="git diff -w -- ':!package-lock.json' ':!yarn.lock'"
+alias gdw="git diff --word-diff -w -- ':!package-lock.json' ':!yarn.lock'"
+alias gds="git diff --staged -- ':!package-lock.json' ':!yarn.lock'"
 alias gsh="git show -w"
 alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
 alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
@@ -64,11 +66,13 @@ alias nig='npm install --global'
 alias nt='npm test'
 alias nit='npm install && npm test'
 alias nk='npm link'
+alias naf='npm audit fix'
 alias nr='npm run'
 alias ns='npm start'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias nlg='npm list --global --depth=0'
 alias npkill='npx npkill'
+alias depcheck='npx depcheck'
 # prompt if deleting more than 3 files at a time #
 alias rm='rm -Iv'
 # confirmation #
