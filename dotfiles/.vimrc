@@ -1,12 +1,10 @@
 " My personal settings
 
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
 Plug 'davidosomething/vim-colors-meh'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'frazrepo/vim-rainbow'
-Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'rafalbromirski/vim-aurora'
@@ -15,7 +13,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'yggdroot/indentline'
-Plug 'zxqfl/tabnine-vim'
 call plug#end()
 
 let g:rainbow_active=1
@@ -29,8 +26,6 @@ let g:gruvbox_material_background='hard'
 let g:gruvbox_material_disable_italic_comment=1
 let g:vim_monokai_tasty_italic=0
 colorscheme gruvbox-material
-
-let g:lightline={'colorscheme': 'gruvbox_material'}
 
 let g:EasyMotion_smartcase=1
 let g:EasyMotion_use_smartsign_us=1
@@ -47,13 +42,10 @@ set backspace=indent,eol,start
 set display=truncate
 set hidden
 set history=200
-set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
 set nocompatible
 set noro
-set noshowmode
 set nrformats-=octal
 set nu rnu
 set number relativenumber
@@ -72,6 +64,30 @@ set wildmenu
 set wildignore+=*.pyc,*.pyo,*/__pycache__/*
 set wildignore+=*.swp,~*
 set wildignore+=*.zip,*.tar
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\
 
 " The default vimrc file.
 "
