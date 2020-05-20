@@ -12,6 +12,7 @@ COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 
 plugins=(
     autojump
@@ -97,6 +98,9 @@ fi
 # source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 # source $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/.zsh-autopair/autopair.zsh
+
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
 
 # eval "$(direnv hook zsh)"
 
