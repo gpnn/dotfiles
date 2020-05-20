@@ -6,6 +6,7 @@ coconutbattery
 discord
 docker
 drawio
+figma
 font-cascadia
 font-droidsansmono-nerd-font
 font-fira-code
@@ -33,8 +34,7 @@ itsycal
 java
 jetbrains-toolbox
 karabiner-elements
-kite
-kitematic
+logitech-options
 mactex-no-gui
 microsoft-office
 notion
@@ -42,6 +42,7 @@ raindropio
 resilio-sync
 slack
 spotify
+
 stremio
 transmission
 visual-studio-code
