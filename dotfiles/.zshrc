@@ -101,6 +101,7 @@ source ~/.zsh-autopair/autopair.zsh
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
+HISTORY_SUBSTRING_SEARCH_FUZZY="true"
 
 # eval "$(direnv hook zsh)"
 

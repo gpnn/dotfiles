@@ -7149,6 +7149,8 @@
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
+			<key>Mouse Reporting allow mouse wheel</key>
+			<false/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
@@ -7262,14 +7264,14 @@
 		<key>screenFrame</key>
 		<string>{{-1440, -223}, {1440, 2560}}</string>
 		<key>topLeft</key>
-		<string>{-1149, 1013}</string>
+		<string>{-1080, 1480}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>008AF6C1-D3BD-4E0B-BF04-299CAC8C5CAB</string>
 	<key>NoSyncLastTipTime</key>
 	<real>596085933.02166498</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>627</integer>
+	<integer>639</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -8085,7 +8087,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-19T16:30:15Z</date>
+	<date>2020-05-20T17:45:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>

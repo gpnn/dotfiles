@@ -39,18 +39,21 @@ let g:vim_json_conceal=0
 
 set autoindent
 set backspace=indent,eol,start
+set cursorline
 set display=truncate
 set hidden
 set history=200
 set ignorecase
 set incsearch
+set linebreak
+set mouse=
 set nocompatible
 set noro
 set nrformats-=octal
 set nu rnu
 set number relativenumber
 set ruler
-set scrolloff=15
+set scrolloff=30
 set showcmd
 set smartcase
 set tabstop=2 shiftwidth=2 expandtab
