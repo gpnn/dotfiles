@@ -86,12 +86,6 @@ alias brewlistcask="brew cask list -1"
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
-# Directory shortcuts
-alias moodle="cd $HOME/resilio-sync/macbook-desktop/moodle"
-alias conu="cd $HOME/Google\ Drive/University/Concordia\ University/"
-alias ws="cd $HOME/workspace/src/github.com/gordonpn"
-alias sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
-alias dl="cd $HOME/Downloads"
 # Gatekeeper (for installing 3rd party apps)
 alias gatekeeperOff="sudo spctl --master-disable"
 alias gatekeeperOn="sudo spctl --master-enable"

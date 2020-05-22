@@ -6,6 +6,12 @@ export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
 export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles"
 
+hash -d ws="$HOME/workspace/src/github.com/gordonpn"
+hash -d dl="$HOME/Downloads"
+hash -d sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
+hash -d cu="$HOME/Google Drive/University/Concordia University"
+hash -d moo="$HOME/resilio-sync/macbook-desktop/moodle"
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT="true"
 COMPLETION_WAITING_DOTS="true"
@@ -95,15 +101,11 @@ fi
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
-# source $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/.zsh-autopair/autopair.zsh
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
 HISTORY_SUBSTRING_SEARCH_FUZZY="true"
-
-# eval "$(direnv hook zsh)"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
