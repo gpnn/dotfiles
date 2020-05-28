@@ -8,6 +8,7 @@ export BAT_STYLE="header,grid"
 export EDITOR="$VISUAL"
 export EDITOR="code"
 export FZF_BASE="/usr/local/bin/fzf"
+export FZF_DEFAULT_OPTS='--layout=reverse --border'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g "" --depth=-1'
 export GEM_HOME="$HOME/gems"
 export GIT_EDITOR=vim

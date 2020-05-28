@@ -53,9 +53,9 @@ alias lg='lazygit'
 alias gb="git branch --sort=-committerdate --verbose"
 alias gst="git status --show-stash --untracked-files=all"
 alias gcount="git shortlog -sn --all --no-merges"
-alias gd="git diff -w -- ':!package-lock.json' ':!yarn.lock'"
-alias gdw="git diff --word-diff -w -- ':!package-lock.json' ':!yarn.lock'"
-alias gds="git diff --staged -- ':!package-lock.json' ':!yarn.lock'"
+alias gd="git diff -w"
+alias gdw="git diff --word-diff -w"
+alias gds="git diff --staged"
 alias gsh="git show -w"
 alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
 alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
