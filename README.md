@@ -13,6 +13,8 @@ Installing everything manually would've probably taken a good amount of time.
 ![Last commit on develop](https://badgen.net/github/last-commit/gordonpn/dotfiles)
 ![License](https://badgen.net/github/license/gordonpn/dotfiles)
 
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gordonpn)
+
 ## Features
 
 * Installs Homebrew
