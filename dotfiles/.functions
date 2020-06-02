@@ -168,3 +168,12 @@ gi() {
   curl -sLw "\n" https://www.gitignore.io/api/\$@ ;
 }
 
+# git diff with fzf
+gdf() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff "$@" --name-only | fzf -m --ansi --preview "$preview"
+}
+
+pd() {
+  ag --hidden --ignore .git -f -g "" --depth=1 | fzf -m --ansi --preview 'bat --style=numbers --color=always {} | head -100'
+}
