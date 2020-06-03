@@ -5,19 +5,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
-export PATH="$JAVA_HOME/bin:$PATH"
-# export FZF_BASE="/usr/bin/fzf"
-export ZSH="$HOME/.oh-my-zsh"
-export TZ=America/Montreal
-export DOMAIN="gordon-pn.com"
-export DOCKER_CLI_EXPERIMENTAL=enabled
-export VISUAL=vim
-export EDITOR="$VISUAL"
-export GIT_EDITOR=vim
 ZSH_THEME="powerlevel10k/powerlevel10k"
+export DOCKER_CLI_EXPERIMENTAL=enabled
+export DOMAIN="gordon-pn.com"
+export EDITOR="$VISUAL"
+export FZF_DEFAULT_OPTS='--layout=reverse'
+export GIT_EDITOR=vim
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
+export TZ=America/Montreal
+export VISUAL=vim
+export ZSH="$HOME/.oh-my-zsh"
 
 DISABLE_AUTO_UPDATE="true"
 export UPDATE_ZSH_DAYS=7
@@ -62,9 +62,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-
-# source $(dirname $(gem which colorls))/tab_complete.sh
-#export PATH="/usr/local/share/python:$PATH"
 
 #        _ _
 #   __ _| (_) __ _ ___  ___  ___
