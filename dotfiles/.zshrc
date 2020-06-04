@@ -56,7 +56,6 @@ plugins=(
     zsh-autosuggestions
     zsh-better-npm-completion
     zsh-completions
-    zsh-interactive-cd
 )
 autoload -Uz compinit && compinit
 source $ZSH/oh-my-zsh.sh

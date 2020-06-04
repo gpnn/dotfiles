@@ -9,6 +9,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'rafalbromirski/vim-aurora'
 Plug 'sainnhe/gruvbox-material'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -25,7 +26,7 @@ set background=dark
 let g:gruvbox_material_background='hard'
 let g:gruvbox_material_disable_italic_comment=1
 let g:vim_monokai_tasty_italic=0
-colorscheme gruvbox-material
+colorscheme aurora
 
 let g:EasyMotion_smartcase=1
 let g:EasyMotion_use_smartsign_us=1
@@ -39,10 +40,10 @@ let g:vim_json_conceal=0
 
 set autoindent
 set backspace=indent,eol,start
-set cursorline
 set display=truncate
 set hidden
 set history=200
+set hlsearch
 set ignorecase
 set incsearch
 set linebreak
@@ -63,6 +64,9 @@ set ttimeoutlen=100
 set ttyfast
 set undolevels=1000
 set wildmenu
+
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 set wildignore+=*.pyc,*.pyo,*/__pycache__/*
 set wildignore+=*.swp,~*
