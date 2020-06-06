@@ -6,10 +6,14 @@ automake
 awk
 bat
 berkeley-db
+boost
+bottom
 cairo
 cheat
+codeclimate
 coreutils
 curl
+dav1d
 diff-so-fancy
 diffutils
 dive
@@ -33,6 +37,7 @@ gdbm
 gettext
 gh
 ghostscript
+gifgen
 giflib
 gifsicle
 git
@@ -145,11 +150,14 @@ screenresolution
 sdl2
 shared-mime-info
 shellcheck
+sk
 smartmontools
 snappy
+source-highlight
 speex
 sqlite
 srt
+ssh-copy-id
 swi-prolog
 tesseract
 the_silver_searcher
@@ -166,5 +174,6 @@ xmlto
 xvid
 xz
 youtube-dl
+zenith
 zsh
 zstd

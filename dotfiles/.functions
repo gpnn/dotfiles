@@ -174,6 +174,11 @@ gdf() {
   git diff "$@" --name-only | fzf -m --ansi --preview "$preview"
 }
 
+gdsf() {
+  preview="git diff $@ --color=always --staged -- {-1}"
+  git diff "$@" --name-only --staged | fzf -m --ansi --preview "$preview"
+}
+
 pd() {
   ag --hidden --ignore .git -f -g "" --depth=1 | fzf -m --ansi --preview 'bat --style=numbers --color=always {} | head -100'
 }

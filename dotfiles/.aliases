@@ -1,12 +1,14 @@
-alias readme="mdstart README.md"
 alias op="open"
 alias cat="bat"
 alias htop="htop --sort-key=PERCENT_CPU"
+alias grep='rg'
+alias find='fd'
 alias al="alias | ag"
 alias hs='history | grep'
 alias ncdu='ncdu --color=dark'
 alias cpd='copydir'
 alias cpf='copyfile'
+alias skl="sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'"
 # alias lps="foo(){lpass show -c --password $(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')}; foo"
 # shell
 alias change="code $DOTFILES_ROOT"

@@ -1,4 +1,5 @@
 adoptopenjdk/openjdk
+clementtsang/bottom
 codeclimate/formulae
 github/gh
 golangci/tap
@@ -10,4 +11,6 @@ homebrew/core
 homebrew/services
 jesseduffield/lazydocker
 jesseduffield/lazygit
+lukechilds/tap
+mczachurski/wallpapper
 mongodb/brew
