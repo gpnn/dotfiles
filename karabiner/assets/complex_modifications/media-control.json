@@ -2,12 +2,12 @@
   "title": "Media control",
   "rules": [
     {
-      "description": "Control + Volume Decrement to Play/Pause",
+      "description": "Control + Mute to Play/Pause",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "consumer_key_code": "volume_decrement",
+            "consumer_key_code": "mute",
             "modifiers": {
               "mandatory": [
                 "control"
@@ -23,12 +23,12 @@
       ]
     },
     {
-      "description": "Control + Mute to Previous Track",
+      "description": "Control + Volume Decrement to Previous Track",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "consumer_key_code": "mute",
+            "consumer_key_code": "volume_decrement",
             "modifiers": {
               "mandatory": [
                 "control"
