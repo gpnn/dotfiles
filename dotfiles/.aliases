@@ -39,9 +39,10 @@ alias ls="exa -1 --icons --all --group-directories-first --color=always --classi
 alias lss="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
 alias cls="clear && ls"
 alias lsd="ls --only-dirs"
-alias lst="exa --git-ignore --tree --level=5"
 alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
-alias tree="tree -I 'node_modules|venv'"
+alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode"'
+# alias lst="exa --git-ignore --tree --level=5"
+# alias tree="tree -I 'node_modules|venv'"
 # git
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"

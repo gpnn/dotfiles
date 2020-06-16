@@ -89,6 +89,9 @@ setopt PROMPT_SUBST
 setopt NO_LIST_AMBIGUOUS
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':autocomplete:list-choices:*' min-input 3
+zstyle ':autocomplete:list-choices:*' max-lines 40%
+zstyle ':autocomplete:tab:*' completion cycle
 
 source "$HOME/.aliases"
 source "$HOME/.exports"

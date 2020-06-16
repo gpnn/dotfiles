@@ -6537,9 +6537,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 0 1915 2137 0 0 3840 2137 </string>
+	<string>0 0 1728 2137 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 3840 2137 0 0 3840 2137 </string>
+	<string>2304 7 1535 1062 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>-1440 -418 1440 1258 -1440 -428 1440 2537 </string>
 	<key>NeverWarnAboutOverrides</key>
@@ -7241,9 +7241,10 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.7</string>
-		<string>3.3.8</string>
 		<string>3.3.9</string>
+		<string>3.3.8</string>
+		<string>3.3.11</string>
+		<string>3.3.7</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -7264,14 +7265,14 @@
 		<key>screenFrame</key>
 		<string>{{-1440, -223}, {1440, 2560}}</string>
 		<key>topLeft</key>
-		<string>{-1080, 1480}</string>
+		<string>{-1131, 1510}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>008AF6C1-D3BD-4E0B-BF04-299CAC8C5CAB</string>
 	<key>NoSyncLastTipTime</key>
 	<real>596085933.02166498</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>639</integer>
+	<integer>793</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -8031,6 +8032,8 @@
 	<integer>4</integer>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PasteSpecialRegex</key>
 	<string></string>
 	<key>PasteSpecialSubstitution</key>
@@ -8072,6 +8075,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/gordonpn/workspace/src/github.com/gordonpn/dotfiles/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -8087,7 +8092,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-20T17:45:12Z</date>
+	<date>2020-06-15T02:00:22Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -8113,7 +8118,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.11</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
