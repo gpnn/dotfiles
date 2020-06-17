@@ -40,7 +40,7 @@ alias lss="exa -1 --icons --all --group-directories-first --color=always --class
 alias cls="clear && ls"
 alias lsd="ls --only-dirs"
 alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
-alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode"'
+alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next"'
 # alias lst="exa --git-ignore --tree --level=5"
 # alias tree="tree -I 'node_modules|venv'"
 # git

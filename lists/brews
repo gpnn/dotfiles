@@ -125,6 +125,7 @@ openssl
 openssl@1.1
 opus
 p11-kit
+pandoc
 pcre
 pcre2
 pdfgrep
@@ -142,6 +143,7 @@ python@3.8
 qt
 readline
 ripgrep
+ripgrep-all
 roswell
 rtmpdump
 rubberband
