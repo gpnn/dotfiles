@@ -1,3 +1,4 @@
+# modern defaults
 alias op="open"
 alias cat="bat"
 alias htop="htop --sort-key=PERCENT_CPU"
@@ -35,11 +36,11 @@ alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
 alias pyup="pip3 list -o --format columns|  cut -d' ' -f1|xargs -n1 pip3 install -U"
 alias allup="brewup; sysup; gemup; npmup; pyup"
 # ls
-alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
-alias lss="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
 alias cls="clear && ls"
+alias ll="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
+alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
 alias lsd="ls --only-dirs"
-alias lsl="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
+alias lsr="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
 alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next"'
 # alias lst="exa --git-ignore --tree --level=5"
 # alias tree="tree -I 'node_modules|venv'"
@@ -62,8 +63,11 @@ alias gds="git diff --staged"
 alias gsh="git show -w"
 alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
 alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
+# docker
+alias doc='docker'
 # npm
 alias ni='npm install'
+alias nu='npm uninstall'
 alias nid='npm install --save-dev'
 alias nig='npm install --global'
 alias nt='npm test'

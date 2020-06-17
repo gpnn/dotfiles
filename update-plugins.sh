@@ -11,7 +11,6 @@ GIT_REPOS=(
 	"$HOME/.oh-my-zsh/custom/plugins/fzf-tab"
 	"$HOME/.oh-my-zsh/custom/plugins/git-extra-commands/"
 	"$HOME/.oh-my-zsh/custom/plugins/you-should-use"
-	"$HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-better-npm-completion"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search"

@@ -3,7 +3,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-export UPDATE_ZSH_DAYS=7
 export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles"
 
 hash -d ws="$HOME/workspace/src/github.com/gordonpn"
@@ -14,6 +13,7 @@ hash -d moo="$HOME/resilio-sync/macbook-desktop/moodle"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT="true"
+DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)

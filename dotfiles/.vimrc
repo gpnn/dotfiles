@@ -1,13 +1,12 @@
 " My personal settings
 
 call plug#begin('~/.vim/plugged')
-Plug 'davidosomething/vim-colors-meh'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'rafalbromirski/vim-aurora'
+Plug 'marcopaganini/termschool-vim-theme'
+Plug 'nanotech/jellybeans.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -26,7 +25,13 @@ set background=dark
 let g:gruvbox_material_background='hard'
 let g:gruvbox_material_disable_italic_comment=1
 let g:vim_monokai_tasty_italic=0
-colorscheme aurora
+colorscheme jellybeans
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+if has('termguicolors') && &termguicolors
+    let g:jellybeans_overrides['background']['guibg'] = 'none'
+endif
 
 let g:EasyMotion_smartcase=1
 let g:EasyMotion_use_smartsign_us=1
@@ -62,6 +67,7 @@ set title
 set ttimeout
 set ttimeoutlen=100
 set ttyfast
+set ttymouse=
 set undolevels=1000
 set wildmenu
 
