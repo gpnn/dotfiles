@@ -55,6 +55,7 @@ set linebreak
 set mouse=
 set nocompatible
 set noro
+set noshowmode
 set nrformats-=octal
 set nu rnu
 set number relativenumber
@@ -98,19 +99,24 @@ function! StatuslineGit()
 endfunction
 
 set statusline=
+set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
+set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
+set statusline+=%#Visual#%{(mode()=='v')?'\ \ VISUAL\ ':''}
 set statusline+=%#PmenuSel#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#LineNr#
 set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
+set statusline+=\ %r
+set statusline+=\ %m
+" right align
+set statusline+=\ %=
 set statusline+=%#CursorColumn#
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
-set statusline+=\
 
 " The default vimrc file.
 "

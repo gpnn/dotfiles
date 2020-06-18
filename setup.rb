@@ -105,7 +105,6 @@ def install_zsh_plugins
   system('git clone https://github.com/Aloxaf/fzf-tab ~ZSH_CUSTOM/plugins/fzf-tab')
   system('git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair')
   system('git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion')
-  system('git clone https://github.com/marlonrichert/zsh-autocomplete ~ZSH_CUSTOM/plugins/zsh-autocomplete')
   system('git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git ~ZSH_CUSTOM/plugins/autoswitch_virtualenv')
   system('git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ~ZSH_CUSTOM/plugins/you-should-use')
   system('git clone https://github.com/unixorn/git-extra-commands.git ~ZSH_CUSTOM/plugins/git-extra-commands')

@@ -6537,7 +6537,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1725 2137 0 0 3840 2137 </string>
+	<string>0 0 3840 2137 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1920 0 1915 2137 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6807,6 +6807,8 @@
 			<string>Default</string>
 			<key>Disable Window Resizing</key>
 			<true/>
+			<key>Draw Powerline Glyphs</key>
+			<false/>
 			<key>Flashing Bell</key>
 			<false/>
 			<key>Foreground Color</key>
@@ -7158,7 +7160,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>JetBrainsMonoNerdFontComplete-Regular 16</string>
+			<string>JetBrainsMonoNerdFontComplete-Regular 17</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -7269,7 +7271,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>596085933.02166498</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>820</integer>
+	<integer>827</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>

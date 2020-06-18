@@ -47,24 +47,26 @@ alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|
 # git
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"
+alias gb="git branch --sort=-committerdate --verbose"
+alias gcount="git shortlog -sn --all --no-merges"
+alias gd="git diff -w"
+alias gds="git diff --staged"
+alias gdw="git diff --word-diff -w"
+alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
+alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
 alias glog='git log --oneline --decorate --graph --all -20'
 alias gloga='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all --decorate'
 alias glogg='git log --oneline --decorate --graph --all'
 alias glogr='git log --oneline --decorate --reverse --all'
 alias glogs='git log --reverse --all --decorate --stat --date=iso'
 alias gpbd='git push origin --delete'
-alias lg='lazygit'
-alias gb="git branch --sort=-committerdate --verbose"
-alias gst="git status --show-stash --untracked-files=all"
-alias gcount="git shortlog -sn --all --no-merges"
-alias gd="git diff -w"
-alias gdw="git diff --word-diff -w"
-alias gds="git diff --staged"
+alias grhs='git reset --soft'
 alias gsh="git show -w"
-alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
-alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
+alias gst="git status --show-stash --untracked-files=all"
+alias lg='lazygit'
 # docker
 alias doc='docker'
+alias ldoc='lazydocker'
 # npm
 alias ni='npm install'
 alias nu='npm uninstall'
