@@ -24,5 +24,5 @@ for directory in "${GIT_REPOS[@]}"; do
     echo -e "Updating $directory"
     echo -e "$NC"
     cd "$directory" || continue
-    git pull origin master
+    git pull origin master --rebase
 done

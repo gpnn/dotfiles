@@ -43,3 +43,5 @@
 [diff-so-fancy]
 	stripLeadingSymbols = true
 	markEmptyLines = false
+[pull]
+	rebase = true

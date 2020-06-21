@@ -60,7 +60,7 @@ set nrformats-=octal
 set nu rnu
 set number relativenumber
 set ruler
-set scrolloff=30
+set scrolloff=15
 set showcmd
 set smartcase
 set tabstop=2 shiftwidth=2 expandtab
