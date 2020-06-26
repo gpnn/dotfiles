@@ -72,6 +72,9 @@ set ttymouse=
 set undolevels=1000
 set wildmenu
 
+noremap <leader>y "*y
+noremap <Leader>p "*p
+
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
