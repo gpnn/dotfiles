@@ -1,6 +1,5 @@
-# export FZF_DEFAULT_COMMAND='rg --hidden --files'
-# export LESS="--no-init --raw-control-chars --QUIT-AT-EOF --quit-at-eof +G $LESS"
-# export PATH="/usr/local/opt/libpq/bin:$PATH"
+#!/usr/bin/env bash
+
 export AUTOSWITCH_DEFAULT_PYTHON="/usr/local/opt/python@3.8/bin/python3"
 export AUTOSWITCH_VIRTUAL_ENV_DIR="virtualenv"
 export BAT_PAGER=""

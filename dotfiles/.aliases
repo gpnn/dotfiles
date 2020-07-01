@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # modern defaults
 alias op="open"
 alias cat="bat"
@@ -41,7 +43,7 @@ alias ll="exa --time-style=long-iso --icons --all --group-directories-first --co
 alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
 alias lsd="ls --only-dirs"
 alias lsr="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
-alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next"'
+alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next|virtualenv"'
 # alias lst="exa --git-ignore --tree --level=5"
 # alias tree="tree -I 'node_modules|venv'"
 # git
