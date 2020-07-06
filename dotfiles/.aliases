@@ -43,7 +43,7 @@ alias ll="exa --time-style=long-iso --icons --all --group-directories-first --co
 alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
 alias lsd="ls --only-dirs"
 alias lsr="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
-alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next|virtualenv"'
+alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next|virtualenv|vendor"'
 # alias lst="exa --git-ignore --tree --level=5"
 # alias tree="tree -I 'node_modules|venv'"
 # git
@@ -65,6 +65,10 @@ alias gpbd='git push origin --delete'
 alias grhs='git reset --soft'
 alias gsh="git show -w"
 alias gst="git status --show-stash --untracked-files=all"
+alias gupod="git pull --rebase origin develop"
+alias gupom="git pull --rebase origin master"
+alias gcod="git checkout develop"
+alias gcom="git checkout master"
 alias lg='lazygit'
 # docker
 alias doc='docker'
