@@ -201,6 +201,7 @@ rga-fzf() {
 	qlmanage -p "$file"
 }
 
+# run through my local projects and see which one is behind, or has untracked files or has changes, etc
 check-git() {
   for d in /Users/gordonpn/workspace/src/github.com/gordonpn/*/
   do
@@ -211,4 +212,9 @@ check-git() {
       git status --show-stash --untracked-files=all | egrep --color 'Your branch is ahead of|Changes not staged for commit|Untracked files|Changes to be committed|'\
       && echo)
   done
+}
+
+# override pip to install packages globally
+gpip(){
+  PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }

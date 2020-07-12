@@ -51,6 +51,7 @@ plugins=(
   npm
   osx
   pip
+  pyenv
   safe-paste
   urltools
   virtualenvwrapper
@@ -118,3 +119,6 @@ HISTORY_SUBSTRING_SEARCH_FUZZY="true"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
