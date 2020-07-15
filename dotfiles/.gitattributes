@@ -6,3 +6,4 @@ package-lock.json binary
 yarn-lock.json binary
 composer.lock binary
 com.googlecode.iterm2.plist binary
+*.drawio binary
