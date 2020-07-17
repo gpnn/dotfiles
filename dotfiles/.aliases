@@ -69,6 +69,7 @@ alias gupod="git pull --autostash --rebase origin develop"
 alias gupom="git pull --autostash --rebase origin master"
 alias gcod="git checkout develop"
 alias gcom="git checkout master"
+alias grss='git restore --staged'
 alias lg='lazygit'
 # docker
 alias doc='docker'
@@ -89,7 +90,7 @@ alias nlg='npm list --global --depth=0'
 alias npkill='npx npkill'
 alias depcheck='npx depcheck'
 # prompt if deleting more than 3 files at a time #
-alias rm='rm -Iv'
+alias rm='rm -iv'
 # confirmation #
 alias mv='mv -iv'
 alias cp='cp -iv'
