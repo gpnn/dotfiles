@@ -81,6 +81,8 @@ setopt SHARE_HISTORY
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+source $ZSH/oh-my-zsh.sh
+
 source "$HOME/.aliases"
 source "$HOME/.exports"
 source "$HOME/.functions"
@@ -99,8 +101,6 @@ if [[ "$MACHINE" == "Linux" ]]; then
 elif [[ "$MACHINE" == "Mac" ]]; then
   source "$HOME/.zshrc-mac"
 fi
-
-source $ZSH/oh-my-zsh.sh
 
 enable-fzf-tab
 

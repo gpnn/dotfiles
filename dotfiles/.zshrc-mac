@@ -27,6 +27,12 @@ done
 
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 source "$HOME/.aliases-mac"
 source "$HOME/.exports-mac"
 source "$HOME/.functions-mac"
@@ -34,10 +40,4 @@ source "$HOME/.functions-mac"
 FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
     source "$FILE"
-fi
-
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
 fi
