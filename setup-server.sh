@@ -1,27 +1,27 @@
 #!/bin/bash
 
-if [[ $EUID -gt 0 ]]
-    then echo "Please run with sudo"
-    exit 1
+if [[ $EUID -gt 0 ]]; then
+	echo "Please run with sudo"
+	exit 1
 fi
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
-    Linux*)     MACHINE=Linux;;
-    Darwin*)    MACHINE=Mac;;
-    CYGWIN*)    MACHINE=Cygwin;;
-    MINGW*)     MACHINE=MinGw;;
-    *)          MACHINE="UNKNOWN:${unameOut}"
+Linux*) MACHINE=Linux ;;
+Darwin*) MACHINE=Mac ;;
+CYGWIN*) MACHINE=Cygwin ;;
+MINGW*) MACHINE=MinGw ;;
+*) MACHINE="UNKNOWN:${unameOut}" ;;
 esac
 
 if [[ "$MACHINE" != "Linux" ]]; then
-    echo "$MACHINE is not supported"
-    exit 1
+	echo "$MACHINE is not supported"
+	exit 1
 fi
 
 if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    DISTRO=$NAME
+	. /etc/os-release
+	DISTRO=$NAME
 else
 	echo "Cannot determine Distro"
 fi
@@ -59,8 +59,13 @@ install_docker() {
 }
 
 create_symlinks() {
-	# TODO create symlink for each file in dotfiles directory
-	echo "TODO"
+	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+	for file in "$DIR"/dotfiles/.*; do
+		if [ -d "$file" ]; then
+			continue
+		fi
+		ln -sfn "$file" /home/gordonpn
+	done
 }
 
 read -r -p "Install zsh? [y/N] " response
