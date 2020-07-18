@@ -18,7 +18,6 @@ Installing everything manually would've probably taken a good amount of time.
 ## Features
 
 * Installs Homebrew
-* Installs syntax highlighting for nano editor
 * Installs brew taps
 * Installs brew packages
 * Installs brew casks
@@ -40,7 +39,7 @@ The default Ruby installed on recent macOS should be 2.6+.
 
 * Clone the repository
 * cd into the repository
-* Run `./setup.sh`
+* Run `./setup-mac.sh`
 
 ## License
 

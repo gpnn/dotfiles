@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# export AUTOSWITCH_DEFAULT_PYTHON="/usr/local/opt/python@3.8/bin/python3"
 export AUTOSWITCH_VIRTUAL_ENV_DIR="virtualenv"
 export BAT_PAGER=""
 export BAT_STYLE="header,grid"

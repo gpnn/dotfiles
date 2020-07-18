@@ -2,7 +2,7 @@
 
 if [[ $EUID -gt 0 ]]
     then echo "Please run with sudo"
-    exit
+    exit 1
 fi
 
 unameOut="$(uname -s)"
@@ -21,11 +21,13 @@ fi
 
 if [ -f /etc/os-release ]; then
     . /etc/os-release
-    OS=$NAME
+    DISTRO=$NAME
+else
+	echo "Cannot determine Distro"
 fi
 
-if [[ "$OS" != *"Rasp"* ]] || [[ "$OS" != *"Debian"* ]] || [[ "$OS" != *"Ubuntu"* ]]; then
-	echo "$OS is not supported"
+if [[ "$DISTRO" != *"Rasp"* ]] && [[ "$DISTRO" != *"Debian"* ]] && [[ "$DISTRO" != *"Ubuntu"* ]]; then
+	echo "$DISTRO is not supported"
 	exit 1
 fi
 
@@ -56,6 +58,11 @@ install_docker() {
 	chmod +x /usr/local/bin/docker-compose
 }
 
+create_symlinks() {
+	# TODO create symlink for each file in dotfiles directory
+	echo "TODO"
+}
+
 read -r -p "Install zsh? [y/N] " response
 response=${response,,}
 if [[ "$response" =~ ^(yes|y)$ ]]; then
@@ -67,3 +74,5 @@ response=${response,,}
 if [[ "$response" =~ ^(yes|y)$ ]]; then
 	install_docker
 fi
+
+create_symlinks
