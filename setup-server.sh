@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [[ $EUID -gt 0 ]]; then
-	echo "Please run with sudo"
-	exit 1
-fi
-
 unameOut="$(uname -s)"
 case "${unameOut}" in
 	Linux*) MACHINE=Linux ;;
@@ -32,11 +27,23 @@ if [[ "$DISTRO" != *"Rasp"* ]] && [[ "$DISTRO" != *"Debian"* ]] && [[ "$DISTRO" 
 fi
 
 install_zsh_etc() {
-	apt update
-	apt -y install \
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/gordonpn/.oh-my-zsh/custom/themes/powerlevel10k
+	git clone https://github.com/Aloxaf/fzf-tab /home/gordonpn/.oh-my-zsh/custom/plugins/fzf-tab
+	git clone https://github.com/MichaelAquilina/zsh-you-should-use.git /home/gordonpn/.oh-my-zsh/custom/plugins/you-should-use
+	git clone https://github.com/hlissner/zsh-autopair /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-autopair
+	git clone https://github.com/lukechilds/zsh-better-npm-completion /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+	git clone https://github.com/unixorn/git-extra-commands.git /home/gordonpn/.oh-my-zsh/custom/plugins/git-extra-commands
+	git clone https://github.com/zdharma/fast-syntax-highlighting.git /home/gordonpn/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-history-substring-search /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	sudo apt update
+	sudo apt -y install \
 		apt-transport-https \
 		ca-certificates \
 		curl \
+		fzf \
 		gnupg-agent \
 		npm \
 		silversearcher-ag \
@@ -44,29 +51,18 @@ install_zsh_etc() {
 		zsh
 	zsh --version
 	chsh -s /bin/zsh
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
-	git clone https://github.com/Aloxaf/fzf-tab ~ZSH_CUSTOM/plugins/fzf-tab
-	git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ~ZSH_CUSTOM/plugins/you-should-use
-	git clone https://github.com/hlissner/zsh-autopair ~ZSH_CUSTOM/plugins/.zsh-autopair
-	git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion
-	git clone https://github.com/unixorn/git-extra-commands.git ~ZSH_CUSTOM/plugins/git-extra-commands
-	git clone https://github.com/zdharma/fast-syntax-highlighting.git ~ZSH_CUSTOM/plugins/fast-syntax-highlighting
-	git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions
-	git clone https://github.com/zsh-users/zsh-history-substring-search ~ZSH_CUSTOM/plugins/zsh-history-substring-search
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 }
 
 install_docker() {
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-	apt update
-	apt -y install \
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+	sudo apt update
+	sudo apt -y install \
 		docker-ce \
 		docker-ce-cli \
 		containerd.io
 	curl -L --fail https://github.com/docker/compose/releases/download/1.26.2/run.sh -o /usr/local/bin/docker-compose
-	chmod +x /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
 }
 
 create_symlinks() {
