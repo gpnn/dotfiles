@@ -114,11 +114,6 @@ def install_zsh_plugins
   system('git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~ZSH_CUSTOM/plugins/zsh-syntax-highlighting')
 end
 
-def install_nano_syntax
-  puts 'Installing nano syntax highlighting'.colorize(:blue)
-  system('curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh')
-end
-
 def main
   install_brew_taps
   install_brews
@@ -134,7 +129,6 @@ def main
   create_ssh_key if continue
   set_mac_os_settings
   install_zsh_plugins
-  install_nano_syntax
 end
 
 main
