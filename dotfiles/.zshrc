@@ -18,8 +18,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 plugins=(
 	colored-man-pages
   colorize
-	copydir
-  copyfile
   command-not-found
   cp
   encode64

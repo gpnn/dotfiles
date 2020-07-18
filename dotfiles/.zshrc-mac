@@ -10,6 +10,8 @@ plugins_mac=(
   autojump
   autoswitch_virtualenv
   brew
+  copydir
+  copyfile
   gitignore
   golang
   osx
