@@ -1,0 +1,13 @@
+#!/bin/bash
+
+plugins_server=(
+  ubuntu
+)
+
+for plugin in "${plugins_server[@]}"; do
+  plugins+=("$plugin")
+done
+
+source "$HOME/.aliases-server"
+source "$HOME/.exports-server"
+source "$HOME/.functions-server"

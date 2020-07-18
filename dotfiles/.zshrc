@@ -5,13 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles"
-
-hash -d ws="$HOME/workspace/src/github.com/gordonpn"
-hash -d dl="$HOME/Downloads"
-hash -d sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
-hash -d cu="$HOME/Google Drive/University/Concordia University"
-hash -d moo="$HOME/resilio-sync/macbook-desktop/moodle"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT="true"
@@ -23,17 +16,12 @@ ZSH_AUTOSUGGEST_USE_ASYNC="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 
 plugins=(
-  autojump
-  autoswitch_virtualenv
-  brew
-  colored-man-pages
+	colored-man-pages
   colorize
-  command-not-found
-  copydir
+	copydir
   copyfile
+  command-not-found
   cp
-  docker
-  docker-compose
   encode64
   extract
   fast-syntax-highlighting
@@ -41,69 +29,82 @@ plugins=(
   git
   git-auto-fetch
   git-extra-commands
-  gitignore
-  golang
-  gradle
   history-substring-search
   httpie
   last-working-dir
-  mvn
   npm
-  osx
-  pip
-  pyenv
   safe-paste
   urltools
-  virtualenvwrapper
-  vscode
   you-should-use
   zsh-autopair
   zsh-autosuggestions
   zsh-better-npm-completion
   zsh-completions
+	docker
+	docker-compose
+	fzf
+	fzf-tab
+	git
+	zsh-interactive-cd
+	zsh-syntax-highlighting
 )
-autoload -Uz compinit && compinit
-source $ZSH/oh-my-zsh.sh
 
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+autoload -Uz compinit && compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 HISTSIZE=50000
+HISTFILE=~/.zsh_history
 SAVEHIST=1000
-setopt EXTENDED_HISTORY
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_BEEP
-setopt CORRECT
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+setopt ALWAYS_TO_END
 setopt AUTO_CD
+setopt AUTO_MENU
 setopt AUTO_PUSHD
+setopt COMPLETE_IN_WORD
+setopt CORRECT
+setopt CORRECT
+setopt EXTENDED_HISTORY
+setopt HISTIGNOREALLDUPS
+setopt HIST_BEEP
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt INC_APPEND_HISTORY
+setopt MENU_COMPLETE
+setopt NO_LIST_AMBIGUOUS
+setopt PROMPT_SUBST
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_MINUS
-setopt ALWAYS_TO_END
-setopt AUTO_MENU
-setopt COMPLETE_IN_WORD
-setopt MENU_COMPLETE
-setopt PROMPT_SUBST
-setopt NO_LIST_AMBIGUOUS
+setopt SHAREHISTORY
+setopt SHARE_HISTORY
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 source "$HOME/.aliases"
 source "$HOME/.exports"
 source "$HOME/.functions"
-FILE="$HOME/.aliases-home"
-if [ -f "$FILE" ]; then
-    source "$FILE"
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+  Linux*) MACHINE=Linux ;;
+  Darwin*) MACHINE=Mac ;;
+  CYGWIN*) MACHINE=Cygwin ;;
+  MINGW*) MACHINE=MinGw ;;
+  *) MACHINE="UNKNOWN:${unameOut}" ;;
+esac
+
+if [[ "$MACHINE" == "Linux" ]]; then
+  source "$HOME/.zshrc-server"
+elif [[ "$MACHINE" == "Mac" ]]; then
+  source "$HOME/.zshrc-mac"
 fi
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+source $ZSH/oh-my-zsh.sh
+
+enable-fzf-tab
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
@@ -114,7 +115,3 @@ HISTORY_SUBSTRING_SEARCH_FUZZY="true"
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi

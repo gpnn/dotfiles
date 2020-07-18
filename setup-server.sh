@@ -7,11 +7,11 @@ fi
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
-Linux*) MACHINE=Linux ;;
-Darwin*) MACHINE=Mac ;;
-CYGWIN*) MACHINE=Cygwin ;;
-MINGW*) MACHINE=MinGw ;;
-*) MACHINE="UNKNOWN:${unameOut}" ;;
+	Linux*) MACHINE=Linux ;;
+	Darwin*) MACHINE=Mac ;;
+	CYGWIN*) MACHINE=Cygwin ;;
+	MINGW*) MACHINE=MinGw ;;
+	*) MACHINE="UNKNOWN:${unameOut}" ;;
 esac
 
 if [[ "$MACHINE" != "Linux" ]]; then
@@ -38,6 +38,8 @@ install_zsh_etc() {
 		ca-certificates \
 		curl \
 		gnupg-agent \
+		npm \
+		silversearcher-ag \
 		software-properties-common \
 		zsh
 	zsh --version
@@ -70,7 +72,7 @@ install_docker() {
 create_symlinks() {
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 	for file in "$DIR"/dotfiles/.*; do
-		if [ -d "$file" ]; then
+		if [ -d "$file" ] || [[ "$file" == *"gitconfig"* ]]; then
 			continue
 		fi
 		ln -sfn "$file" /home/gordonpn

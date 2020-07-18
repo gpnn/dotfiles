@@ -1,0 +1,41 @@
+#!/bin/bash
+
+hash -d ws="$HOME/workspace/src/github.com/gordonpn"
+hash -d dl="$HOME/Downloads"
+hash -d sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
+hash -d cu="$HOME/Google Drive/University/Concordia University"
+hash -d moo="$HOME/resilio-sync/macbook-desktop/moodle"
+
+plugins_mac=(
+  autojump
+  autoswitch_virtualenv
+  brew
+  gitignore
+  golang
+  osx
+  pip
+  pyenv
+  virtualenvwrapper
+  vscode
+)
+
+for plugin in "${plugins_mac[@]}"; do
+  plugins+=("$plugin")
+done
+
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+source "$HOME/.aliases-mac"
+source "$HOME/.exports-mac"
+source "$HOME/.functions-mac"
+
+FILE="$HOME/.aliases-home"
+if [ -f "$FILE" ]; then
+    source "$FILE"
+fi
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

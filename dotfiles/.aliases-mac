@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# modern defaults
+alias op="open"
+alias cat="bat"
+alias grep='rg'
+alias find='fd'
+alias cpd='copydir'
+alias cpf='copyfile'
+alias skl="sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'"
+# Gatekeeper (for installing 3rd party apps)
+alias gatekeeperOff="sudo spctl --master-disable"
+alias gatekeeperOn="sudo spctl --master-enable"
+# sort LaunchPad
+alias sortlaunchpad="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+# spotify control
+alias spn="spotify next"
+alias sps="spotify stop"
+alias spp="spotify play"
+# shell
+alias change="code $DOTFILES_ROOT"
+# updates
+alias brewup="brew update; brew upgrade; brew cask upgrade; brew cask doctor; brew cleanup; brew doctor"
+alias sysup="$DOTFILES_ROOT/update-plugins.sh"
+alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
+alias pyup="pip3 list -o --format columns|  cut -d' ' -f1|xargs -n1 pip3 install -U"
+alias allup="brewup; sysup; gemup; npmup; pyup"
+# ls
+alias ll="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
+alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
+alias lsd="exa -d */ -1"
+alias lsr="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
+alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next|virtualenv|vendor"'
+# Brew
+alias brewsl='brew services list'
+alias brewlistcask="brew cask list -1"
