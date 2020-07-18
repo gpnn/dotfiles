@@ -57,6 +57,7 @@ plugins=(
   virtualenvwrapper
   vscode
   you-should-use
+  zsh-autopair
   zsh-autosuggestions
   zsh-better-npm-completion
   zsh-completions
@@ -93,9 +94,6 @@ setopt PROMPT_SUBST
 setopt NO_LIST_AMBIGUOUS
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':autocomplete:list-choices:*' min-input 3
-zstyle ':autocomplete:list-choices:*' max-lines 40%
-zstyle ':autocomplete:tab:*' completion cycle
 
 source "$HOME/.aliases"
 source "$HOME/.exports"
@@ -106,8 +104,6 @@ if [ -f "$FILE" ]; then
 fi
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-source ~/.zsh-autopair/autopair.zsh
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
