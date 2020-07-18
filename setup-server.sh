@@ -36,6 +36,7 @@ install_zsh_etc() {
 	git clone https://github.com/unixorn/git-extra-commands.git /home/gordonpn/.oh-my-zsh/custom/plugins/git-extra-commands
 	git clone https://github.com/zdharma/fast-syntax-highlighting.git /home/gordonpn/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 	git clone https://github.com/zsh-users/zsh-autosuggestions /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-completions /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-completions
 	git clone https://github.com/zsh-users/zsh-history-substring-search /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/gordonpn/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	sudo apt update

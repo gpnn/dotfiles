@@ -110,6 +110,7 @@ def install_zsh_plugins
   system('git clone https://github.com/unixorn/git-extra-commands.git ~ZSH_CUSTOM/plugins/git-extra-commands')
   system('git clone https://github.com/zdharma/fast-syntax-highlighting.git ~ZSH_CUSTOM/plugins/fast-syntax-highlighting')
   system('git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions')
+  system('git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions')
   system('git clone https://github.com/zsh-users/zsh-history-substring-search ~ZSH_CUSTOM/plugins/zsh-history-substring-search')
   system('git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~ZSH_CUSTOM/plugins/zsh-syntax-highlighting')
 end
