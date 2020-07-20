@@ -79,6 +79,14 @@ set wildmenu
 
 noremap <leader>y "*y
 noremap <Leader>p "*p
+nnoremap <c-j> 5j
+nnoremap <c-k> 5k
+xnoremap <c-j> 5j
+xnoremap <c-k> 5k
+inoremap <c-k> <up>
+inoremap <c-j> <down>
+inoremap <c-h> <left>
+inoremap <c-l> <right>
 
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul

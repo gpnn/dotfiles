@@ -51,32 +51,32 @@ autoload -Uz compinit && compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-HISTSIZE=50000
 HISTFILE=~/.zsh_history
-SAVEHIST=1000
+HISTORY_IGNORE="(ls|cd|pwd|exit|ll|history)"
+HISTSIZE=10000000
+SAVEHIST=10000000
 setopt ALWAYS_TO_END
 setopt AUTO_CD
 setopt AUTO_MENU
 setopt AUTO_PUSHD
 setopt COMPLETE_IN_WORD
 setopt CORRECT
-setopt CORRECT
 setopt EXTENDED_HISTORY
-setopt HISTIGNOREALLDUPS
 setopt HIST_BEEP
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt MENU_COMPLETE
 setopt NO_LIST_AMBIGUOUS
 setopt PROMPT_SUBST
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_MINUS
-setopt SHAREHISTORY
 setopt SHARE_HISTORY
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

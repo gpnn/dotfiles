@@ -9,8 +9,9 @@
 	editor = vim
 	eol = lf
 	excludesFile = ~/.gitignore
-	hooksPath = ~/.githooks
-	pager = diff-so-fancy | cat
+  hooksPath = ~/.githooks
+  pager = diff-so-fancy | less
+	; pager = diff-so-fancy | cat
 [merge]
 	tool = vimdiff
 [mergetool "vscode"]

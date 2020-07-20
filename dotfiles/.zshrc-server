@@ -10,6 +10,6 @@ done
 
 source $ZSH/oh-my-zsh.sh
 
-source "$HOME/.aliases-server"
 source "$HOME/.exports-server"
+source "$HOME/.aliases-server"
 source "$HOME/.functions-server"
