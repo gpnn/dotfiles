@@ -8,6 +8,7 @@ export DOTFILES_ROOT="$HOME/workspace/src/github.com/gordonpn/dotfiles"
 export FZF_BASE="/usr/local/bin/fzf"
 export GNUTERM=qt
 export GOPATH="$HOME/go"
+export LESSOPEN='| $(which highlight) %s --out-format xterm256 -l --force -s anotherdark --no-trailing-nl'
 export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
