@@ -40,7 +40,9 @@
 [difftool]
 	prompt = false
 [diff-so-fancy]
-	stripLeadingSymbols = true
+	changeHunkIndicators = true
 	markEmptyLines = false
+	rulerWidth = 80
+	stripLeadingSymbols = true
 [pull]
 	rebase = true

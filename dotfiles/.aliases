@@ -24,6 +24,8 @@ alias cls="clear && ls"
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"
 alias gb="git branch --sort=-committerdate --verbose"
+alias gcod="git checkout develop"
+alias gcom="git checkout master"
 alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
 alias gds="git diff --staged"
@@ -37,13 +39,11 @@ alias glogr='git log --oneline --decorate --reverse --all'
 alias glogs='git log --reverse --all --decorate --stat --date=iso'
 alias gpbd='git push origin --delete'
 alias grhs='git reset --soft'
+alias grss='git restore --staged'
 alias gsh="git show -w"
 alias gst="git status --show-stash --untracked-files=all"
 alias gupod="git pull --autostash --rebase origin develop"
 alias gupom="git pull --autostash --rebase origin master"
-alias gcod="git checkout develop"
-alias gcom="git checkout master"
-alias grss='git restore --staged'
 alias lg='lazygit'
 # docker
 alias dcls='docker container ls --format "table {{.Image}}\t{{.Names}}\t{{.Status}}"'
