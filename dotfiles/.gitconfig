@@ -11,9 +11,9 @@
 	excludesFile = ~/.gitignore
   hooksPath = ~/.githooks
   pager = diff-so-fancy | less
-	; pager = diff-so-fancy | cat
 [merge]
 	tool = vimdiff
+	ff = false
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [diff]
@@ -46,3 +46,6 @@
 	stripLeadingSymbols = true
 [pull]
 	rebase = true
+	ff = only
+[rebase]
+	autoStash = true
