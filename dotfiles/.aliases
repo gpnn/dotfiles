@@ -38,11 +38,13 @@ alias glogg='git log --oneline --decorate --graph --all'
 alias glogs='git log --all --decorate --stat --date=iso'
 alias gbdr='git push origin --delete'
 alias grhs='git reset --soft'
+alias grhs1='git reset --soft HEAD~1'
 alias grss='git restore --staged'
 alias gsh="git show -w"
 alias gst="git status --show-stash --untracked-files=all"
 alias gupod="git pull --autostash --rebase origin develop"
 alias gupom="git pull --autostash --rebase origin master"
+alias gep='git add . && git commit --allow-empty - m "intentionally empty debug push" && git push origin $(git_current_branch)'
 alias lg='lazygit'
 # docker
 alias dcls='docker container ls --format "table {{.Image}}\t{{.Names}}\t{{.Status}}"'

@@ -33,3 +33,5 @@ alias lsr="exa -1 --icons --all --group-directories-first --color=always --class
 alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next|virtualenv|vendor"'
 # Brew
 alias brewsc="brew cask list -1"
+# GH
+alias ghrv="gh repo view --web"
