@@ -14,37 +14,7 @@ def install_npm_global
   end
 end
 
-def install_brew_taps
-  File.foreach('./lists/brew-taps') do |line|
-    line = line.strip.chomp
-    puts "Installing brew tap #{line}".colorize(:blue)
-    system("brew tap #{line}")
-  end
-end
-
-def install_brew_mas
-  File.foreach('./lists/brew-mas') do |line|
-    line = line.strip.chomp
-    line = line.split(' ')
-    puts "Installing Mac App Store app #{line[0]}".colorize(:blue)
-    system("mas install #{line[0]}")
-  end
-end
-
-def install_brew_casks
-  File.foreach('./lists/brew-casks') do |line|
-    line = line.strip.chomp
-    puts "Installing cask #{line}".colorize(:blue)
-    system("brew cask install #{line}")
-  end
-end
-
-def install_brews
-  File.foreach('./lists/brews') do |line|
-    line = line.strip.chomp
-    puts "Installing brew #{line}".colorize(:blue)
-    system("brew install #{line}")
-  end
+def install_brew
 end
 
 def symlink_dotfiles
@@ -116,10 +86,6 @@ def install_zsh_plugins
 end
 
 def main
-  install_brew_taps
-  install_brews
-  install_brew_casks
-  install_brew_mas
   create_directories
   make_zsh_default
   symlink_dotfiles
