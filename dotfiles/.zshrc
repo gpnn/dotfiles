@@ -17,6 +17,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 
 plugins=(
 	colored-man-pages
+	docker
+	docker-compose
+	fzf
+	fzf-tab
+	git
+	zsh-interactive-cd
+	zsh-syntax-highlighting
   colorize
   command-not-found
   cp
@@ -38,13 +45,6 @@ plugins=(
   zsh-autosuggestions
   zsh-better-npm-completion
   zsh-completions
-	docker
-	docker-compose
-	fzf
-	fzf-tab
-	git
-	zsh-interactive-cd
-	zsh-syntax-highlighting
 )
 
 autoload -Uz compinit && compinit

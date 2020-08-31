@@ -16,6 +16,7 @@ GIT_REPOS=(
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search"
 	"$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 	"$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
+	"$HOME/enhancd"
 )
 
 for directory in "${GIT_REPOS[@]}"; do

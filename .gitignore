@@ -1,4 +1,5 @@
-**/.vim/plugged
-dotfiles/.vimrc.swp
+**/.idea
 **/.vim/pack
+**/.vim/plugged
 dotfiles/.vim/
+dotfiles/.vimrc.swp

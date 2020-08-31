@@ -43,3 +43,4 @@ FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
     source "$FILE"
 fi
+source ~/enhancd/init.sh
