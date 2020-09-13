@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export AUTOSWITCH_DEFAULT_PYTHON="/Users/gordonpn/.pyenv/shims/python"
 export AUTOSWITCH_VIRTUAL_ENV_DIR="virtualenv"
 export BAT_PAGER=""
 export BAT_STYLE="header,grid"
@@ -41,3 +42,9 @@ export PATH="/usr/local/opt/texinfo/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PIP_REQUIRE_VIRTUALENV=true
 export PYENV_ROOT="$HOME/.pyenv"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"

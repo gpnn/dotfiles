@@ -35,6 +35,7 @@ alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|
 alias brewsc="brew cask list -1"
 # GH
 alias ghrv="gh repo view --web"
+alias ghil="gh issue list"
 # JetBrains
 alias ws="webstorm ."
 alias pc="pycharm ."

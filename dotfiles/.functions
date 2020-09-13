@@ -95,6 +95,11 @@ pd() {
 }
 
 # override pip to install packages globally
-gpip(){
+gpip() {
   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
+# upgrade global pip
+upgrade-pip() {
+  PIP_REQUIRE_VIRTUALENV="" pip install --upgrade pip
 }
