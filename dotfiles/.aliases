@@ -12,12 +12,9 @@ alias path='echo -e ${PATH//:/\\n}'
 # network
 alias pingdns="ping -c3 8.8.8.8"
 alias pingtest="ping -c3 google.com"
-alias st="speedtest-cli --no-upload --bytes"
 alias myip="curl http://ipecho.net/plain; echo"
 alias myrouter="netstat -nr | grep default"
 alias localip="ipconfig getifaddr en0"
-# updates
-alias npmup="npm install npm -g; npm update -g"
 # ls
 alias cls="clear && ls"
 # git
