@@ -35,6 +35,7 @@ alias brewsc="brew cask list -1"
 # GH
 alias ghrv="gh repo view --web"
 alias ghil="gh issue list"
+alias ghis="gh issue status"
 # JetBrains
 alias ws="webstorm ."
 alias pc="pycharm ."
