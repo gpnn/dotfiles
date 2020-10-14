@@ -25,10 +25,10 @@ alias sysup="$DOTFILES_ROOT/update-plugins.sh"
 alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
 alias allup="brewup; sysup; gemup"
 # ls
+alias l="exa -d */ -1"
+alias la="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
 alias ll="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
 alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
-alias lsd="exa -d */ -1"
-alias lsr="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
 alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next|virtualenv|vendor"'
 # Brew
 alias brewsc="brew cask list -1"
