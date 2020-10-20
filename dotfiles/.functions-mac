@@ -100,15 +100,18 @@ rga-fzf() {
 
 # run through my local projects and see which one is behind, or has untracked files or has changes, etc
 check-git() {
-  for d in /Users/gordonpn/workspace/src/github.com/gordonpn/*/
+  CURRENT_DIR=$(pwd)
+  for d in /Users/gordonpn/workspace/src/github.com/*/*/
   do
-    (cd "$d" && \
-      echo -e '\033[1;33m' && \
-      pwd && \
-      echo -e '\033[0m' && \
-      git status --show-stash --untracked-files=all | egrep --color 'Your branch is ahead of|Changes not staged for commit|Untracked files|Changes to be committed|'\
-      && echo)
+    cd "$d" || continue
+    NO_CHANGE=$(git status --show-stash --untracked-files=all | grep -q -e 'Your branch is ahead of' -e 'Changes not staged for commit' -e 'Untracked files' -e 'Changes to be committed' -e 'You have unmerged paths'; echo $?)
+    HAS_CHANGE=$(git status --show-stash --untracked-files=all | grep -q -e 'nothing to commit, working tree clean'; echo $?)
+    if [ "${NO_CHANGE}" -eq "0" ]; then
+      echo -e '\033[1;33m' && pwd && echo -e '\033[0m'
+      git status --show-stash --untracked-files=all
+    fi
   done
+  cd "${CURRENT_DIR}" || exit
 }
 
 # like normal autojump when used with arguments but displays an fzf prompt when used without
