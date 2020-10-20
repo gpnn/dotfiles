@@ -8,7 +8,7 @@
 	autocrlf = input
 	editor = vim
 	eol = lf
-	excludesFile = ~/.gitignore
+	excludesfile = /Users/gordonpn/.gitignore
   hooksPath = ~/.githooks
   pager = diff-so-fancy | less
 [merge]
@@ -51,3 +51,11 @@
 [rerere]
 	enabled = true
 	autoUpdate = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/gordonpn/.stCommitMsg

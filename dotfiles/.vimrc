@@ -26,17 +26,23 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=dark
+set background=light
 let g:gruvbox_material_background='hard'
+let g:gruvbox_material_better_performance=1
 let g:gruvbox_material_disable_italic_comment=1
+let g:gruvbox_material_palette='material'
+let g:gruvbox_material_transparent_background=1
 let g:vim_monokai_tasty_italic=0
-colorscheme jellybeans
+colorscheme gruvbox-material
 let g:jellybeans_overrides = {
 \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
 \}
 if has('termguicolors') && &termguicolors
     let g:jellybeans_overrides['background']['guibg'] = 'none'
 endif
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
 
 let g:EasyMotion_smartcase=1
 let g:EasyMotion_use_smartsign_us=1
@@ -90,6 +96,9 @@ inoremap <c-l> <right>
 
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
