@@ -30,7 +30,7 @@ set background=light
 let g:gruvbox_material_background='hard'
 let g:gruvbox_material_better_performance=1
 let g:gruvbox_material_disable_italic_comment=1
-let g:gruvbox_material_palette='material'
+let g:gruvbox_material_palette='original'
 let g:gruvbox_material_transparent_background=1
 let g:vim_monokai_tasty_italic=0
 colorscheme gruvbox-material
