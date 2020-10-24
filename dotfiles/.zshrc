@@ -101,6 +101,7 @@ source "$HOME/.exports"
 source "$HOME/.functions"
 
 enable-fzf-tab
+zstyle ':fzf-tab:*' no-group-color $'\033[38;5;19m'
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'

@@ -18,6 +18,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'yggdroot/indentline'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 let g:rainbow_active=1
@@ -33,7 +34,16 @@ let g:gruvbox_material_disable_italic_comment=1
 let g:gruvbox_material_palette='original'
 let g:gruvbox_material_transparent_background=1
 let g:vim_monokai_tasty_italic=0
-colorscheme gruvbox-material
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'allow_bold': 0,
+  \       'allow_italic': 0,
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+colorscheme PaperColor
 let g:jellybeans_overrides = {
 \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
 \}
