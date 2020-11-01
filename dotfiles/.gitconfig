@@ -28,7 +28,14 @@
 	process = git-lfs filter-process
 	required = true
 [alias]
+  default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/"
+  diff = diff $(git default-branch)
   lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+  merged-branches = "!git branch --merged $(git default-branch)"
+  pom = push origin $(git default-branch)
+	pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+  pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+  sync = "!git fetch -p && git rebase origin/$(git default-branch)"
   trim = !git branch --merged | grep -v '*' | xargs -n 1 git branch -d
 [hub]
 	protocol = https
@@ -53,7 +60,7 @@
 	autoUpdate = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
