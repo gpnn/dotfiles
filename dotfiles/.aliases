@@ -20,6 +20,7 @@ alias cls="clear && ls"
 # git
 alias gaa='git add .'
 alias gac="git add -v . && git commit -v"
+alias gapa='git add --intent-to-add . && git add --patch'
 alias gb="git branch --sort=-committerdate --verbose"
 alias gcnv="git commit --allow-empty --no-verify"
 alias gcod="git checkout develop"
