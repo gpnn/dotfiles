@@ -1,6 +1,9 @@
 #!/bin/bash
 
 export EDITOR="$VISUAL"
+export ENHANCD_FILTER="fzf"
+#export ENHANCD_HOOK_AFTER_CD="ls"
+export ENHANCD_HYPHEN_NUM="15"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g "" --depth=-1'
 export GEM_HOME="$HOME/gems"
 export GIT_EDITOR=vim

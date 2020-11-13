@@ -117,3 +117,4 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ev" edit-command-line
 
+source ~/enhancd/init.sh
