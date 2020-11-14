@@ -38,6 +38,11 @@ mvcd() {
   fi
 }
 
+# create dir and cd to it
+mkcd() {
+  command mkdir "$1" && cd "$1" || exit
+}
+
 # git clone and cd into it
 gccd() {
   REPO=$1
@@ -102,4 +107,19 @@ gpip() {
 # upgrade global pip
 upgrade-pip() {
   PIP_REQUIRE_VIRTUALENV="" pip install --upgrade pip
+}
+
+# print color palette
+palette() {
+    local -a colors
+    for i in {000..255}; do
+        colors+=("%F{$i}$i%f")
+    done
+    print -cP $colors
+}
+
+# printc COLOR_CODE to get color code
+printc() {
+    local color="%F{$1}"
+    echo -E ${(qqqq)${(%)color}}
 }
