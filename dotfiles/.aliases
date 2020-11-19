@@ -22,30 +22,32 @@ alias gaa='git add .'
 alias gac="git add -v . && git commit -v"
 alias gapa='git add --intent-to-add . && git add --patch'
 alias gb="git branch --sort=-committerdate --verbose"
+alias gbdr='git push origin --delete'
 alias gcnv="git commit --allow-empty --no-verify"
+alias gcob="git checkout -b"
 alias gcod="git checkout develop"
 alias gcom="git checkout master"
-alias gcob="git checkout -b"
 alias gcot="git checkout -t"
 alias gcount="git shortlog -sn --all --no-merges"
 alias gd="git diff -w"
+alias gdc="diff --name-only --diff-filter=U"
 alias gds="git diff --staged"
 alias gdw="git diff --word-diff -w"
+alias gep='git add . && git commit --allow-empty - m "intentionally empty debug push" && git push origin $(git_current_branch)'
+alias ggc="git gc --prune=now --aggressive"
 alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
 alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
 alias glog='git log --oneline --decorate --graph --all -20'
 alias gloga='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all --decorate'
 alias glogg='git log --oneline --decorate --graph --all'
 alias glogs='git log --all --decorate --stat --date=iso'
-alias gbdr='git push origin --delete'
-alias grhs='git reset --soft'
 alias grhs1='git reset --soft HEAD~1'
+alias grhs='git reset --soft'
 alias grss='git restore --staged'
 alias gsh="git show -w"
 alias gst="git status --show-stash --untracked-files=all"
 alias gupod="git pull --autostash --rebase origin develop"
 alias gupom="git pull --autostash --rebase origin master"
-alias gep='git add . && git commit --allow-empty - m "intentionally empty debug push" && git push origin $(git_current_branch)'
 alias lg='lazygit'
 # docker
 alias dcls='docker container ls --format "table {{.Image}}\t{{.Names}}\t{{.Status}}"'

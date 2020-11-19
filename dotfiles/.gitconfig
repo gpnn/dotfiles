@@ -28,12 +28,15 @@
 	process = git-lfs filter-process
 	required = true
 [alias]
+	pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	recent-branches = !git branch --sort=-committerdate | head
+  authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
   default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/"
   diff = diff $(git default-branch)
   lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+  local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
   merged-branches = "!git branch --merged $(git default-branch)"
   pom = push origin $(git default-branch)
-	pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
   pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
   sync = "!git fetch -p && git rebase origin/$(git default-branch)"
   trim = !git branch --merged | grep -v '*' | xargs -n 1 git branch -d
