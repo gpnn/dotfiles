@@ -40,6 +40,7 @@
   pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
   sync = "!git fetch -p && git rebase origin/$(git default-branch)"
   trim = !git branch --merged | grep -v '*' | xargs -n 1 git branch -d
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [hub]
 	protocol = https
 [url "https://github.com/"]
