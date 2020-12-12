@@ -14,20 +14,22 @@ plugins_mac=(
   copyfile
   gitignore
   golang
+  jenv
   osx
   pip
   pyenv
   virtualenvwrapper
   vscode
+  zsh-nvm
 )
 
 for plugin in "${plugins_mac[@]}"; do
   plugins+=("$plugin")
 done
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -41,7 +43,12 @@ source "$HOME/.exports-mac"
 source "$HOME/.aliases-mac"
 source "$HOME/.functions-mac"
 
+eval "$(jenv init -)"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
-    source "$FILE"
+  source "$FILE"
 fi
