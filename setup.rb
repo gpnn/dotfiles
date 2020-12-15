@@ -77,6 +77,8 @@ def install_zsh_plugins
   system('git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ~ZSH_CUSTOM/plugins/you-should-use')
   system('git clone https://github.com/hlissner/zsh-autopair ~ZSH_CUSTOM/plugins/.zsh-autopair')
   system('git clone https://github.com/lukechilds/zsh-better-npm-completion ~ZSH_CUSTOM/plugins/zsh-better-npm-completion')
+  system('git clone https://github.com/lukechilds/zsh-nvm ~ZSH_CUSTOM/plugins/zsh-nvm ')
+  system('git clone https://github.com/mroth/evalcache ~ZSH_CUSTOM/plugins/evalcache ')
   system('git clone https://github.com/unixorn/git-extra-commands.git ~ZSH_CUSTOM/plugins/git-extra-commands')
   system('git clone https://github.com/zdharma/fast-syntax-highlighting.git ~ZSH_CUSTOM/plugins/fast-syntax-highlighting')
   system('git clone https://github.com/zsh-users/zsh-autosuggestions ~ZSH_CUSTOM/plugins/zsh-autosuggestions')
