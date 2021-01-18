@@ -43,3 +43,5 @@ alias pc="pycharm"
 alias gola="goland"
 alias rbm="rubymine"
 alias ij="idea"
+# Node dependent
+alias mdstart="node -v && mdstart"

@@ -125,6 +125,7 @@ j() {
 
 # stream a magnet link to iina
 torrent() {
+  node -v
   webtorrent download "$1" --iina
 }
 
