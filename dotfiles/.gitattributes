@@ -5,6 +5,7 @@ com.googlecode.iterm2.plist binary
 composer.lock binary
 package-lock.json binary
 yarn-lock.json binary
+yarn.lock binary
 
 *.bib   diff=bibtex
 *.c     diff=cpp

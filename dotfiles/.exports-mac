@@ -43,6 +43,7 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/ssh-copy-id/bin:$PATH"
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.serverless/bin:$PATH"
 export PIP_REQUIRE_VIRTUALENV=true
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"

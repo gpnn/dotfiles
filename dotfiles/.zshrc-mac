@@ -14,7 +14,6 @@ export NVM_LAZY_LOAD=true
 
 plugins_mac=(
   autojump
-  autoswitch_virtualenv
   brew
   copydir
   copyfile
@@ -55,3 +54,5 @@ FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then
   source "$FILE"
 fi
+
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

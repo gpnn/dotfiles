@@ -84,6 +84,7 @@ set mouse=
 set nocompatible
 set noro
 set noshowmode
+set noswapfile
 set nrformats-=octal
 set nu rnu
 set number relativenumber
