@@ -1,6 +1,8 @@
 #!/bin/bash
 
 export DOCKER_CLI_EXPERIMENTAL=enabled
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
 export DOMAIN="gordon-pn.com"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
