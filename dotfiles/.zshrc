@@ -16,20 +16,16 @@ ZSH_AUTOSUGGEST_USE_ASYNC="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 
 plugins=(
-	colored-man-pages
-	docker
-	docker-compose
-	fzf
-	fzf-tab
-	git
-	zsh-interactive-cd
-	zsh-syntax-highlighting
+  colored-man-pages
   colorize
   command-not-found
   cp
+  docker
+  docker-compose
   encode64
   extract
   fast-syntax-highlighting
+  fzf
   fzf-tab
   git
   git-auto-fetch
@@ -45,6 +41,8 @@ plugins=(
   zsh-autosuggestions
   zsh-better-npm-completion
   zsh-completions
+  zsh-interactive-cd
+  zsh-syntax-highlighting
 )
 
 if type brew &>/dev/null; then
