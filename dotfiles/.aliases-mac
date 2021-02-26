@@ -20,10 +20,7 @@ alias spp="spotify play"
 # shell
 alias change="code $DOTFILES_ROOT"
 # updates
-alias brewup="brew update; brew upgrade; brew upgrade --cask; brew doctor --verbose; brew cleanup; brew doctor"
-alias sysup="$DOTFILES_ROOT/update-plugins.sh"
 alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
-alias allup="brewup; sysup; gemup"
 # ls
 alias l="exa -d */ -1"
 alias la="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"

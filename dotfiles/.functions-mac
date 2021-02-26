@@ -134,3 +134,33 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+
+# check md5 hash of file with string
+cmd5() {
+  file_hash=$(md5 -q "$1")
+  if [ "$file_hash" = "$2" ]; then
+    echo "Hashes are equal"
+  else
+    echo "Hashes are not equal"
+  fi
+}
+
+# check sha1 hash of file with string
+csha1() {
+  file_hash=$(shasum "$1")
+  if [ "${file_hash%% *}" = "$2" ]; then
+    echo "Hashes are equal"
+  else
+    echo "Hashes are not equal"
+  fi
+}
+
+sysup() {
+  "$DOTFILES_ROOT"/update-plugins.sh
+  "$HOME"/Downloads/chrome-extensions/update.sh
+  xcode-select --install
+  brew update
+  brew upgrade
+  brew doctor
+  brew cleanup
+}
