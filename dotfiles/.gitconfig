@@ -1,73 +1,83 @@
 [user]
 	name = Gordon Pham-Nguyen
 	email = gordon.pn6@gmail.com
+
 [color]
 	ui = true
+
 [core]
 	attributesfile = ~/.gitattributes
 	autocrlf = input
 	editor = vim
 	eol = lf
 	excludesfile = /Users/gordonpn/.gitignore
-  hooksPath = ~/.githooks
-  pager = diff-so-fancy | less
+	hooksPath = ~/.githooks
+	pager = diff-so-fancy | less
+
 [merge]
 	tool = vimdiff
 	ff = false
+	conflictstyle = diff3
+	log = true
+
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+
 [diff]
 	tool = vimdiff
+
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+
 [credential]
 	helper = osxkeychain
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [alias]
-	pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+	authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
+	default-branch = "!git remote show origin | grep 'HEAD branch' | cut -d' ' -f5"
+	lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[34m%s: \\033[32m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 	recent-branches = !git branch --sort=-committerdate | head
-  authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
-  default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/"
-  diff = diff $(git default-branch)
-  lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
-  local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
-  merged-branches = "!git branch --merged $(git default-branch)"
-  pom = push origin $(git default-branch)
-  pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-  sync = "!git fetch -p && git rebase origin/$(git default-branch)"
-  trim = !git branch --merged | grep -v '*' | xargs -n 1 git branch -d
-  alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
-  wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+	wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:blue)%(authordate:relative)%09%(color:green)%(refname:short)' refs/heads
+
 [hub]
 	protocol = https
+
 [url "https://github.com/"]
 	insteadOf = git@github.com:
+
 [url "https://"]
 	insteadOf = git://
+
 [difftool]
 	prompt = false
+
 [diff-so-fancy]
 	changeHunkIndicators = true
 	markEmptyLines = false
 	rulerWidth = 80
 	stripLeadingSymbols = true
+
 [pull]
 	rebase = true
 	ff = only
+
 [rebase]
 	autoStash = true
+	autosquash = true
+
 [rerere]
 	enabled = true
 	autoUpdate = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
 [commit]
 	template = /Users/gordonpn/.stCommitMsg
+
+[init]
+	defaultBranch = main

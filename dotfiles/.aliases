@@ -26,10 +26,10 @@ alias gbdr='git push origin --delete'
 alias gcnv="git commit --allow-empty --no-verify"
 alias gcob="git checkout -b"
 alias gcod="git checkout develop"
-alias gcom="git checkout master"
+# alias gcom="git checkout $(git default-branch)"
 alias gcot="git checkout -t"
 alias gcount="git shortlog -sn --all --no-merges"
-alias gd="git diff -w"
+alias gd="git diff"
 alias gdc="diff --name-only --diff-filter=U"
 alias gds="git diff --staged"
 alias gdw="git diff --word-diff -w"
@@ -47,7 +47,7 @@ alias grss='git restore --staged'
 alias gsh="git show -w"
 alias gst="git status --show-stash --untracked-files=all"
 alias gupod="git pull --autostash --rebase origin develop"
-alias gupom="git pull --autostash --rebase origin master"
+alias gupo="git pull --autostash --rebase origin"
 alias lg='lazygit'
 # docker
 alias dcls='docker container ls --format "table {{.Image}}\t{{.Names}}\t{{.Status}}"'

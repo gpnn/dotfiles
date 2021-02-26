@@ -110,11 +110,12 @@ fabric.properties
 .nfs*
 
 .vscode/*
-!.vscode/settings.json
+**/.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
+# *.code-workspace
+**/snipsnap.code-snippets
 
 # Windows thumbnail cache files
 Thumbs.db
@@ -146,6 +147,7 @@ node_modules/*
 
 # JetBrains
 .idea/*
-.vscode/
+.vscode/*
 .venv
 virtualenv/
+.dccache
