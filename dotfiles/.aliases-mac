@@ -37,11 +37,6 @@ alias brewsc="brew list --cask -1"
 alias ghrv="gh repo view --web"
 alias ghil="gh issue list"
 alias ghis="gh issue status"
-# JetBrains
-alias ws="webstorm"
-alias pc="pycharm"
-alias gola="goland"
-alias rbm="rubymine"
-alias ij="idea"
-# Node dependent
-alias mdstart="node -v && mdstart"
+# Convenience
+alias jsontidy="pbpaste | jq '.'"
+alias sql-formatter="npx sql-formatter -u"

@@ -1,16 +1,16 @@
 #!/bin/bash
 
-zmodload zsh/zprof
-
 hash -d ws="$HOME/workspace/src/github.com/gordonpn"
 hash -d dl="$HOME/Downloads"
 hash -d sc="$HOME/resilio-sync/macbook-desktop/Screenshots"
-hash -d cu="$HOME/Google Drive/University/Concordia University"
+hash -d cu="$HOME/google-drive/University/concordia-university"
 hash -d moo="$HOME/resilio-sync/macbook-desktop/moodle"
 
 export NVM_COMPLETION=true
 export NVM_DIR="$HOME/.nvm"
 export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('mdstart' 'torrent' 'git' 'tldr' 'code')
+export NVM_AUTO_USE=true
 
 plugins_mac=(
   autojump
@@ -41,7 +41,7 @@ source "$ZSH/oh-my-zsh.sh"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-source ~/.iterm2_shell_integration.zsh
+source "$HOME/.iterm2_shell_integration.zsh"
 
 source "$HOME/.exports-mac"
 source "$HOME/.aliases-mac"
@@ -49,6 +49,8 @@ source "$HOME/.functions-mac"
 
 _evalcache jenv init -
 _evalcache pyenv init -
+
+source "$HOME/.rvm/scripts/rvm"
 
 FILE="$HOME/.aliases-home"
 if [ -f "$FILE" ]; then

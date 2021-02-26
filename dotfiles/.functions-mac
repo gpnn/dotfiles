@@ -125,8 +125,8 @@ j() {
 
 # stream a magnet link to iina
 torrent() {
-  node -v
-  webtorrent download "$1" --iina
+  clipboard=$(pbpaste)
+  webtorrent download "$clipboard" --iina
 }
 
 # time zsh startup for debugging

@@ -101,6 +101,8 @@ set ttymouse=
 set undolevels=1000
 set wildmenu
 
+set rtp+=/usr/local/opt/fzf
+
 noremap <leader>y "*y
 noremap <Leader>p "*p
 nnoremap <c-j> 5j

@@ -51,9 +51,9 @@ alias gupo="git pull --autostash --rebase origin"
 alias lg='lazygit'
 # docker
 alias dcls='docker container ls --format "table {{.Image}}\t{{.Names}}\t{{.Status}}"'
-alias doc='docker'
 alias ldoc='lazydocker'
 alias ctop='ctop -i'
+alias dcupb='docker-compose up --build'
 # npm
 alias ni='npm install'
 alias nu='npm uninstall'
