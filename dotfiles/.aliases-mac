@@ -31,3 +31,5 @@ alias sql-formatter="npx sql-formatter -u"
 alias op="open"
 alias cpd='copydir'
 alias cpf='copyfile'
+# python
+alias avenv="source .venv/bin/activate"

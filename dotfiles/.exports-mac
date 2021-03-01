@@ -28,3 +28,6 @@ export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/ssh-copy-id/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PIP_REQUIRE_VIRTUALENV=true
+export AUTOSWITCH_DEFAULT_REQUIREMENTS="$HOME/.requirements.txt"
+export AUTOSWITCH_DEFAULT_PYTHON="/Users/gordonpn/.pyenv/shims/python"
+export PATH="/Users/gordonpn/.local/bin:$PATH"

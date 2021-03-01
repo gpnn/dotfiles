@@ -14,6 +14,7 @@ export NVM_AUTO_USE=true
 
 plugins_mac=(
   autojump
+  autoswitch_virtualenv
   brew
   copydir
   copyfile
@@ -24,8 +25,8 @@ plugins_mac=(
   npm
   osx
   pip
+  pipenv
   pyenv
-  virtualenvwrapper
   vscode
   zsh-better-npm-completion
   zsh-nvm
