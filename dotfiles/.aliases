@@ -3,7 +3,6 @@
 # modern defaults
 alias al="alias | ag"
 alias hs='history | grep'
-# alias ncdu='ncdu --color=dark'
 alias htop="htop --sort-key=PERCENT_CPU"
 # shell
 alias update="source $HOME/.zshrc"

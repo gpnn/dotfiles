@@ -15,11 +15,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'
-Plug 'marcopaganini/termschool-vim-theme'
-Plug 'nanotech/jellybeans.vim'
-Plug 'sainnhe/gruvbox-material'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
@@ -28,19 +24,12 @@ Plug 'yggdroot/indentline'
 Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
-let g:rainbow_active=1
 
 if has('termguicolors')
   set termguicolors
 endif
 
 set background=light
-let g:gruvbox_material_background='hard'
-let g:gruvbox_material_better_performance=1
-let g:gruvbox_material_disable_italic_comment=1
-let g:gruvbox_material_palette='original'
-let g:gruvbox_material_transparent_background=1
-let g:vim_monokai_tasty_italic=0
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default': {
@@ -51,12 +40,6 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 colorscheme PaperColor
-let g:jellybeans_overrides = {
-\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-\}
-if has('termguicolors') && &termguicolors
-    let g:jellybeans_overrides['background']['guibg'] = 'none'
-endif
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE

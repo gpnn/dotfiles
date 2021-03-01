@@ -1,83 +1,86 @@
 [user]
-	name = Gordon Pham-Nguyen
-	email = gordon.pn6@gmail.com
+name = Gordon Pham-Nguyen
+email = gordon.pn6@gmail.com
 
 [color]
-	ui = true
+ui = true
 
 [core]
-	attributesfile = ~/.gitattributes
-	autocrlf = input
-	editor = vim
-	eol = lf
-	excludesfile = /Users/gordonpn/.gitignore
-	hooksPath = ~/.githooks
-	pager = diff-so-fancy | less
+attributesfile = ~/.gitattributes
+autocrlf = input
+editor = vim
+eol = lf
+excludesfile = /Users/gordonpn/.gitignore
+hooksPath = ~/.githooks
+pager = diff-so-fancy | less
 
 [merge]
-	tool = vimdiff
-	ff = false
-	conflictstyle = diff3
-	log = true
+tool = vscode
+ff = false
+conflictstyle = diff3
+log = true
 
 [mergetool "vscode"]
-	cmd = code --wait $MERGED
+cmd = code --wait $MERGED
 
 [diff]
-	tool = vimdiff
+tool = vscode
 
 [difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+cmd = code --wait --diff $LOCAL $REMOTE
 
 [credential]
-	helper = osxkeychain
+helper = osxkeychain
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
 
 [alias]
-	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
-	authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
-	default-branch = "!git remote show origin | grep 'HEAD branch' | cut -d' ' -f5"
-	lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[34m%s: \\033[32m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
-	recent-branches = !git branch --sort=-committerdate | head
-	wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:blue)%(authordate:relative)%09%(color:green)%(refname:short)' refs/heads
+alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
+default-branch = "!git remote show origin | grep 'HEAD branch' | cut -d' ' -f5"
+lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[34m%s: \\033[32m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+recent-branches = !git branch --sort=-committerdate | head
+wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:blue)%(authordate:relative)%09%(color:green)%(refname:short)' refs/heads
 
 [hub]
-	protocol = https
+protocol = https
 
 [url "https://github.com/"]
-	insteadOf = git@github.com:
+insteadOf = git@github.com:
 
 [url "https://"]
-	insteadOf = git://
+insteadOf = git://
 
 [difftool]
-	prompt = false
+prompt = false
 
 [diff-so-fancy]
-	changeHunkIndicators = true
-	markEmptyLines = false
-	rulerWidth = 80
-	stripLeadingSymbols = true
+changeHunkIndicators = true
+markEmptyLines = false
+rulerWidth = 80
+stripLeadingSymbols = true
 
 [pull]
-	rebase = true
-	ff = only
+rebase = true
+ff = only
 
 [rebase]
-	autoStash = true
-	autosquash = true
+autoStash = true
+autosquash = true
 
 [rerere]
-	enabled = true
-	autoUpdate = true
+enabled = true
+autoUpdate = true
 
 [commit]
-	template = /Users/gordonpn/.stCommitMsg
+template = /Users/gordonpn/.stCommitMsg
 
 [init]
-	defaultBranch = main
+defaultBranch = main
+
+[mergetool]
+prompt = false

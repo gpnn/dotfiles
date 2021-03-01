@@ -20,13 +20,20 @@ plugins_mac=(
   evalcache
   gitignore
   golang
+  httpie
+  npm
   osx
   pip
   pyenv
   virtualenvwrapper
   vscode
+  zsh-better-npm-completion
   zsh-nvm
 )
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 for plugin in "${plugins_mac[@]}"; do
   plugins+=("$plugin")

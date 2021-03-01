@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# export GEM_HOME="$HOME/gems"
-# export PATH="$HOME/gems/bin:$PATH"
-#export ENHANCD_HOOK_AFTER_CD="ls"
 export EDITOR="$VISUAL"
 export ENHANCD_FILTER="fzf"
 export ENHANCD_HYPHEN_NUM="15"

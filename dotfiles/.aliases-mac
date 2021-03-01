@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # modern defaults
-alias op="open"
 alias cat="bat"
-alias cpd='copydir'
-alias cpf='copyfile'
 alias skl="sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'"
 # Gatekeeper (for installing 3rd party apps)
 alias gatekeeperOff="sudo spctl --master-disable"
@@ -13,14 +10,8 @@ alias gatekeeperOn="sudo spctl --master-enable"
 alias sortlaunchpad="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-# spotify control
-alias spn="spotify next"
-alias sps="spotify stop"
-alias spp="spotify play"
 # shell
 alias change="code $DOTFILES_ROOT"
-# updates
-alias gemup="sudo gem update --system; sudo gem update; sudo gem cleanup"
 # ls
 alias l="exa -d */ -1"
 alias la="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
@@ -37,3 +28,6 @@ alias ghis="gh issue status"
 # Convenience
 alias jsontidy="pbpaste | jq '.'"
 alias sql-formatter="npx sql-formatter -u"
+alias op="open"
+alias cpd='copydir'
+alias cpf='copyfile'

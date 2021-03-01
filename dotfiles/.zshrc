@@ -31,23 +31,16 @@ plugins=(
   git-auto-fetch
   git-extra-commands
   history-substring-search
-  httpie
   last-working-dir
-  npm
   safe-paste
   urltools
   you-should-use
   zsh-autopair
   zsh-autosuggestions
-  zsh-better-npm-completion
   zsh-completions
   zsh-interactive-cd
   zsh-syntax-highlighting
 )
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
 
 autoload -Uz compinit
 () {
