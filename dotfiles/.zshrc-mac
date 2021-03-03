@@ -30,6 +30,7 @@ plugins_mac=(
   vscode
   zsh-better-npm-completion
   zsh-nvm
+  zsh-pipx
 )
 
 if type brew &>/dev/null; then
