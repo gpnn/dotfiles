@@ -157,7 +157,7 @@ csha1() {
 
 sysup() {
   "$DOTFILES_ROOT"/update-plugins.sh
-  "$HOME"/Downloads/chrome-extensions/update.sh
+  "$DOTFILES_ROOT"/update-chrome-extensions.sh
   xcode-select --install
   brew update
   brew upgrade
