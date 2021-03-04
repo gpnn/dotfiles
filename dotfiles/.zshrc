@@ -14,6 +14,7 @@ ENABLE_CORRECTION="true"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
+ZSH_DISABLE_COMPFIX="true"
 
 plugins=(
   colored-man-pages
@@ -42,16 +43,18 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-autoload -Uz compinit
-() {
-  if [[ $# -gt 0 ]]; then
-    compinit
-  else
-    compinit -C
-  fi
-} ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
+if which brew >/dev/null 2>&1; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+autoload -Uz compinit
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
+[[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
 HISTFILE=~/.zsh_history
 HISTORY_IGNORE="(ls|cd|pwd|exit|ll|history)"
@@ -84,19 +87,8 @@ setopt SHARE_HISTORY
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 unameOut="$(uname -s)"
-case "${unameOut}" in
-  Linux*) MACHINE=Linux ;;
-  Darwin*) MACHINE=Mac ;;
-  CYGWIN*) MACHINE=Cygwin ;;
-  MINGW*) MACHINE=MinGw ;;
-  *) MACHINE="UNKNOWN:${unameOut}" ;;
-esac
-
-if [[ "$MACHINE" == "Linux" ]]; then
-  source "$HOME/.zshrc-server"
-elif [[ "$MACHINE" == "Mac" ]]; then
-  source "$HOME/.zshrc-mac"
-fi
+[[ ! "$unameOut" == "Linux" ]] || source "$HOME/.zshrc-server"
+[[ ! "$unameOut" == "Darwin" ]] || source "$HOME/.zshrc-mac"
 
 source "$HOME/.aliases"
 source "$HOME/.exports"
@@ -119,4 +111,4 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ev" edit-command-line
 
-source ~/enhancd/init.sh
+[[ ! -f ~/enhancd/init.sh ]] || source ~/enhancd/init.sh

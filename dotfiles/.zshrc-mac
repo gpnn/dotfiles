@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1090,SC1091
 
 hash -d ws="$HOME/workspace/src/github.com/gordonpn"
 hash -d dl="$HOME/Downloads"
@@ -33,22 +34,13 @@ plugins_mac=(
   zsh-pipx
 )
 
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
 for plugin in "${plugins_mac[@]}"; do
   plugins+=("$plugin")
 done
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-export JENV_ROOT="/usr/local/opt/jenv"
-
 source "$ZSH/oh-my-zsh.sh"
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[[ ! -f /usr/local/etc/profile.d/autojump.sh ]] || source /usr/local/etc/profile.d/autojump.sh
 
 source "$HOME/.iterm2_shell_integration.zsh"
 
@@ -56,14 +48,6 @@ source "$HOME/.exports-mac"
 source "$HOME/.aliases-mac"
 source "$HOME/.functions-mac"
 
-_evalcache jenv init -
-_evalcache pyenv init -
+[[ ! -f ~/.aliases-home ]] || source ~/.aliases-home
 
-source "$HOME/.rvm/scripts/rvm"
-
-FILE="$HOME/.aliases-home"
-if [ -f "$FILE" ]; then
-  source "$FILE"
-fi
-
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+[[ ! -f ~/.config/tabtab/__tabtab.zsh ]] || source ~/.config/tabtab/__tabtab.zsh

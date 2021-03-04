@@ -164,3 +164,13 @@ sysup() {
   brew doctor
   brew cleanup
 }
+
+pyenv() {
+  _evalcache pyenv init -
+  pyenv "$@"
+}
+
+jenv() {
+  _evalcache jenv init -
+  jenv "$@"
+}
