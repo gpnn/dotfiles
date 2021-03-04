@@ -18,10 +18,15 @@ alias localip="ipconfig getifaddr en0"
 alias cls="clear && ls"
 # git
 alias gaa='git add .'
-alias gac="git add -v . && git commit -v"
+alias gac="git add -v . && git commit"
 alias gapa='git add --intent-to-add . && git add --patch'
 alias gb="git branch --sort=-committerdate --verbose"
 alias gbdr='git push origin --delete'
+alias gc='git commit'
+alias 'gc!'='git commit --amend'
+alias gca='git commit -a'
+alias 'gca!'='git commit -a --amend'
+alias 'gcan!'='git commit -a --no-edit --amend'
 alias gcnv="git commit --allow-empty --no-verify"
 alias gcob="git checkout -b"
 alias gcod="git checkout develop"
