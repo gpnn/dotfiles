@@ -1,7 +1,6 @@
-├── highlight.js@10.6.0
-├── npm-check-updates@11.1.10
-├── npm@7.6.0
-├── tldr@3.3.7
-├── vtop@0.6.1
-└── webtorrent-cli@3.2.1
-
+highlight.js
+npm-check-updates
+npm
+tldr
+vtop
+webtorrent-cli

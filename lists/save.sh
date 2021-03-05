@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ -f "Brewfile" ]; then
-  rm "Brewfile"
+	rm "Brewfile"
 fi
 npm root -g
-npm list -g --depth 0 | tail --lines=+2 >npm-global
+npm ls -g --depth=0 --parseable | grep -o 'node_modules/.*$' | sed 's:node_modules/::g' >npm-global
 brew bundle dump --all
