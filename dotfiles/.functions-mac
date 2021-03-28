@@ -101,7 +101,7 @@ rga-fzf() {
 # run through my local projects and see which one is behind, or has untracked files or has changes, etc
 check-git() {
   CURRENT_DIR=$(pwd)
-  for d in /Users/gordonpn/workspace/src/github.com/*/*/
+  for d in /Users/gordonpn/workspace/*/*/
   do
     cd "$d" || continue
     NO_CHANGE=$(git status --show-stash --untracked-files=all | grep -q -e 'Your branch is ahead of' -e 'Changes not staged for commit' -e 'Untracked files' -e 'Changes to be committed' -e 'You have unmerged paths'; echo $?)
