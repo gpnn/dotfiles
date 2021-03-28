@@ -41,9 +41,8 @@ alias gep='git add . && git commit --allow-empty - m "intentionally empty debug 
 alias ggc="git gc --prune=now --aggressive"
 alias giu="git status --porcelain | grep '^??' | cut -c4- >> .gitignore"
 alias glb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)"'
-alias glog='git log --oneline --decorate --graph --all -20'
-alias gloga='git log --pretty="%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset" --graph --all --decorate'
-alias glogg='git log --oneline --decorate --graph --all'
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias glogg='glog --decorate'
 alias glogs='git log --all --decorate --stat --date=iso'
 alias grhs1='git reset --soft HEAD~1'
 alias grhs='git reset --soft'
