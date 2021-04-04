@@ -53,7 +53,9 @@ alias gupod="git pull --autostash --rebase origin develop"
 alias gupo="git pull --autostash --rebase origin"
 alias lg='lazygit'
 # docker
-alias dcls='docker container ls --format "table {{.Image}}\t{{.Names}}\t{{.Status}}"'
+alias dc='docker container'
+alias dcls='docker container ls'
+alias dclsf='docker container ls --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Status}}"'
 alias ldoc='lazydocker'
 alias ctop='ctop -i'
 alias dcupb='docker-compose up --build'
