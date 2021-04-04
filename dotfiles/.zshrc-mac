@@ -10,7 +10,7 @@ hash -d moo="$HOME/resilio-sync/macbook-desktop/moodle"
 export NVM_COMPLETION=true
 export NVM_DIR="$HOME/.nvm"
 export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('mdstart' 'torrent' 'git' 'tldr' 'code')
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('mdstart' 'torrent' 'git' 'tldr' 'code' 'npx')
 export NVM_AUTO_USE=true
 
 plugins_mac=(

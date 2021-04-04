@@ -5,11 +5,6 @@ ql() {
   qlmanage -p "$1"
 }
 
-# make gif
-togif() {
-  ffmpeg -i "$1" -s 1280x720 -f gif - | gifsicle --delay=2 > "$1".gif
-}
-
 # upload a file to transfer.sh
 transfer() {
   wget -t 1 -qO - --method=PUT --body-file="$1" --header="Content-Type: $(file -b --mime-type "$1")" https://transfer.sh/"$(basename "$1")";
@@ -123,16 +118,10 @@ j() {
     cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)" || exit
 }
 
-# stream a magnet link to iina
-torrent() {
-  clipboard=$(pbpaste)
-  webtorrent download "$clipboard" --iina
-}
-
 # time zsh startup for debugging
 timezsh() {
   shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+  for i in $(seq 1 10); do /usr/bin/time "$shell" -i -c exit; done
 }
 
 # check md5 hash of file with string
@@ -155,25 +144,48 @@ csha1() {
   fi
 }
 
+# check sha256 hash of file with string
+csha256() {
+  file_hash=$(sha256sum "$1")
+  if [ "${file_hash%% *}" = "$2" ]; then
+    echo "Hashes are equal"
+  else
+    echo "Hashes are not equal"
+  fi
+}
+
+# Quickly update zsh plugins, chrome extensions, brew
 sysup() {
   "$DOTFILES_ROOT"/update-plugins.sh
   "$DOTFILES_ROOT"/update-chrome-extensions.sh
+  echo
   xcode-select --install
+  echo
   brew update
   brew upgrade
   brew doctor
   brew cleanup
 }
 
+# Lazy load (on-demand) pyenv
 pyenv() {
   _evalcache pyenv init -
   pyenv "$@"
 }
 
+# Allows switching JDKs quickly
+# e.g. jdk 1.8, jdk 11, jdk 15
 jdk() {
   version=$1
   unset JAVA_HOME;
   NEW_JAVA_HOME=$(/usr/libexec/java_home -v"$version")
   export JAVA_HOME="$NEW_JAVA_HOME";
   java -version
+}
+
+# After updating pyenv and/or pipx through Homebrew, it often breaks some configuration
+# So this quick function fixes that
+pyfix() {
+  pyenv rehash
+  pipx reinstall-all
 }

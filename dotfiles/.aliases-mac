@@ -28,8 +28,9 @@ alias ghis="gh issue status"
 # Convenience
 alias jsontidy="pbpaste | jq '.'"
 alias sql-formatter="npx sql-formatter -u"
-alias op="open"
+alias o="open_command"
 alias cpd='copydir'
 alias cpf='copyfile'
+alias torrent='webtorrent download $(pbpaste) --iina'
 # python
 alias avenv="source .venv/bin/activate"
