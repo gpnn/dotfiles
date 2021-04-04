@@ -2,7 +2,7 @@
 
 export EDITOR="$VISUAL"
 export ENHANCD_FILTER="fzf"
-export ENHANCD_HYPHEN_NUM="15"
+export ENHANCD_HYPHEN_NUM="20"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g "" --depth=-1'
 export GIT_EDITOR=vim
 export LANG=en_US.UTF-8
@@ -38,6 +38,7 @@ _gen_fzf_default_opts() {
     --color fg:-1,bg:-1,hl:$blue,fg+:$base02,bg+:$base2,hl+:$blue
     --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
     --layout=reverse
+    --height 40%
   "
 }
 _gen_fzf_default_opts
