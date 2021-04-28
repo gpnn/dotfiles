@@ -4,6 +4,7 @@ HIGHLIGHT=$(which highlight)
 BREW=$(brew --prefix)
 JAVA_HOME_15=$(/usr/libexec/java_home -v15)
 
+export BROWSER="firefox developer edition"
 export BAT_PAGER=""
 export BAT_STYLE="header,grid"
 export BAT_THEME="Solarized (light)"
