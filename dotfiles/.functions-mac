@@ -176,11 +176,15 @@ pyenv() {
 # Allows switching JDKs quickly
 # e.g. jdk 1.8, jdk 11, jdk 15
 jdk() {
-  version=$1
-  unset JAVA_HOME;
-  NEW_JAVA_HOME=$(/usr/libexec/java_home -v"$version")
-  export JAVA_HOME="$NEW_JAVA_HOME";
-  java -version
+  if [ "$1" -eq 0 ]; then
+    /usr/libexec/java_home -V
+  else
+    version=$1
+    unset JAVA_HOME;
+    NEW_JAVA_HOME=$(/usr/libexec/java_home -v"$version")
+    export JAVA_HOME="$NEW_JAVA_HOME";
+    java -version
+  fi
 }
 
 # After updating pyenv and/or pipx through Homebrew, it often breaks some configuration
