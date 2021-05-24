@@ -167,12 +167,6 @@ sysup() {
   brew cleanup
 }
 
-# Lazy load (on-demand) pyenv
-pyenv() {
-  _evalcache pyenv init -
-  pyenv "$@"
-}
-
 # Allows switching JDKs quickly
 # e.g. jdk 1.8, jdk 11, jdk 15
 jdk() {
