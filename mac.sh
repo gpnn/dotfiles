@@ -18,6 +18,21 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
+# Disable system integrity protection temporarily
+# csrutil disable
+# Disable spotlight indexing
+sudo mdutil -a -i off
+sudo mdutil -i off -d -E /
+# sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+# csrutil enable
+
+# Disable Microsoft Autoupdater
+sudo launchctl unload -w /Library/LaunchDaemons/com.microsoft.autoupdate.helper.plist
+
+# Disable ReportCrash
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+
 # Throttle Time Machine backups
 sudo sysctl debug.lowpri_throttle_enabled=0
 
