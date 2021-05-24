@@ -74,6 +74,7 @@ set number relativenumber
 set ruler
 set scrolloff=15
 set showcmd
+set showmatch
 set smartcase
 set tabstop=2 shiftwidth=2 expandtab
 set title
@@ -88,14 +89,20 @@ set rtp+=/usr/local/opt/fzf
 
 noremap <leader>y "*y
 noremap <Leader>p "*p
-nnoremap <c-j> 5j
-nnoremap <c-k> 5k
+" nnoremap <c-j> 5j
+" nnoremap <c-k> 5k
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
 xnoremap <c-j> 5j
 xnoremap <c-k> 5k
-inoremap <c-k> <up>
-inoremap <c-j> <down>
+" inoremap <c-k> <up>
+" inoremap <c-j> <down>
 inoremap <c-h> <left>
 inoremap <c-l> <right>
+inoremap <c-j> <Esc>:m .+1<CR>==gi
+inoremap <c-k> <Esc>:m .-2<CR>==gi
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
 
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
