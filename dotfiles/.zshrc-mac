@@ -19,7 +19,8 @@ plugins_mac=(
   brew
   copydir
   copyfile
-  evalcache
+  deno
+  fzf-zsh-completions
   gitignore
   golang
   httpie
@@ -51,3 +52,9 @@ source "$HOME/.functions-mac"
 [[ ! -f ~/.aliases-home ]] || source ~/.aliases-home
 
 [[ ! -f ~/.config/tabtab/__tabtab.zsh ]] || source ~/.config/tabtab/__tabtab.zsh
+
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+eval "$(lua "$HOME/.oh-my-zsh/custom/plugins/z.lua/z.lua" --init zsh enhanced once fzf)"
+
+eval "$(pyenv init -)"

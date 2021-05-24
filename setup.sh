@@ -9,6 +9,9 @@ MINGW*) MACHINE=MinGw ;;
 *) MACHINE="UNKNOWN:${unameOut}" ;;
 esac
 
+git clone https://github.com/b4b4r07/enhancd "$HOME"
+# git clone https://github.com/lincheney/fzf-tab-completion "$HOME"
+
 if [[ "$MACHINE" == "Linux" ]]; then
   source setup-server.sh
 elif [[ "$MACHINE" == "Mac" ]]; then

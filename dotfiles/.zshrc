@@ -112,3 +112,7 @@ zle -N edit-command-line
 bindkey "\ev" edit-command-line
 
 [[ ! -f ~/enhancd/init.sh ]] || source ~/enhancd/init.sh
+
+# source "$HOME"/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+# bindkey '^I' fzf_completion
+# zstyle ':completion:*' fzf-search-display true
