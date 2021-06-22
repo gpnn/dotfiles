@@ -12,7 +12,29 @@ editor = vim
 eol = lf
 excludesfile = /Users/gordonpn/.gitignore
 hooksPath = ~/.githooks
-pager = diff-so-fancy | less
+# pager = diff-so-fancy | less
+
+[pager]
+diff = delta
+log = delta
+reflog = delta
+show = delta
+
+[delta]
+# plus-style = "syntax #012800"
+# minus-style = "syntax #340001"
+syntax-theme = GitHub
+navigate = true
+features = side-by-side line-numbers decorations
+
+[delta "decorations"]
+commit-decoration-style = bold black box ul
+file-style = bold black ul
+file-decoration-style = none
+hunk-header-decoration-style = black box
+
+[interactive]
+diffFilter = delta --color-only
 
 [merge]
 tool = vscode

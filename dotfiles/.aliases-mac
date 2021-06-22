@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # modern defaults
-alias cat="bat"
+alias cat="bat --paging=never"
 alias skl="sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'"
 # Gatekeeper (for installing 3rd party apps)
 alias gatekeeperOff="sudo spctl --master-disable"
