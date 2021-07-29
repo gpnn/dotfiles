@@ -49,11 +49,11 @@ gccd() {
   CLONEPATH=$2
 
   if [ -z "$CLONEPATH" ]; then
-      CLONEPATH=${$(basename "$1")/.git/}
+      CLONEPATH=$(basename "$1")/.git/
   fi
 
-  git clone "$REPO" $CLONEPATH
-  cd $CLONEPATH || exit
+  git clone "$REPO" "$CLONEPATH"
+  cd "$CLONEPATH" || exit
 }
 
 # look for a process to kill
@@ -67,7 +67,7 @@ fkill() {
 
     if [ "x$pid" != "x" ]
     then
-        echo "$pid" | xargs kill -${1:-9}
+        echo "$pid" | xargs kill -"${1:-9}"
     fi
 }
 
@@ -77,9 +77,9 @@ fcdp() {
   get_parent_dirs() {
     if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
     if [[ "${1}" == '/' ]]; then
-      for _dir in "${dirs[@]}"; do echo $_dir; done
+      for _dir in "${dirs[@]}"; do echo "$_dir"; done
     else
-      get_parent_dirs $(dirname "$1")
+      get_parent_dirs "$(dirname "$1")"
     fi
   }
   local DIR=$(get_parent_dirs "$(realpath "${1:-$PWD}")" | fzf-tmux --tac)
@@ -89,9 +89,7 @@ fcdp() {
 # cd to selected directory
 fcd() {
   local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir" || exit
+  dir=$(find "${1:-.}" -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) && cd "$dir" || exit
 }
 
 # preview files in directory with fzf
@@ -115,11 +113,11 @@ palette() {
     for i in {000..255}; do
         colors+=("%F{$i}$i%f")
     done
-    print -cP $colors
+    print -cP "$colors"
 }
 
 # printc COLOR_CODE to get color code
 printc() {
     local color="%F{$1}"
-    echo -E ${(qqqq)${(%)color}}
+    echo -E "${(qqqq)${(%)color}}"
 }

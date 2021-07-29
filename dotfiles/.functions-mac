@@ -158,13 +158,15 @@ csha256() {
 sysup() {
   "$DOTFILES_ROOT"/update-plugins.sh
   "$DOTFILES_ROOT"/update-chrome-extensions.sh
-  echo
-  xcode-select --install
-  echo
   brew update
   brew upgrade
   brew doctor
   brew cleanup
+  echo
+  xcode-select --install
+  echo
+  sudo softwareupdate --list
+  echo
 }
 
 # Allows switching JDKs quickly
