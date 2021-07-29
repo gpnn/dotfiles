@@ -18,3 +18,4 @@ git clone https://github.com/thuandt/zsh-pipx.git ~ZSH_CUSTOM/plugins/zsh-pipx
 git clone https://github.com/denodev/oh-my-zsh-deno.git ~ZSH_CUSTOM/plugins/deno
 git clone https://github.com/chitoku-k/fzf-zsh-completions.git ~ZSH_CUSTOM/plugins/fzf-zsh-completions
 git clone https://github.com/skywind3000/z.lua.git ~ZSH_CUSTOM/plugins/z.lua
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~ZSH_CUSTOM/plugins/zsh-autocomplete

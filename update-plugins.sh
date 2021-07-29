@@ -20,8 +20,10 @@ GIT_REPOS=(
   "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm"
   "$HOME/.oh-my-zsh/custom/plugins/zsh-pipx/"
   "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  "$HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete"
   "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
   "$HOME/enhancd"
+  "$HOME/fzf-tab-completion"
 )
 
 for directory in "${GIT_REPOS[@]}"; do

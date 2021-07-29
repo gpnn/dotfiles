@@ -23,13 +23,13 @@ plugins_mac=(
   fzf-zsh-completions
   gitignore
   golang
-  httpie
   npm
   osx
   pip
   pipenv
   pyenv
   vscode
+  # zsh-autocomplete
   zsh-better-npm-completion
   zsh-nvm
   zsh-pipx
@@ -53,8 +53,12 @@ source "$HOME/.functions-mac"
 
 [[ ! -f ~/.config/tabtab/__tabtab.zsh ]] || source ~/.config/tabtab/__tabtab.zsh
 
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-eval "$(lua "$HOME/.oh-my-zsh/custom/plugins/z.lua/z.lua" --init zsh enhanced once fzf)"
+[[ ! -f ~/.config/tabtab/zsh/__tabtab.zsh ]] || source ~/.config/tabtab/zsh/__tabtab.zsh
 
 eval "$(pyenv init -)"
+
+# zstyle ':autocomplete:*' recent-dirs autojump
+# zstyle ':autocomplete:*' widget-style menu-complete
+# zstyle ':autocomplete:*' fzf-completion yes
+# bindkey $key[Up] up-line-or-history
+# bindkey $key[Down] down-line-or-history

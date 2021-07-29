@@ -8,5 +8,5 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
-export TZ=America/Montreal
+export TZ=America/Toronto
 export DOTFILES_ROOT="/home/gordonpn/workspace/dotfiles"
