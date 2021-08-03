@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # shell
-alias change="vim $HOME/.zshrc"
+alias change='vim $HOME/.zshrc'
 # system
 alias ls="ls -A -1 --group-directories-first --color=always"
-alias sysup=" $DOTFILES_ROOT/update-plugins.sh; sudo apt-get update"
+alias sysup='sudo apt-get update'
 alias listd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL; df -hl'
 # network
 alias ufwnum="sudo ufw status numbered"
 # mail
-alias checkmail="sudo less /var/mail/$(whoami)"
-alias deletemail="sudo rm /var/mail/$(whoami)"
+alias checkmail='sudo less /var/mail/$(whoami)'
+alias deletemail='sudo rm /var/mail/$(whoami)'
 # zombie processes
 alias zombie="ps axo stat,ppid,pid,comm | grep -w defunct"

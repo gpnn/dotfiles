@@ -61,14 +61,9 @@ bcp() {
   fi
 }
 
-# gitignore.io
-gi() {
-  curl -sLw "\n" https://www.gitignore.io/api/\$@ ;
-}
-
 # git diff with fzf
 gdf() {
-  preview="git diff $@ --color=always -- {-1}"
+  preview="git diff $* --color=always -- {-1}"
   git diff "$@" --name-only | fzf -m --ansi --preview "$preview"
 }
 
@@ -156,7 +151,6 @@ csha256() {
 
 # Quickly update zsh plugins, chrome extensions, brew
 sysup() {
-  "$DOTFILES_ROOT"/update-plugins.sh
   "$DOTFILES_ROOT"/update-chrome-extensions.sh
   brew update
   brew upgrade

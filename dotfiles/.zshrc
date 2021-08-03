@@ -4,10 +4,125 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="$HOME/.oh-my-zsh"
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p $HOME/.zinit
+    command git clone https://github.com/zdharma/zinit $HOME/.zinit/bin && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%F" || \
+        print -P "%F{160}▓▒░ The clone has failed.%F"
+fi
+source ~/.zinit/bin/zinit.zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-DISABLE_UPDATE_PROMPT="true"
+autoload -Uz compinit
+() {
+  if [[ $# -gt 0 ]]; then
+    compinit;
+  else
+    compinit -C;
+  fi
+} ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
+
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+zinit wait lucid for \
+  OMZL::clipboard.zsh \
+  OMZL::compfix.zsh \
+  OMZL::completion.zsh \
+  OMZL::correction.zsh \
+  OMZL::directories.zsh \
+  OMZL::functions.zsh \
+  OMZL::git.zsh \
+  OMZL::grep.zsh \
+  OMZL::history.zsh \
+  OMZL::key-bindings.zsh \
+  OMZL::spectrum.zsh \
+  OMZL::termsupport.zsh
+
+zinit wait lucid for \
+  OMZP::alias-finder \
+  OMZP::autojump \
+  OMZP::brew \
+  OMZP::colored-man-pages \
+  OMZP::colorize \
+  OMZP::command-not-found \
+  OMZP::common-aliases \
+  OMZP::copydir \
+  OMZP::copyfile \
+  OMZP::cp \
+  OMZP::docker-compose \
+  OMZP::dotenv \
+  OMZP::extract \
+  OMZP::fzf \
+  OMZP::git \
+  OMZP::git-auto-fetch \
+  OMZP::git-extras \
+  OMZP::gitignore \
+  OMZP::golang \
+  OMZP::history \
+  OMZP::jsontools \
+  OMZP::node \
+  OMZP::npm \
+  OMZP::nvm \
+  OMZP::pip \
+  OMZP::pipenv \
+  OMZP::pj \
+  OMZP::pyenv \
+  OMZP::python \
+  OMZP::rsync \
+  OMZP::ruby \
+  OMZP::rvm \
+  OMZP::ubuntu \
+  OMZP::urltools \
+  OMZP::virtualenv \
+  OMZP::vscode \
+  OMZP::yarn \
+  OMZP::zsh-interactive-cd \
+  OMZP::zsh_reload
+
+zinit wait lucid for \
+  as"completion" \
+    OMZP::ag/_ag \
+    OMZP::docker-compose/_docker-compose \
+    OMZP::docker/_docker
+
+zinit light-mode for \
+  Aloxaf/fzf-tab \
+  MichaelAquilina/zsh-autoswitch-virtualenv \
+  MichaelAquilina/zsh-you-should-use \
+  b4b4r07/enhancd \
+  chitoku-k/fzf-zsh-completions \
+  hlissner/zsh-autopair \
+  lukechilds/zsh-better-npm-completion \
+  lukechilds/zsh-nvm \
+  unixorn/git-extra-commands \
+  wfxr/forgit \
+  zdharma/fast-syntax-highlighting \
+  zdharma/history-search-multi-word \
+  zsh-users/zsh-autosuggestions \
+  zsh-users/zsh-completions \
+  zsh-users/zsh-history-substring-search \
+  zsh-users/zsh-syntax-highlighting
+
+zinit wait lucid for \
+  svn \
+    OMZP::osx
+
+[[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+  curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
+fi
+source "$HOME/.iterm2_shell_integration.zsh"
+
+PROJECT_PATHS=(~/workspace)
+
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('mdstart' 'torrent' 'git' 'tldr' 'code' 'npx')
+export NVM_AUTO_USE=true
+
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
@@ -16,93 +131,74 @@ ZSH_AUTOSUGGEST_USE_ASYNC="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 ZSH_DISABLE_COMPFIX="true"
 
-plugins=(
-  colored-man-pages
-  colorize
-  command-not-found
-  cp
-  docker
-  docker-compose
-  encode64
-  extract
-  fast-syntax-highlighting
-  fzf
-  fzf-tab
-  git
-  git-auto-fetch
-  git-extra-commands
-  history-substring-search
-  last-working-dir
-  safe-paste
-  urltools
-  you-should-use
-  zsh-autopair
-  zsh-autosuggestions
-  zsh-completions
-  zsh-interactive-cd
-  zsh-syntax-highlighting
-)
-
-if which brew >/dev/null 2>&1; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
-autoload -Uz compinit
-if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
-  compinit
-else
-  compinit -C
-fi
-
-[[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
+HISTORY_SUBSTRING_SEARCH_FUZZY="true"
 
 HISTFILE=~/.zsh_history
 HISTORY_IGNORE="(ls|cd|pwd|exit|ll|history)"
 HISTSIZE=10000000
-SAVEHIST=10000000
-setopt ALWAYS_TO_END
-setopt AUTO_CD
-setopt AUTO_MENU
-setopt AUTO_PUSHD
-setopt COMPLETE_IN_WORD
-setopt CORRECT
-setopt EXTENDED_HISTORY
-setopt HIST_BEEP
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_VERIFY
-setopt INC_APPEND_HISTORY
-setopt MENU_COMPLETE
-setopt NO_LIST_AMBIGUOUS
-setopt PROMPT_SUBST
-setopt PUSHD_IGNORE_DUPS
-setopt PUSHD_MINUS
-setopt SHARE_HISTORY
+SAVEHIST=$HISTSIZE
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-unameOut="$(uname -s)"
-[[ ! "$unameOut" == "Linux" ]] || source "$HOME/.zshrc-server"
-[[ ! "$unameOut" == "Darwin" ]] || source "$HOME/.zshrc-mac"
+setopt always_to_end
+setopt auto_cd
+setopt auto_menu
+setopt auto_pushd
+setopt complete_in_word
+setopt correct
+setopt extended_history
+setopt hash_list_all
+setopt hist_beep
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_verify
+setopt inc_append_history
+setopt list_ambiguous
+setopt menu_complete
+setopt no_list_ambiguous
+setopt prompt_subst
+setopt pushd_ignore_dups
+setopt pushd_minus
+setopt share_history
 
 source "$HOME/.aliases"
 source "$HOME/.exports"
 source "$HOME/.functions"
 
+unameOut="$(uname -s)"
+if [[ "$unameOut" == "Linux" ]] then;
+  source "$HOME/.exports-linux"
+  source "$HOME/.aliases-linux"
+  source "$HOME/.functions-linux"
+elif [[ "$unameOut" == "Darwin" ]] then;
+  source "$HOME/.exports-mac"
+  source "$HOME/.aliases-mac"
+  source "$HOME/.functions-mac"
+fi
+
+if which brew >/dev/null 2>&1; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 enable-fzf-tab
+zstyle ":completion:*:git-checkout:*" sort false
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
+zstyle ':completion:*:descriptions' format '-- %d --'
+zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:*' default-color $'\033[36m'
-
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
-HISTORY_SUBSTRING_SEARCH_FUZZY="true"
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-(( ! ${+functions[p10k]} )) || p10k finalize
+zstyle ':fzf-tab:complete:_zlua:*' query-string input
+zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -111,8 +207,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ev" edit-command-line
 
-[[ ! -f ~/enhancd/init.sh ]] || source ~/enhancd/init.sh
+autoload colors && colors
 
-# source "$HOME"/fzf-tab-completion/zsh/fzf-zsh-completion.sh
-# bindkey '^I' fzf_completion
-# zstyle ':completion:*' fzf-search-display true
+# Keep at bottom
+(( ! ${+functions[p10k]} )) || p10k finalize
