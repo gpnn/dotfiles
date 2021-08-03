@@ -185,18 +185,33 @@ if which brew >/dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
+autoload colors && colors
 enable-fzf-tab
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select=2
+zstyle ':completion:*' rehash true
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
+zstyle ':completion:*:*:*:default' menu yes select search
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:descriptions' format '-- %d --'
+zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
+zstyle ':completion:*:kill:*'   force-list always
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion::complete:*' use-cache on
 zstyle ':completion:complete:*:options' sort false
-zstyle ':fzf-tab:*' default-color $'\033[36m'
+zstyle ':fzf-tab:*' default-color $'\033[34m'
+zstyle ':fzf-tab:*' fzf-flags '--color=hl:blue'
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
 
@@ -206,8 +221,6 @@ bindkey '^[[B' history-substring-search-down
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ev" edit-command-line
-
-autoload colors && colors
 
 # Keep at bottom
 (( ! ${+functions[p10k]} )) || p10k finalize
