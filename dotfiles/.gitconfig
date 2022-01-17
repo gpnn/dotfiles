@@ -11,7 +11,7 @@ autocrlf = input
 editor = vim
 eol = lf
 excludesfile = /Users/gordonpn/.gitignore
-hooksPath = ~/.githooks
+# hooksPath = ~/.githooks
 # pager = diff-so-fancy | less
 
 [pager]
