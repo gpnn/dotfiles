@@ -34,3 +34,5 @@ alias cpf='copyfile'
 alias torrent='webtorrent download $(pbpaste) --iina'
 # python
 alias avenv="source .venv/bin/activate"
+# themes
+alias ncdu="ncdu --color off"
