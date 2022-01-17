@@ -86,3 +86,7 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 # Get week number
 alias week='date +%V'
+# archives
+alias ltar="tar -ztvf"
+alias untar="tar -zxvf"
+alias atar="tar -cvzf"
