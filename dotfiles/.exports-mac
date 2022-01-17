@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HIGHLIGHT=$(which source-highlight)
+HIGHLIGHT=$(which src-hilite-lesspipe.sh)
 BREW=$(brew --prefix)
 
 export BROWSER="firefox developer edition"
