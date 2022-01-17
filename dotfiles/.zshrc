@@ -111,6 +111,10 @@ zinit wait lucid for \
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
+zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
+zinit light cantino/mcfly
+bindkey '^R' mcfly-history-widget
+
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
   curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 fi
@@ -221,6 +225,9 @@ bindkey '^[[B' history-substring-search-down
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ev" edit-command-line
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # Keep at bottom
 (( ! ${+functions[p10k]} )) || p10k finalize
