@@ -11,6 +11,11 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
         print -P "%F{33}▓▒░ %F{34}Installation successful.%F" || \
         print -P "%F{160}▓▒░ The clone has failed.%F"
 fi
+
+if [[ ! -f $HOME/.iterm2_shell_integration.zsh ]]; then
+  curl -L https://iterm2.com/shell_integration/zsh -o $HOME/.iterm2_shell_integration.zsh
+fi
+
 source ~/.zinit/bin/zinit.zsh
 
 unameOut="$(uname -s)"
@@ -110,18 +115,18 @@ zinit light-mode for \
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
 if [[ "$unameOut" == "Darwin" ]]; then
-  zinit wait lucid for \
-    svn \
-      OMZP::macos
+  # zinit wait lucid for OMZP::macos
+  # zinit wait lucid for svn OMZP::macos
   zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
   zinit light cantino/mcfly
   bindkey '^R' mcfly-history-widget
 fi
 
+source "$HOME/.iterm2_shell_integration.zsh"
+
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
   curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 fi
-source "$HOME/.iterm2_shell_integration.zsh"
 
 PROJECT_PATHS=(~/workspace)
 
@@ -135,7 +140,7 @@ COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#b07000,underline,bold"
 ZSH_DISABLE_COMPFIX="true"
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
