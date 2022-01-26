@@ -81,7 +81,7 @@ zinit wait lucid for \
   OMZP::yarn \
   OMZP::zsh-interactive-cd
 
-[[ ! "$unameOut" == "Linux" ]] || zinit wait lucid for OMZP::autojump
+[[ ! "$unameOut" == "Darwin" ]] || zinit wait lucid for OMZP::autojump
 
 zinit wait lucid for \
   as"completion" \
@@ -113,9 +113,11 @@ zinit wait lucid for \
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
-zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
-zinit light cantino/mcfly
-bindkey '^R' mcfly-history-widget
+if [[ "$unameOut" == "Darwin" ]]; then
+  zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
+  zinit light cantino/mcfly
+  bindkey '^R' mcfly-history-widget
+fi
 
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
   curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
