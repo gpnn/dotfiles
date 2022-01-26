@@ -62,6 +62,7 @@ zinit wait lucid for \
   OMZP::golang \
   OMZP::history \
   OMZP::jsontools \
+  OMZP::macos \
   OMZP::node \
   OMZP::npm \
   OMZP::nvm \
@@ -78,8 +79,7 @@ zinit wait lucid for \
   OMZP::virtualenv \
   OMZP::vscode \
   OMZP::yarn \
-  OMZP::zsh-interactive-cd \
-  OMZP::zsh_reload
+  OMZP::zsh-interactive-cd
 
 zinit wait lucid for \
   as"completion" \
@@ -104,10 +104,6 @@ zinit light-mode for \
   zsh-users/zsh-completions \
   zsh-users/zsh-history-substring-search \
   zsh-users/zsh-syntax-highlighting
-
-zinit wait lucid for \
-  svn \
-    OMZP::osx
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
