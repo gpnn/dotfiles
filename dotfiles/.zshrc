@@ -7,7 +7,7 @@ fi
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
     command mkdir -p $HOME/.zinit
-    command git clone https://github.com/zdharma/zinit $HOME/.zinit/bin && \
+    command git clone https://github.com/zdharma-continuum/zinit $HOME/.zinit/bin && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%F" || \
         print -P "%F{160}▓▒░ The clone has failed.%F"
 fi
@@ -98,8 +98,8 @@ zinit light-mode for \
   lukechilds/zsh-nvm \
   unixorn/git-extra-commands \
   wfxr/forgit \
-  zdharma/fast-syntax-highlighting \
-  zdharma/history-search-multi-word \
+  zdharma-continuum/fast-syntax-highlighting \
+  zdharma-continuum/history-search-multi-word \
   zsh-users/zsh-autosuggestions \
   zsh-users/zsh-completions \
   zsh-users/zsh-history-substring-search \
