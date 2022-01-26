@@ -107,13 +107,12 @@ zinit light-mode for \
   zsh-users/zsh-history-substring-search \
   zsh-users/zsh-syntax-highlighting
 
-zinit wait lucid for \
-  svn \
-    OMZP::macos
-
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
 if [[ "$unameOut" == "Darwin" ]]; then
+  zinit wait lucid for \
+    svn \
+      OMZP::macos
   zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
   zinit light cantino/mcfly
   bindkey '^R' mcfly-history-widget
