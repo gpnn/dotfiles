@@ -13,6 +13,8 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
 fi
 source ~/.zinit/bin/zinit.zsh
 
+unameOut="$(uname -s)"
+
 autoload -Uz compinit
 () {
   if [[ $# -gt 0 ]]; then
@@ -42,7 +44,6 @@ zinit wait lucid for \
 
 zinit wait lucid for \
   OMZP::alias-finder \
-  OMZP::autojump \
   OMZP::brew \
   OMZP::colored-man-pages \
   OMZP::colorize \
@@ -62,7 +63,6 @@ zinit wait lucid for \
   OMZP::golang \
   OMZP::history \
   OMZP::jsontools \
-  OMZP::macos \
   OMZP::node \
   OMZP::npm \
   OMZP::nvm \
@@ -80,6 +80,8 @@ zinit wait lucid for \
   OMZP::vscode \
   OMZP::yarn \
   OMZP::zsh-interactive-cd
+
+[[ ! "$unameOut" == "Linux" ]] || zinit wait lucid for OMZP::autojump
 
 zinit wait lucid for \
   as"completion" \
@@ -104,6 +106,10 @@ zinit light-mode for \
   zsh-users/zsh-completions \
   zsh-users/zsh-history-substring-search \
   zsh-users/zsh-syntax-highlighting
+
+zinit wait lucid for \
+  svn \
+    OMZP::macos
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
@@ -170,7 +176,6 @@ source "$HOME/.aliases"
 source "$HOME/.exports"
 source "$HOME/.functions"
 
-unameOut="$(uname -s)"
 if [[ "$unameOut" == "Linux" ]] then;
   source "$HOME/.exports-linux"
   source "$HOME/.aliases-linux"
