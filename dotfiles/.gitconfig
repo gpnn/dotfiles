@@ -67,6 +67,7 @@ default-branch = "!git remote show origin | grep 'HEAD branch' | cut -d' ' -f5"
 lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[34m%s: \\033[32m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 recent-branches = !git branch --sort=-committerdate | head
 wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:blue)%(authordate:relative)%09%(color:green)%(refname:short)' refs/heads
+stash-staged = '!git diff --staged --name-only | xargs git stash push "$@" --'
 
 [hub]
 protocol = https
