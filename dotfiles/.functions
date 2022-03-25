@@ -45,15 +45,7 @@ mkcd() {
 
 # git clone and cd into it
 gccd() {
-  REPO=$1
-  CLONEPATH=$2
-
-  if [ -z "$CLONEPATH" ]; then
-      CLONEPATH=$(basename "$1")/.git/
-  fi
-
-  git clone "$REPO" "$CLONEPATH"
-  cd "$CLONEPATH" || exit
+  git clone "$1" && cd "$(basename "$1")" || exit;
 }
 
 # look for a process to kill
