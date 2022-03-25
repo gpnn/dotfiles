@@ -190,6 +190,8 @@ if which brew >/dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
+[[ ! -s "/usr/local/etc/grc.zsh" ]] || source /usr/local/etc/grc.zsh
+
 autoload colors && colors
 enable-fzf-tab
 zstyle ":completion:*:git-checkout:*" sort false
