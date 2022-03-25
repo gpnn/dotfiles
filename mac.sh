@@ -21,8 +21,8 @@ done 2>/dev/null &
 # Disable system integrity protection temporarily
 # csrutil disable
 # Disable spotlight indexing
-sudo mdutil -a -i off
-sudo mdutil -i off -d -E /
+# sudo mdutil -a -i off
+# sudo mdutil -i off -d -E /
 # sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 # csrutil enable
 
@@ -267,7 +267,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 defaults write com.apple.screencapture location -string "${HOME}/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture type -string "jpg"
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
@@ -627,29 +627,29 @@ sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Vol
 # 	MENU_SPOTLIGHT_SUGGESTIONS (send search queries to Apple)
 # 	MENU_WEBSEARCH             (send search queries to Apple)
 # 	MENU_OTHER
-# defaults write com.apple.spotlight orderedItems -array \
-# 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-# 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-# 	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-# 	'{"enabled" = 1;"name" = "PDF";}' \
-# 	'{"enabled" = 1;"name" = "FONTS";}' \
-# 	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
-# 	'{"enabled" = 0;"name" = "MESSAGES";}' \
-# 	'{"enabled" = 0;"name" = "CONTACT";}' \
-# 	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
-# 	'{"enabled" = 0;"name" = "IMAGES";}' \
-# 	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-# 	'{"enabled" = 0;"name" = "MUSIC";}' \
-# 	'{"enabled" = 0;"name" = "MOVIES";}' \
-# 	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-# 	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-# 	'{"enabled" = 0;"name" = "SOURCE";}' \
-# 	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
-# 	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
-# 	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
-# 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
-# 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
-# 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+defaults write com.apple.spotlight orderedItems -array \
+  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+  '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+  '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+  '{"enabled" = 1;"name" = "PDF";}' \
+  '{"enabled" = 0;"name" = "FONTS";}' \
+  '{"enabled" = 0;"name" = "DOCUMENTS";}' \
+  '{"enabled" = 0;"name" = "MESSAGES";}' \
+  '{"enabled" = 0;"name" = "CONTACT";}' \
+  '{"enabled" = 0;"name" = "EVENT_TODO";}' \
+  '{"enabled" = 0;"name" = "IMAGES";}' \
+  '{"enabled" = 0;"name" = "BOOKMARKS";}' \
+  '{"enabled" = 0;"name" = "MUSIC";}' \
+  '{"enabled" = 0;"name" = "MOVIES";}' \
+  '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+  '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+  '{"enabled" = 0;"name" = "SOURCE";}' \
+  '{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+  '{"enabled" = 0;"name" = "MENU_OTHER";}' \
+  '{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+  '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+  '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
+  '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 # Load new settings before rebuilding the index
 killall mds >/dev/null 2>&1
 # Make sure indexing is enabled for the main volume
@@ -658,7 +658,7 @@ sudo mdutil -i on / >/dev/null
 sudo mdutil -E / >/dev/null
 
 # Disable spotlight
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+# sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -924,7 +924,7 @@ defaults write org.m0k.transmission WarningLegal -bool false
 # IP block list.
 # Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
 defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "https://github.com/sahsu/transmission-blocklist/releases/latest/download/blocklist.gz"
+defaults write org.m0k.transmission BlocklistURL -string "https://github.com/Naunter/BT_BlockLists/raw/master/bt_blocklists.gz"
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 
 # Randomize port on launch
