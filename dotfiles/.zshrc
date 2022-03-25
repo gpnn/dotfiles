@@ -234,3 +234,5 @@ bindkey "\ev" edit-command-line
 
 # Keep at bottom
 (( ! ${+functions[p10k]} )) || p10k finalize
+
+echo '→'
