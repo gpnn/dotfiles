@@ -1,9 +1,6 @@
-@cloudflare/wrangler
-findead
 highlight.js
-npm-check-updates
 npm
-pnpm
 tldr
 vtop
 webtorrent-cli
+yarn
