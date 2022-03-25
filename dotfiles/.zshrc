@@ -47,6 +47,7 @@ zinit wait lucid for \
   OMZL::spectrum.zsh \
   OMZL::termsupport.zsh
 
+  # OMZP::dotenv \
 zinit wait lucid for \
   OMZP::alias-finder \
   OMZP::brew \
@@ -54,11 +55,10 @@ zinit wait lucid for \
   OMZP::colorize \
   OMZP::command-not-found \
   OMZP::common-aliases \
-  OMZP::copydir \
+  OMZP::copypath \
   OMZP::copyfile \
   OMZP::cp \
   OMZP::docker-compose \
-  OMZP::dotenv \
   OMZP::extract \
   OMZP::fzf \
   OMZP::git \
@@ -70,7 +70,6 @@ zinit wait lucid for \
   OMZP::jsontools \
   OMZP::node \
   OMZP::npm \
-  OMZP::nvm \
   OMZP::pip \
   OMZP::pipenv \
   OMZP::pj \
@@ -100,9 +99,9 @@ zinit light-mode for \
   MichaelAquilina/zsh-you-should-use \
   b4b4r07/enhancd \
   chitoku-k/fzf-zsh-completions \
+  dominik-schwabe/zsh-fnm \
   hlissner/zsh-autopair \
   lukechilds/zsh-better-npm-completion \
-  lukechilds/zsh-nvm \
   unixorn/git-extra-commands \
   wfxr/forgit \
   zdharma-continuum/fast-syntax-highlighting \
@@ -129,11 +128,6 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
 fi
 
 PROJECT_PATHS=(~/workspace)
-
-export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('mdstart' 'torrent' 'git' 'tldr' 'code' 'npx')
-export NVM_AUTO_USE=true
 
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
