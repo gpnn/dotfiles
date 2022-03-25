@@ -10855,6 +10855,10 @@
 	<true/>
 	<key>NeverWarnAboutOverrides_selection</key>
 	<integer>0</integer>
+	<key>NeverWarnAboutShortLivedSessions_1713E2A4-3F6C-4A3D-9401-C784EF08AD27</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_1713E2A4-3F6C-4A3D-9401-C784EF08AD27_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -11793,7 +11797,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.27225775405707048</real>
+	<real>0.59999999999999998</real>
 	<key>StatusBarPosition</key>
 	<integer>0</integer>
 	<key>StretchTabsToFillBar</key>
