@@ -3,7 +3,7 @@
 HIGHLIGHT=$(which src-hilite-lesspipe.sh)
 BREW=$(brew --prefix)
 
-export BROWSER="firefox developer edition"
+# export BROWSER="firefox developer edition"
 export BAT_PAGER="less -RF"
 export BAT_STYLE="plain"
 export BAT_THEME="GitHub"
