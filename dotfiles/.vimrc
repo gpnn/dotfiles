@@ -13,17 +13,21 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'dbakker/vim-paragraph-motion'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'machakann/vim-highlightedyank'
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'sheerun/vim-polyglot'
+Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/argtextobj.vim'
 Plug 'yggdroot/indentline'
-Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
-
 
 if has('termguicolors')
   set termguicolors
@@ -53,6 +57,8 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_enabled=1
 
 let g:vim_json_conceal=0
+
+let g:highlightedyank_highlight_duration = "1000"
 
 set autoindent
 set backspace=indent,eol,start
