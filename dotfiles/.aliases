@@ -74,6 +74,7 @@ alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias nlg='npm list --global --depth=0'
 alias npkill='npx npkill'
 alias depcheck='npx depcheck'
+alias ncu='npx npm-check-updates'
 # prompt if deleting more than 3 files at a time #
 alias rm='rm -iv'
 # confirmation #
