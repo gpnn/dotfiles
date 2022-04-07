@@ -32,6 +32,7 @@ alias o="open_command"
 alias cpd='copydir'
 alias cpf='copyfile'
 alias torrent='webtorrent download $(pbpaste) --iina'
+alias wakedev='wakeonlan 94:c6:91:12:c8:e2'
 # python
 alias avenv="source .venv/bin/activate"
 # themes
