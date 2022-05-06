@@ -20,23 +20,17 @@ source ~/.zinit/bin/zinit.zsh
 
 unameOut="$(uname -s)"
 
-autoload -Uz compinit
-() {
-  if [[ $# -gt 0 ]]; then
-    compinit;
-  else
-    compinit -C;
-  fi
-} ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
-
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# cannot load asynchonously because they will overwrite ^I binding for fzf-tab
+zinit snippet OMZL::completion.zsh
+zinit snippet OMZP::fzf
+
 zinit wait lucid for \
   OMZL::clipboard.zsh \
   OMZL::compfix.zsh \
-  OMZL::completion.zsh \
   OMZL::correction.zsh \
   OMZL::directories.zsh \
   OMZL::functions.zsh \
@@ -48,6 +42,8 @@ zinit wait lucid for \
   OMZL::termsupport.zsh
 
   # OMZP::dotenv \
+  # OMZP::zsh-interactive-cd
+
 zinit wait lucid for \
   OMZP::alias-finder \
   OMZP::brew \
@@ -60,7 +56,6 @@ zinit wait lucid for \
   OMZP::cp \
   OMZP::docker-compose \
   OMZP::extract \
-  OMZP::fzf \
   OMZP::git \
   OMZP::git-auto-fetch \
   OMZP::git-extras \
@@ -68,6 +63,7 @@ zinit wait lucid for \
   OMZP::golang \
   OMZP::history \
   OMZP::jsontools \
+  OMZP::macos \
   OMZP::node \
   OMZP::npm \
   OMZP::pip \
@@ -82,8 +78,7 @@ zinit wait lucid for \
   OMZP::urltools \
   OMZP::virtualenv \
   OMZP::vscode \
-  OMZP::yarn \
-  OMZP::zsh-interactive-cd
+  OMZP::yarn
 
 [[ ! "$unameOut" == "Darwin" ]] || zinit wait lucid for OMZP::autojump
 
@@ -94,24 +89,33 @@ zinit wait lucid for \
     OMZP::docker/_docker
 
 zinit light-mode for \
-  Aloxaf/fzf-tab \
   MichaelAquilina/zsh-autoswitch-virtualenv \
   MichaelAquilina/zsh-you-should-use \
   b4b4r07/enhancd \
-  chitoku-k/fzf-zsh-completions \
   dominik-schwabe/zsh-fnm \
   hlissner/zsh-autopair \
   lukechilds/zsh-better-npm-completion \
   unixorn/git-extra-commands \
   wfxr/forgit \
-  zdharma-continuum/fast-syntax-highlighting \
   zdharma-continuum/history-search-multi-word \
-  zsh-users/zsh-autosuggestions \
-  zsh-users/zsh-completions \
   zsh-users/zsh-history-substring-search \
+  chitoku-k/fzf-zsh-completions \
+  zsh-users/zsh-completions \
+  Aloxaf/fzf-tab \
+  zsh-users/zsh-autosuggestions \
+  zdharma-continuum/fast-syntax-highlighting \
   zsh-users/zsh-syntax-highlighting
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+
+autoload -Uz compinit
+() {
+  if [[ $# -gt 0 ]]; then
+    compinit;
+  else
+    compinit -C;
+  fi
+} ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
 
 if [[ "$unameOut" == "Darwin" ]]; then
   # zinit wait lucid for OMZP::macos
@@ -122,10 +126,6 @@ if [[ "$unameOut" == "Darwin" ]]; then
 fi
 
 source "$HOME/.iterm2_shell_integration.zsh"
-
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-  curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
-fi
 
 PROJECT_PATHS=(~/workspace)
 
@@ -193,7 +193,6 @@ fi
 [[ ! -s "/usr/local/etc/grc.zsh" ]] || source /usr/local/etc/grc.zsh
 
 autoload colors && colors
-enable-fzf-tab
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' group-name ''
@@ -234,5 +233,3 @@ bindkey "\ev" edit-command-line
 
 # Keep at bottom
 (( ! ${+functions[p10k]} )) || p10k finalize
-
-echo '→'
