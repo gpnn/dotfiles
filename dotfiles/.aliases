@@ -75,12 +75,6 @@ alias nlg='npm list --global --depth=0'
 alias npkill='npx npkill'
 alias depcheck='npx depcheck'
 alias ncu='npx npm-check-updates'
-# prompt if deleting more than 3 files at a time #
-alias rm='rm -iv'
-# confirmation #
-alias mv='mv -iv'
-alias cp='cp -iv'
-alias ln='ln -iv'
 # Parenting changing perms on / #
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
