@@ -99,8 +99,8 @@ autosquash = true
 enabled = true
 autoUpdate = true
 
-[commit]
-template = /Users/gordonpn/.stCommitMsg
+# [commit]
+# template = /Users/gordonpn/.stCommitMsg
 
 [init]
 defaultBranch = main
