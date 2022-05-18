@@ -105,7 +105,7 @@ zinit wait lucid silent for \
 
   # MichaelAquilina/zsh-autoswitch-virtualenv \
 
-zinit light-mode for \
+zinit light-mode silent for \
   MichaelAquilina/zsh-you-should-use \
   b4b4r07/enhancd \
   thuandt/zsh-pipx \
