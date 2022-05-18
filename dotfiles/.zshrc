@@ -44,54 +44,71 @@ zinit wait lucid for \
   # OMZP::dotenv \
   # OMZP::zsh-interactive-cd
 
-zinit wait lucid for \
+zinit wait lucid silent for \
   OMZP::alias-finder \
   OMZP::brew \
   OMZP::colored-man-pages \
   OMZP::colorize \
   OMZP::command-not-found \
   OMZP::common-aliases \
-  OMZP::copypath \
   OMZP::copyfile \
+  OMZP::copypath \
   OMZP::cp \
+  OMZP::docker \
   OMZP::docker-compose \
   OMZP::extract \
+  OMZP::fnm \
+  OMZP::gh \
   OMZP::git \
   OMZP::git-auto-fetch \
   OMZP::git-extras \
   OMZP::gitignore \
+  OMZP::gnu-utils \
   OMZP::golang \
+  OMZP::gradle \
+  OMZP::grc \
   OMZP::history \
   OMZP::jsontools \
-  OMZP::macos \
+  OMZP::mvn \
   OMZP::node \
   OMZP::npm \
   OMZP::pip \
   OMZP::pipenv \
   OMZP::pj \
+  OMZP::poetry \
   OMZP::pyenv \
   OMZP::python \
   OMZP::rsync \
   OMZP::ruby \
   OMZP::rvm \
-  OMZP::ubuntu \
+  OMZP::safe-paste \
+  OMZP::terraform \
   OMZP::urltools \
   OMZP::virtualenv \
   OMZP::vscode \
-  OMZP::yarn
+  OMZP::yarn \
+  ntnyq/omz-plugin-pnpm
 
-[[ ! "$unameOut" == "Darwin" ]] || zinit wait lucid for OMZP::autojump
+[[ ! "$unameOut" == "Darwin" ]] || zinit wait lucid for OMZP::autojump OMZP::macos
+[[ ! "$unameOut" == "Linux" ]] || zinit wait lucid for OMZP::systemd OMZP::ubuntu
+[[ ! "$unameOut" == "Linux" ]] || zinit wait lucid for as'completion' OMZP::ufw/_ufw
 
-zinit wait lucid for \
-  as"completion" \
+zinit wait lucid silent for \
+  as'completion' \
     OMZP::ag/_ag \
     OMZP::docker-compose/_docker-compose \
-    OMZP::docker/_docker
+    OMZP::docker/_docker \
+    OMZP::fd/_fd \
+    OMZP::gradle/_gradle \
+    OMZP::httpie/_httpie \
+    OMZP::terraform/_terraform
+
+  # MichaelAquilina/zsh-autoswitch-virtualenv \
 
 zinit light-mode for \
-  MichaelAquilina/zsh-autoswitch-virtualenv \
   MichaelAquilina/zsh-you-should-use \
   b4b4r07/enhancd \
+  thuandt/zsh-pipx \
   dominik-schwabe/zsh-fnm \
   hlissner/zsh-autopair \
   lukechilds/zsh-better-npm-completion \
@@ -107,6 +124,11 @@ zinit light-mode for \
   zsh-users/zsh-syntax-highlighting
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+
+eval "$(fnm env --use-on-cd)"
+
+# For poetry completions
+fpath+=~/.zfunc
 
 autoload -Uz compinit
 () {
@@ -148,8 +170,10 @@ setopt always_to_end
 setopt auto_cd
 setopt auto_menu
 setopt auto_pushd
+setopt cd_silent
 setopt complete_in_word
 setopt correct
+setopt extended_glob
 setopt extended_history
 setopt hash_list_all
 setopt hist_beep
@@ -162,12 +186,20 @@ setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt hist_verify
 setopt inc_append_history
+setopt interactive_comments
 setopt list_ambiguous
+setopt long_list_jobs
 setopt menu_complete
+setopt no_bg_nice
+setopt no_check_jobs
+setopt no_clobber
+setopt no_hup
 setopt no_list_ambiguous
 setopt prompt_subst
 setopt pushd_ignore_dups
 setopt pushd_minus
+setopt pushd_silent
+setopt pushd_to_home
 setopt share_history
 
 source "$HOME/.aliases"
