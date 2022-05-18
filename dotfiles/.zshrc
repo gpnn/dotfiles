@@ -118,8 +118,6 @@ autoload -Uz compinit
 } ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
 
 if [[ "$unameOut" == "Darwin" ]]; then
-  # zinit wait lucid for OMZP::macos
-  # zinit wait lucid for svn OMZP::macos
   zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
   zinit light cantino/mcfly
   bindkey '^R' mcfly-history-widget
