@@ -22,6 +22,7 @@ export MCFLY_KEY_SCHEME=vim
 export MCFLY_FUZZY=2
 export MCFLY_HISTORY_LIMIT=10000
 export MCFLY_RESULTS=20
+export ZSH_ALIAS_FINDER_AUTOMATIC=true
 
 export FZF_DEFAULT_OPTS="
   --layout=reverse
