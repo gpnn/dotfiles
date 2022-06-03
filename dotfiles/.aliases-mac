@@ -3,6 +3,11 @@
 # modern defaults
 alias cat="bat --paging=never"
 alias skl="sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'"
+alias gtop="pnpm dlx gtop"
+alias tldr="pnpm dlx tldr"
+alias btm="btm --color=default-light"
+alias glances="glances --theme-white"
+alias yless="jless --yaml"
 # Gatekeeper (for installing 3rd party apps)
 alias gatekeeperOff="sudo spctl --master-disable"
 alias gatekeeperOn="sudo spctl --master-enable"
