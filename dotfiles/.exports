@@ -28,7 +28,6 @@ export FZF_DEFAULT_OPTS="
   --layout=reverse
   --height 40%
   --prompt='λ -> '
-  --pointer='|>'
   --marker='✓'
   --ansi
 "
