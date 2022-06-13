@@ -28,7 +28,6 @@ export FZF_DEFAULT_OPTS="
   --layout=reverse
   --height 40%
   --prompt='λ -> '
-  --marker='✓'
   --ansi
 "
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#808080,bg:#ffffff,hl:#0069d1 --color=fg+:#000000,bg+:#e3e3e3,hl+:#0069d1 --color=info:#afaf87,prompt:#d7005f,pointer:#19d400 --color=marker:#00d435,spinner:#3451c7,header:#009494'

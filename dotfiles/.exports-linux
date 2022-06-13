@@ -10,3 +10,4 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
 export TZ=America/Toronto
 export DOTFILES_ROOT="/home/gordonpn/workspace/dotfiles"
+export FZF_BASE="/usr/bin/fzf"
