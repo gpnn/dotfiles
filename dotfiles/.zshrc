@@ -43,6 +43,7 @@ zinit wait lucid for \
 
   # OMZP::dotenv \
   # OMZP::zsh-interactive-cd
+  # OMZP::grc \
 
 zinit wait lucid silent for \
   OMZP::alias-finder \
@@ -66,7 +67,6 @@ zinit wait lucid silent for \
   OMZP::gnu-utils \
   OMZP::golang \
   OMZP::gradle \
-  OMZP::grc \
   OMZP::history \
   OMZP::jsontools \
   OMZP::mvn \
@@ -103,7 +103,7 @@ zinit wait lucid silent for \
     OMZP::httpie/_httpie \
     OMZP::terraform/_terraform
 
-  # MichaelAquilina/zsh-autoswitch-virtualenv \
+  #MichaelAquilina/zsh-autoswitch-virtualenv \
 
 zinit light-mode silent for \
   MichaelAquilina/zsh-you-should-use \
@@ -220,7 +220,7 @@ if which brew >/dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-[[ ! -s "/usr/local/etc/grc.zsh" ]] || source /usr/local/etc/grc.zsh
+# [[ ! -s "/usr/local/etc/grc.zsh" ]] || source /usr/local/etc/grc.zsh
 
 autoload colors && colors
 zstyle ":completion:*:git-checkout:*" sort false
