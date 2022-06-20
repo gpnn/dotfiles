@@ -113,6 +113,7 @@ zinit light-mode silent for \
   hlissner/zsh-autopair \
   lukechilds/zsh-better-npm-completion \
   unixorn/git-extra-commands \
+  macunha1/zsh-terraform \
   wfxr/forgit \
   zdharma-continuum/history-search-multi-word \
   zsh-users/zsh-history-substring-search \
