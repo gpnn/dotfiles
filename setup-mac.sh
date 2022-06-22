@@ -35,6 +35,11 @@ download_chrome_extensions() {
 	git clone https://github.com/Ibit-to/google-unlocked.git "$HOME/chrome-extensions/google-unlocked"
 }
 
+download_completions() {
+	git clone https://github.com/sawadashota/go-task-completions.git "$HOME/completions/go-task-completions"
+	git clone https://github.com/Berger91/taskfile-zsh-autocompletion.git "$HOME/completions/taskfile-zsh-autocompletion"
+}
+
 create_symlinks() {
 	DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 	for file in "$DIR"/dotfiles/.*; do
@@ -58,6 +63,7 @@ symlink_iterm_settings() {
 }
 
 download_chrome_extensions
+download_completions
 create_symlinks
 symlink_iterm_settings
 
