@@ -124,6 +124,13 @@ zinit light-mode silent for \
   zdharma-continuum/fast-syntax-highlighting \
   zsh-users/zsh-syntax-highlighting
 
+completions=(
+  go-task-completions
+  taskfile-zsh-autocompletion/src
+)
+
+for s in ${completions[@]}; do zinit creinstall -Q %HOME/completions/$s; done
+
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
 eval "$(fnm env --use-on-cd)"
