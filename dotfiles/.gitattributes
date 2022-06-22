@@ -6,6 +6,7 @@ composer.lock binary
 package-lock.json binary
 yarn-lock.json binary
 yarn.lock binary
+poetry.lock binary
 
 *.bib diff=bibtex
 *.c diff=cpp
