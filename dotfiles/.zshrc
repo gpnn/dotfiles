@@ -124,12 +124,14 @@ zinit light-mode silent for \
   zdharma-continuum/fast-syntax-highlighting \
   zsh-users/zsh-syntax-highlighting
 
-completions=(
-  go-task-completions
-  taskfile-zsh-autocompletion/src
-)
+if [[ "$unameOut" == "Darwin" ]]; then
+  completions=(
+    go-task-completions
+    taskfile-zsh-autocompletion/src
+  )
 
-for s in ${completions[@]}; do zinit creinstall -Q %HOME/completions/$s; done
+  for s in ${completions[@]}; do zinit creinstall -Q %HOME/completions/$s; done
+fi
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 
