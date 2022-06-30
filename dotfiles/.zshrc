@@ -257,7 +257,7 @@ zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:*' default-color $'\033[34m'
-zstyle ':fzf-tab:*' fzf-flags '--color=hl:blue'
+# zstyle ':fzf-tab:*' fzf-flags '--color=hl:blue'
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
 
