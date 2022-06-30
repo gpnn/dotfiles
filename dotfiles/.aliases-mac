@@ -17,12 +17,6 @@ alias sortlaunchpad="defaults write com.apple.dock ResetLaunchPad -bool true; ki
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 # shell
 alias change='code $DOTFILES_ROOT'
-# ls
-alias l="exa -d */ -1"
-alias la="exa -1 --icons --all --group-directories-first --color=always --classify --reverse --sort=modified"
-alias ll="exa --time-style=long-iso --icons --all --group-directories-first --color=always --classify --long --git --header"
-alias ls="exa -1 --icons --all --group-directories-first --color=always --classify"
-alias tree='exa --tree --all --ignore-glob="node_modules|venv|.mypy_cache|.idea|.git|__pycache__|.vscode|.next|virtualenv|vendor"'
 # Brew
 alias brews="brew list --formula -1"
 alias brewsc="brew list --cask -1"
