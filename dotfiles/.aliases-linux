@@ -3,7 +3,6 @@
 # shell
 alias change='vim $HOME/.zshrc'
 # system
-alias ls="ls -A -1 --group-directories-first --color=always"
 alias sysup='sudo apt-get update'
 alias listd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL; df -hl'
 # network
