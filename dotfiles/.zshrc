@@ -87,6 +87,7 @@ zinit wait lucid silent for \
   OMZP::virtualenv \
   OMZP::vscode \
   OMZP::yarn \
+  OMZP::zoxide \
   ntnyq/omz-plugin-pnpm
 
 [[ ! "$unameOut" == "Darwin" ]] || zinit wait lucid for OMZP::autojump OMZP::macos
