@@ -107,3 +107,5 @@ defaultBranch = main
 
 [mergetool]
 prompt = false
+[push]
+	autoSetupRemote = true
