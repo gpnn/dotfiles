@@ -151,16 +151,16 @@ csha256() {
 
 # Quickly update zsh plugins, chrome extensions, brew
 sysup() {
-  "$DOTFILES_ROOT"/update-repos.sh
-  brew update
-  brew upgrade
-  brew doctor
-  brew cleanup
   echo
   xcode-select --install
   echo
   sudo softwareupdate --list
   echo
+  "$DOTFILES_ROOT"/update-repos.sh
+  brew update
+  brew upgrade
+  brew doctor
+  brew cleanup
 }
 
 # Allows switching JDKs quickly
