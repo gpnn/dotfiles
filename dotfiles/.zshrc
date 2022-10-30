@@ -27,12 +27,13 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # cannot load asynchonously because they will overwrite ^I binding for fzf-tab
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZP::fzf
+zinit snippet OMZP::common-aliases
+zinit snippet OMZL::directories.zsh
 
 zinit wait lucid for \
   OMZL::clipboard.zsh \
   OMZL::compfix.zsh \
   OMZL::correction.zsh \
-  OMZL::directories.zsh \
   OMZL::functions.zsh \
   OMZL::git.zsh \
   OMZL::grep.zsh \
@@ -51,7 +52,6 @@ zinit wait lucid silent for \
   OMZP::colored-man-pages \
   OMZP::colorize \
   OMZP::command-not-found \
-  OMZP::common-aliases \
   OMZP::copyfile \
   OMZP::copypath \
   OMZP::cp \
