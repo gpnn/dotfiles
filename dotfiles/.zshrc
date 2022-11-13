@@ -153,8 +153,11 @@ autoload -Uz compinit
 if [[ "$unameOut" == "Darwin" ]]; then
   zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
   zinit light cantino/mcfly
-  bindkey '^R' mcfly-history-widget
+else
+  source <(mcfly init zsh)
+  eval "$(mcfly init zsh)"
 fi
+bindkey '^R' mcfly-history-widget
 
 source "$HOME/.iterm2_shell_integration.zsh"
 
