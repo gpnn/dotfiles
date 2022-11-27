@@ -37,3 +37,4 @@ alias restartwifi='sudo ifconfig en0 down && sudo ifconfig en0 up'
 alias avenv="source .venv/bin/activate"
 # themes
 alias ncdu="ncdu --color off"
+alias mmdc='npx -p @mermaid-js/mermaid-cli mmdc'

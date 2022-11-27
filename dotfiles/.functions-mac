@@ -161,6 +161,10 @@ sysup() {
   brew upgrade
   brew doctor
   brew cleanup
+  # zinit self-update
+  # zinit update --all
+  # zinit compile --all
+  # zinit compinit
 }
 
 # Allows switching JDKs quickly
