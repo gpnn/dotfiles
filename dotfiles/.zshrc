@@ -34,10 +34,10 @@ zinit wait lucid for \
   OMZL::history.zsh \
   OMZL::key-bindings.zsh \
   OMZL::spectrum.zsh \
-  OMZL::termsupport.zsh
+  OMZL::termsupport.zsh \
+  OMZP::zsh-interactive-cd
 
   # OMZP::dotenv \
-  # OMZP::zsh-interactive-cd
   # OMZP::grc \
 
 zinit wait lucid silent for \
@@ -98,7 +98,7 @@ zinit wait lucid silent for \
     OMZP::httpie/_httpie \
     OMZP::terraform/_terraform
 
-  #MichaelAquilina/zsh-autoswitch-virtualenv \
+  # MichaelAquilina/zsh-autoswitch-virtualenv \
 
 zinit light-mode silent for \
   MichaelAquilina/zsh-you-should-use \
@@ -151,7 +151,6 @@ else
   source <(mcfly init zsh)
   eval "$(mcfly init zsh)"
 fi
-bindkey '^R' mcfly-history-widget
 
 source "$HOME/.iterm2_shell_integration.zsh"
 
@@ -228,8 +227,6 @@ if which brew >/dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-# [[ ! -s "/usr/local/etc/grc.zsh" ]] || source /usr/local/etc/grc.zsh
-
 autoload colors && colors
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
@@ -246,7 +243,7 @@ zstyle ':completion:*:*:*:default' menu yes select search
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-zstyle ':completion:*:descriptions' format '-- %d --'
+zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
 zstyle ':completion:*:kill:*'   force-list always
 zstyle ':completion:*:matches' group 'yes'
@@ -262,6 +259,7 @@ zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps -
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^R' mcfly-history-widget
 
 autoload -U edit-command-line
 zle -N edit-command-line
