@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
     command mkdir -p $HOME/.zinit
@@ -20,9 +16,7 @@ source ~/.zinit/bin/zinit.zsh
 
 unameOut="$(uname -s)"
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+zinit light spaceship-prompt/spaceship-prompt
 
 # cannot load asynchonously because they will overwrite ^I binding for fzf-tab
 zinit snippet OMZL::completion.zsh
@@ -260,9 +254,9 @@ zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion:complete:*:options' sort false
-#zstyle ':fzf-tab:*' default-color $'\033[34m'
 zstyle ':fzf-tab:*' default-color $'\033[30m'
 zstyle ':fzf-tab:*' fzf-flags --color=light
+zstyle ':fzf-tab:*' switch-group ',' '.'
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
 
@@ -273,8 +267,4 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ev" edit-command-line
 # tabtab source for packages
-# uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-# Keep at bottom
-(( ! ${+functions[p10k]} )) || p10k finalize
