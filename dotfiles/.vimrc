@@ -13,6 +13,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'AndrewRadev/sideways.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dbakker/vim-paragraph-motion'
 Plug 'easymotion/vim-easymotion'
@@ -22,6 +23,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -101,6 +103,8 @@ nnoremap <c-j> :m .+1<CR>==
 nnoremap <c-k> :m .-2<CR>==
 xnoremap <c-j> 5j
 xnoremap <c-k> 5k
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
 " inoremap <c-k> <up>
 " inoremap <c-j> <down>
 inoremap <c-h> <left>
