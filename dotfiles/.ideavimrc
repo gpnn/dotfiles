@@ -2,3 +2,5 @@ source ~/.vimrc
 
 set showmode
 set ideajoin
+set sneak
+set quickscope
