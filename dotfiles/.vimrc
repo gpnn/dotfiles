@@ -98,6 +98,28 @@ set wildmenu
 
 set rtp+=/usr/local/opt/fzf
 
+" Make vim-sneak mappings more consistent in visual mode by making s go to next match and
+" go to previous match, while keeping vim-surround functionality through z
+" (mnemonics: vim-zurround) Explained in this GitHub issue:
+" https://github.com/justinmk/vim-sneak/issues/268
+" So now the behaviour is:
+" - Normal: s and S to move with sneak
+" - Visual: s and S to move with sneak, z to surround (zurround)
+" - cs and ds: change/delete matching characters (), [], {}... with
+"   vim-surround
+
+" let g:surround_no_mappings= 1
+" xmap <S-s> <Plug>Sneak_S
+" xmap z <Plug>VSurround
+" nmap yzz <Plug>Yssurround
+" nmap yz  <Plug>Ysurround
+" nmap dz  <Plug>Dsurround
+" nmap cz  <Plug>Csurround
+" omap s <Plug>Sneak_s
+" S mapped with v to make it inclusive, similarly to other backward motions in
+" my config (0 mapped to v0, ^ mapped to v^, etc)
+" omap S v<Plug>Sneak_S
+
 noremap <leader>y "*y
 noremap <Leader>p "*p
 " nnoremap <c-j> 5j
