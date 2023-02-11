@@ -16,7 +16,7 @@ source ~/.zinit/bin/zinit.zsh
 
 unameOut="$(uname -s)"
 
-zinit light spaceship-prompt/spaceship-prompt
+# zinit light spaceship-prompt/spaceship-prompt
 
 # cannot load asynchonously because they will overwrite ^I binding for fzf-tab
 zinit snippet OMZL::completion.zsh
@@ -25,7 +25,7 @@ zinit snippet OMZP::common-aliases
 zinit snippet OMZL::directories.zsh
 # zinit light marlonrichert/zsh-autocomplete
 
-zinit wait lucid for \
+zinit wait lucid silent for \
   OMZL::clipboard.zsh \
   OMZL::compfix.zsh \
   OMZL::correction.zsh \
@@ -130,7 +130,9 @@ if [[ "$unameOut" == "Darwin" ]]; then
   for s in ${completions[@]}; do zinit creinstall -Q %HOME/completions/$s; done
 fi
 
-[[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+# [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+# zinit wait"1" lucid from"gh-r" as"null" for sbin"fzf" junegunn/fzf-bin
+zinit pack for fzf
 
 eval "$(fnm env --use-on-cd)"
 
@@ -149,6 +151,7 @@ autoload -Uz compinit
 if [[ "$unameOut" == "Darwin" ]]; then
   zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
   zinit light cantino/mcfly
+  # zinit wait lucid silent for cantino/mcfly
 else
   source <(mcfly init zsh)
   eval "$(mcfly init zsh)"
@@ -275,3 +278,5 @@ zle -N edit-command-line
 bindkey "\ev" edit-command-line
 # tabtab source for packages
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+eval "$(starship init zsh)"
