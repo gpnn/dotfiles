@@ -23,6 +23,7 @@ zinit snippet OMZL::completion.zsh
 zinit snippet OMZP::fzf
 zinit snippet OMZP::common-aliases
 zinit snippet OMZL::directories.zsh
+# zinit light marlonrichert/zsh-autocomplete
 
 zinit wait lucid for \
   OMZL::clipboard.zsh \
@@ -118,6 +119,7 @@ zinit light-mode silent for \
   zsh-users/zsh-autosuggestions \
   zdharma-continuum/fast-syntax-highlighting \
   zsh-users/zsh-syntax-highlighting
+  # marlonrichert/zsh-autocomplete
 
 if [[ "$unameOut" == "Darwin" ]]; then
   completions=(
@@ -256,6 +258,13 @@ zstyle ':fzf-tab:*' fzf-flags --color=light
 zstyle ':fzf-tab:*' switch-group ',' '.'
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
+zstyle ':autocomplete:*' fzf-completion yes
+zstyle ':autocomplete:*' insert-unambiguous yes
+zstyle ':autocomplete:*' min-delay 0.2
+zstyle ':autocomplete:*' min-input 0
+zstyle ':autocomplete:*' widget-style menu-select
+zstyle ':autocomplete:recent-dirs' backend zoxide
+bindkey -M menuselect '\r' accept-line
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
