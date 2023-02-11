@@ -1344,7 +1344,7 @@
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
-			<true/>
+			<false/>
 			<key>Mouse Reporting allow mouse wheel</key>
 			<false/>
 			<key>Name</key>
