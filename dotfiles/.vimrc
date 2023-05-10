@@ -65,6 +65,9 @@ let g:vim_json_conceal=0
 
 let g:highlightedyank_highlight_duration = "1000"
 
+let g:qs_primary_color = '#494949'
+let g:qs_secondary_color = '#707070'
+
 set autoindent
 set backspace=indent,eol,start
 set display=truncate
