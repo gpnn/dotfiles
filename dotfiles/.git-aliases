@@ -107,6 +107,7 @@ alias glols='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %
 alias glp=_git_log_prettily
 alias glum='git pull upstream $(git_main_branch)'
 alias gm='git merge --no-edit'
+alias gms='gm --squash -X theirs'
 alias gma='git merge --abort'
 alias gmom='git merge origin/$(git_main_branch)'
 alias gmtl='git mergetool --no-prompt'
