@@ -2,5 +2,12 @@ source ~/.vimrc
 
 set showmode
 set ideajoin
-" set sneak
+set sneak
 set quickscope
+set surround
+set commentary
+set argtextobj
+set exchange
+set highlightedyank
+set vim-paragraph-motion
+set textobj-indent
