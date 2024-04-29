@@ -38,7 +38,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=light
+set background=dark
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default': {
@@ -65,8 +65,8 @@ let g:vim_json_conceal=0
 
 let g:highlightedyank_highlight_duration = "1000"
 
-let g:qs_primary_color = '#494949'
-let g:qs_secondary_color = '#707070'
+" let g:qs_primary_color = '#494949'
+" let g:qs_secondary_color = '#707070'
 
 set autoindent
 set backspace=indent,eol,start
