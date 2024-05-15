@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #!/bin/bash
 
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -279,4 +281,9 @@ bindkey "\ev" edit-command-line
 # tabtab source for packages
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
+FPATH=$HOME/.local/share/zsh/generated_man_completions:$FPATH
+
 eval "$(starship init zsh)"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

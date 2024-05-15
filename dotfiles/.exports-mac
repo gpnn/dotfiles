@@ -40,3 +40,4 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-19.jdk/Contents/Home
 export LS_COLORS="$(vivid generate ayu)"
 export PNPM_HOME="/Users/gordonpn/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+export PATH="/Users/gordonpn/go/bin:$PATH"
