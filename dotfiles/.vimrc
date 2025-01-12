@@ -13,25 +13,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'AndrewRadev/sideways.vim'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'chrisbra/matchit'
 Plug 'dbakker/vim-paragraph-motion'
 Plug 'easymotion/vim-easymotion'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'machakann/vim-highlightedyank'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
-Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'unblevable/quick-scope'
 Plug 'vim-scripts/argtextobj.vim'
-Plug 'yggdroot/indentline'
 call plug#end()
 
 if has('termguicolors')
@@ -39,16 +31,7 @@ if has('termguicolors')
 endif
 
 set background=dark
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'allow_bold': 0,
-  \       'allow_italic': 0,
-  \       'transparent_background': 1
-  \     }
-  \   }
-  \ }
-colorscheme PaperColor
+colorscheme sorbet
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
@@ -80,7 +63,7 @@ set linebreak
 set mouse=
 set nocompatible
 set noro
-set noshowmode
+set showmode
 set noswapfile
 set nrformats-=octal
 set nu rnu
@@ -98,6 +81,7 @@ set ttyfast
 set ttymouse=
 set undolevels=1000
 set wildmenu
+set cursorline
 
 set rtp+=/usr/local/opt/fzf
 
