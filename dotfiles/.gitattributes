@@ -7,6 +7,7 @@ package-lock.json binary
 yarn-lock.json binary
 yarn.lock binary
 poetry.lock binary
+pnpm-lock.yaml binary
 
 *.bib diff=bibtex
 *.c diff=cpp
