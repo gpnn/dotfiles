@@ -24,6 +24,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'unblevable/quick-scope'
 Plug 'vim-scripts/argtextobj.vim'
+Plug 'echasnovski/mini.ai'
+Plug 'kana/vim-textobj-function'
 call plug#end()
 
 if has('termguicolors')
@@ -69,7 +71,7 @@ set nrformats-=octal
 set nu rnu
 set number relativenumber
 set ruler
-set scrolloff=15
+set scrolloff=3
 set showcmd
 set showmatch
 set smartcase
